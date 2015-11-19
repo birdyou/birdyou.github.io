@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CONTACT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="fantastico Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<script src="js/jquery-1.11.0.min.js"></script>
+<link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!--start-top-nav-script-->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+</head>
+<body>
+<!--start-header-->
+	<div class="header" id="home">
+		<div class="container">
+			<div class="head">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="" /></a>
+			</div>
+			<div class="navigation">
+				 <span class="menu"></span> 
+					<ul class="navig">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="features.html">Features</a></li>
+						<li><a href="work.html">Work</a></li>
+						<li><a href="404.html">Support</a></li>
+						<li><a href="contact.html"  class="active">Contact</a></li>
+					</ul>
+			</div>
+				<div class="clearfix"></div>
+			</div>
+			</div>
+		</div>	
+	<!-- script-for-menu -->
+	<!-- script-for-menu -->
+		 <script>
+				$("span.menu").click(function(){
+					$(" ul.navig").slideToggle("slow" , function(){
+					});
+				});
+		 </script>
+		 <!-- script-for-menu -->
+	 <!--start-contact-->
+	 <div class="contact">
+	 	<div class="container">
+	 		<div class="contact-mian">
+	 			<h3>Contact Us</h3>
+	 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate velit a velit consectetur luctus. Etiam in malesuada turpis. Praesent at accumsan elit.</p>
+	 			<div class="contact-top">
+	 				<input type="text" value="Your Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Name';}"/>
+					<input type="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}"/>
+					<textarea value="Your Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Message';}">Your Message</textarea>
+						<div class="contact-but">
+							<form>
+								<input type="submit" value="SEND" />
+							</form>
+						</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	 </div>
+	 <!--end-contact--> 
+	 <!--end-contact--> 
+	 <div class="map">
+	 	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3887.934190118153!2d77.63611399999999!3d12.976061!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a3f47ada21%3A0x6959ab57b8bec812!2sDFS%2C+No+184+1st+Floor!5e0!3m2!1sen!2sin!4v1421480060066" frameborder="0" style="border:0"></iframe>
+	 </div> 
+	 <!--end-contact--> 
+	 <!--start-footer-->
+	 <div class="footer">
+	 	<div class="container">
+	 		<div class="footer-top">
+	 			<div class="footer-left">
+	 				<div class="footer-text">
+	 					<a href="about.html">ABOUT</a>
+	 					<ul>
+	 						<li><a href="#">- Lorem ipsum</a></li>
+							<li><a href="#">- Dolor sit amet</a></li>
+							<li><a href="#">- Nullam sed </a></li>
+							<li><a href="#">- Integer sagttis eget</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="features.html">FEATURES</a>
+	 					<ul>
+	 						<li><a href="#">- Lorem ipsum</a></li>
+							<li><a href="#">- Dolor sit amet</a></li>
+							<li><a href="#">- Nullam sed </a></li>
+							<li><a href="#">- Integer sagttis eget</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="work.html">WORK</a>
+	 					<ul>
+	 						<li><a href="#">- Lorem ipsum</a></li>
+							<li><a href="#">- Dolor sit amet</a></li>
+							<li><a href="#">- Nullam sed </a></li>
+							<li><a href="#">- Integer sagttis eget</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="404.html">SUPPORT</a>
+	 					<ul>
+	 						<li><a href="#">- Lorem ipsum</a></li>
+							<li><a href="#">- Dolor sit amet</a></li>
+							<li><a href="#">- Nullam sed </a></li>
+							<li><a href="#">- Integer sagttis eget</a></li>
+	 					</ul>
+	 				</div>
+	 				<div class="footer-text">
+	 					<a href="contact.html">CONTACT</a>
+	 					<ul>
+	 						<li><a href="#">- Lorem ipsum</a></li>
+							<li><a href="#">- Dolor sit amet</a></li>
+							<li><a href="#">- Nullam sed </a></li>
+							<li><a href="#">- Integer sagttis eget</a></li>
+	 					</ul>
+	 				</div>
+	 			</div>
+	 			<div class="footer-right">
+	 				<ul>
+	 					<li><a href="#"><span class="fb"> </span></a></li>
+	 					<li><a href="#"><span class="twt"> </span></a></li>
+	 					<li><a href="#"><span class="in"> </span></a></li>
+	 					<li><a href="#"><span class="be"> </span></a></li>
+	 					<li><a href="#"><span class="drbl"> </span></a></li>
+	 				</ul>
+	 			</div>
+	 			<div class="clearfix"></div>
+	 			<div class="footer-bottom">
+	 				<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></p>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	 </div>	
+	 <!--end-footer-->					 
+</body>
+</html>
