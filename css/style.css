@@ -50,8 +50,8 @@ body a:hover{
 	-ms-transition: 0.5s all ease;
 }
 .header {
-	padding: 2em 0;
-	background: #505866;
+	padding: 1em 0;
+	background: #111111;
 }
 ul.navig {
 	padding: 0;
@@ -68,7 +68,7 @@ ul.navig li {
 	position: relative;
 }
 ul.navig li a {
-	font-size: 1.15em;
+	font-size: 0.8em;
 	color: rgba(255, 255, 255, 0.69);
 	font-weight: 400;
 	text-decoration: none;
@@ -220,11 +220,19 @@ ul.navig li:nth-of-type(3) {
 /*--Header-Part-Ends-Here --*/
 /*--banner-Part-starts-Here --*/
 .banner {
-	padding-top: 6em;
-	background: #454c58;
+	padding-top: 0em;
+	background: #FFFFFF;
 	border-top: 1px solid rgba(255, 255, 255, 0.17);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.29);
 }
+
+.banner-left{
+position:absolute;
+top:200px;
+left:200px;
+width:380px;
+}
+
 .banner-right{
 	margin-top:3em;
 }
@@ -280,16 +288,16 @@ ul.navig li:nth-of-type(3) {
 	-ms-border-radius: 0.7em;
 }
 .b-btn ul li a.contact:hover{
-	color: #999999;
+	color: #4a86e8;
 	text-decoration:none;
-	background: #ffffff;
-	background: -moz-linear-gradient(top,  #ffffff 0%, #ffffff 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ffffff));
-	background: -webkit-linear-gradient(top,  #ffffff 0%,#ffffff 100%);
-	background: -o-linear-gradient(top,  #ffffff 0%,#ffffff 100%);
-	background: -ms-linear-gradient(top,  #ffffff 0%,#ffffff 100%);
-	background: linear-gradient(to bottom,  #ffffff 0%,#ffffff 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+	background: #4a86e8;
+	background: -moz-linear-gradient(top,  #4a86e8 0%, #4a86e8 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4a86e8), color-stop(100%,#4a86e8));
+	background: -webkit-linear-gradient(top,  #4a86e8 0%,#4a86e8 100%);
+	background: -o-linear-gradient(top,  #4a86e8 0%,#4a86e8 100%);
+	background: -ms-linear-gradient(top,  #4a86e8 0%,#4a86e8 100%);
+	background: linear-gradient(to bottom,  #4a86e8 0%,#v 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a86e8', endColorstr='#4a86e8',GradientType=0 );
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
 	-o-transition: 0.5s all;
@@ -298,16 +306,16 @@ ul.navig li:nth-of-type(3) {
 }
 .b-btn ul li a.work {
 	font-size: 15px;
-	color: #fff;
+	color: #4a86e8;
 	font-weight: 400;
 	padding: 0px 0px 1px 24px;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #4a86e8;
 	background: url(../images/tv.png) no-repeat 0px 5px;
 }
 .b-btn ul li a.work:hover{
-	color:#7ec623;
+	color:#38c943;
 	text-decoration:none;
-	border-bottom: 1px solid #7ec623;
+	border-bottom: 1px solid #38c943;
 	background: url(../images/tv-1.png) no-repeat 0px 5px;
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
