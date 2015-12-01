@@ -93,20 +93,19 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="嵌入式sdk使用开发环境搭建">嵌入式SDK使用开发环境搭建</h1>
+<h1 id="搭建nordic-nrf51822开发环境">搭建Nordic nRF51822开发环境</h1>
 <hr />
-<h2 id="一获取相关的软件资源">一、获取相关的软件资源</h2>
-<p>想要使用JUMA的嵌入式SDK首先需要如下这些软件资源：</p>
+<h2 id="一获取软件资源">一、获取软件资源</h2>
+<p>使用JUMA的嵌入式SDK需要以下软件资源：</p>
 <ol style="list-style-type: decimal">
-<li><p>KEIL的编译环境： ARM御用的编译器，可以从相应的KEIL官网进行相应的下载。 下载地址：https://www.keil.com/demo/eval/arm.htm</p></li>
-<li><p>nRFTools_6_0_0_Installer： Nordic公司提供的用于对其旗下N51822等芯片进行下载管理等的软件集成包。如果这个工具不安装的话，那么聚码的协议栈等就可能无法烧录到相应的</p></li>
-<li><p>JUMA的SDK资源。</p></li>
+<li><p>Keil的编译环境： ARM编译器，可从相应的Keil官网进行相应的下载。下载地址：<br /><a href="https://www.Keil.com/demo/eval/arm.htm" class="uri">https://www.Keil.com/demo/eval/arm.htm</a></p></li>
+<li><p>nRFTools_6_0_0_Installer： Nordic公司提供的用于对其旗下nRF51822等芯片进行下载管理等的软件集成包。下载地址：<br /><a href="https://developer.mbed.org/media/uploads/nemovn/nrftools_6_0_0_installer.exe" class="uri">https://developer.mbed.org/media/uploads/nemovn/nrftools_6_0_0_installer.exe</a></p></li>
+<li><p>JUMA SDK集成包： SDK发布在下述地址，请选择下载最新的集成包：<br /><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html" class="uri">http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html</a></p></li>
 </ol>
-<h2 id="二准备好的各个软件以及嵌入式的sdk">二、准备好的各个软件以及嵌入式的SDK</h2>
-<div class="figure">
-<img src="./soft_resouse.png" />
+<pre><code>    其中，Keil环境中Nodic的插件包，如果国外官网下载不方便，JUMA也提供了镜像下载链接：
+    <a href="http://pan.baidu.com/s/1c09Jbc0">http://pan.baidu.com/s/1c09Jbc0</a></code></pre>
+<hr />
 
-</div>
 <h2 id="三开始安装">三、开始安装</h2>
 <h3 id="安装keil">安装KEIL</h3>
 <p>KEIL的安装一般不会出现问题，在整个安装过程中一般只要一直next就可以了，不过如果想要知道每一步所完成的功能等，可以参照下面的介绍。</p>

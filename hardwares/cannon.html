@@ -81,49 +81,140 @@
         </div>
     </nav>
 
-    
-
-    <!-- Page Content -->
-    <div class="container">
-	    <div class="row header">
-	        <div class="col-md-12">
-	        <br />
-	            <h5 >
-	                <a href="../hardwares.html"><<更多硬件平台</a>
-	            </h5>
+<div id="showcase">
+	<div class="container">
+		<div class="row header">
+		    <div class="col-md-12">
+		    <br />
+		        <h5 >
+		            <a href="../hardwares.html"><<更多硬件平台</a>
+		        </h5>
+		    </div>
+		</div>
+		<div class="row">
+		        <div class="col-md-12">
+		            <div class="project">
+		                <h1 align="center">
+		                   CANNON
+		                </h1>
+		
+		                <div class="col-md-7 screens">
+		                	<div align="center">
+		                    <img src="../hardwares/cannon.jpg" class="img-responsive" alt="cannon" />
+		                    </div>
+		                    <p class="text">
+		                        <h4><strong>原型开发的痛点</strong></h4>
+		                        - <strong>成本&周期:</strong> 目前智能硬件除了蓝牙SoC开发平台，很少有合适的现成的平台，就需要制作电路板，移植软件等，搭建周期长，无法快速验证一个想法。<br /><br />
+		                        - <strong>开发板体积/供电:</strong> 原厂的MCU开发板通常是用来做软件开发，不考虑制作快速原型，体积大，不能用电池供电，导致无法制作一个小尺寸可移动的产品原型，影响快速验证原型。<br /><br />
+		                        - <strong>一致性的软件平台:</strong> 对于应用开发者，要把底层的各种软件都整合到一起，各层都调试到比较好的水平，门槛高。<br /><br />		                        
+		                        <br />
+		                        <h4><strong>设计目标</strong></h4>
+		                        - 小钢炮主板本身构成一个完整的蓝牙智能硬件系统，以及相应的调试好的底层软件。<br /><br />
+		                        - 可以通过丰富接口扩展更多配件。<br /><br />
+		                        - 无需重做PCB，调试底层软件，只需应用编程即可搭建自己的智能硬件。<br /><br />
+		                        - 提供完整的智能硬件范例工程做为起点<br />		                        
+		                        <br />
+		                        <h4><strong>主要资源:</strong></h4>
+		                        <br />
+		                        <strong>1. 处理器<a href="http://www.st.com/web/en/catalog/mmc/FM141/SC1169/SS1577/LN1810">STM32F401</a></strong><br />
+		                        - ARM 32位 Cortex-M4 CPU，最高可达84Mhz frequency。<br />
+		                        - 512Kbytes Flash存储，96Kbytes SRAM。<br />
+		                        - 1.7V-3.6V供电电压，可外接426Mhz外部晶振，CANON外接的为16Mhz晶振和为RTC校准提供的32.768k晶振。<br />
+		                        - 3组I2C接口，CANON使用了I2C1，留出了I2C1与I2S2测试接口。<br />
+		                        - 4组SPI接口，CANON使用了SPI2，留出了SPI3测试接口。<br />
+		                        - 3组USART接口，CANON留出了UART1、UART2。<br />
+		                        - GPIO测试接口，CANON留出了GPIO_A0、GPIO_A1、GPIO_A8、GPIO_B0、GPIO_C13、GPIO_B8、GPIO_C5、GPIO_C7。<br />
+		                        - SDIO接口CANON安装了TF插槽。<br />
+		                        <br />
+		                        <strong>2. 蓝牙BLE芯片<a href="http://www.st.com/web/catalog/sense_power/FM2185/SC1898/PF258646">BlueNRG</a></strong>
+		                        - 支持Master与Slave单模<br />
+		                        - 嵌入式标准蓝牙低功耗协议栈的GAP、GATT、SM、L2CAP、LL、RF_PHY层<br />
+		                        - profile层在MCU实现<br />
+		                        - 发射功率最高可达+8dbm<br />
+		                        - MCU通过SPI控制BlueNRG<br />
+		                        - 16Mhz与32.768khz外部晶振<br />
+		                        <br />
+		    					<strong>3. 传感器阵列</strong>
+		                        <br />
+							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1449/PF262168">LSM303AGR</a>磁力计<br />
+							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1448/PF261181">LSM6DS3</a>六轴陀螺仪<br />
+							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1718/PF260067">HTS221</a>温湿度<br />
+							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1316/PF255230">LPS25H</a>气压计<br />					   
+							     <br />
+		                        <strong>4. 板载锂电池充电电路，MicroUSB</strong>
+		                        <br /><br />
+		                        <strong>5.强大的扩展性: </strong>SD卡，UART，I2C，GPIO，USB等
+		                        <br /><br />
+		                        <strong>6.其他，</strong>例如：LED,按键，BOOT接口等
+		                        <br /><br />
+		                        <h4><strong>使用</strong></h4>
+							    <br />
+							    使用者可以自行对开发板进行编程，通过SDK里面提供的移动端调试工具进行数据交互，具体烧录方法，参看<a href="http://www.juma.io/sdk/boards/st/cannon.html"><strong>开发指南</strong></a>. 
+							    <br />
+							    <br />
+		                    </p>
+		                    <img src="../images/cannon_big.jpg" class="magnifier img-responsive" alt="smp" />
+		                </div>
+		                <div class="col-md-4 col-md-offset-1 description">
+		                    <div class="info">
+	                        <p>
+	                            <h3><strong>适用产品:</strong></h3>
+	                            <br />
+	                            -智能手表
+	                            <br>
+	                            -智能健康设备
+	                            <br>
+	                            -家居与工业自动化
+	                            <br />
+	                            -远程控制
+	                            <br />
+	                            -移动终端外设、PC外设
+	                        </p>
+	                        <p>
+	                            <h3><strong>优势:</strong></h3>
+	                            <br>
+	                            -传感器阵列
+	                            <br>
+	                            -低功耗蓝牙芯片
+	                            <br>
+	                            -提供完整的解决方案           
+	                        </p>
+	    					<p>
+	                            <h3><strong>尺寸:</strong></h3>
+	                            <br>
+	                            -电路板: 60mm x 40mm
+	                        </p>
+	                        <!--br />
+	                        <a class="button button-small" href="../spec/smp.pdf"><strong>SPEC下载</strong></a>
+	                        &nbsp;
+	                        <a class="button button-small" href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w137644-12587108551.26.LQzV4E&id=520729293015"><strong>立即购买</strong></a>-->
+	                    </div>                          
+	                </div>
+	            </div>
 	        </div>
 	    </div>
-
-		<div >
-			<h1 id="smart-motion产品规格" align="center">CANNON</h1>			
-			<hr />
-			<h2 id="硬件实物照">硬件实物照</h2>
-			<hr />
-			<h2 id="硬件基本信息">硬件基本信息</h2>
-			<p>coming soon!</p>
-			<hr />
-			<h2 id="软件基本信息">软件基本信息</h2>
-			<p>coming soon!</p>
-			<hr />
-			<h2 id="资料下载">资料下载</h2>
-			<p>coming soon!</p>
-			<hr />
-			<h2 id="购买渠道">购买方式</h2>
-			<p>联系客服：<a href="mailto:hello@jumacc.com" class="uri">hello@jumacc.com</a></p>
-		</div>
-
-
-
-
+	    
         <!-- Footer -->
         <footer>
-        <div class="row">
-          <div class="col-md-12">
-			<hr />
-            <p>© JUMA Hardwares 2015</p>
-
-          </div>
-        </div>
+        <div class="container">
+        <br />
+        <hr />
+         	<div class="row">
+              <div class="col-lg-12">
+        		<ul class="list-inline">
+        			<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+        			<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+        			<li><a href="../about.html#contact">联系我们</a></li>
+        			<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+        			<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+        
+        			<li class="pull-right"><a href="#">English</a></li>				
+        			<li class="pull-right">|</li>				
+        			<li class="pull-right"><a href="#">中文</a></li>								
+                </ul>
+                <p>Copyright © 2015 JUMA INC</p>	
+              </div>
+            </div>
         </footer>
 
     </div>
