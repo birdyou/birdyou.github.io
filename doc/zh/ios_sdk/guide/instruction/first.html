@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<title>JUMA SDK</title>
+<!-- Bootstrap core CSS -->
+<link href="http://www.juma.io/doc/static/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://www.juma.io/doc/static/css/table.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+.navbar-brand{
+padding:0px;
+width: 120px;
+background-image: url("http://www.juma.io/doc/static/JUMA-LOGO.png");
+background-size: 60% 40%;
+background-repeat: no-repeat;
+background-position: center;
+}
+.content-section-a {
+padding: 20px 0;
+background-color: #f8f8f8;
+}
+.well-font { font-size: 16px; }
+</style>
+<SCRIPT>
+var menu_wwwzzjsnet=function(){
+var t=15,z=50,s=6,a;
+function dd(n){this.n=n; this.h=[]; this.c=[]}
+dd.prototype.init=function(p,c){
+a=c; var w=document.getElementById(p), s=w.getElementsByTagName('ul'), l=s.length, i=0;
+for(i;i<l;i++){
+var h=s[i].parentNode; this.h[i]=h; this.c[i]=s[i];
+h.onmouseover=new Function(this.n+'.st('+i+',true)');
+h.onmouseout=new Function(this.n+'.st('+i+')');
+}
+}
+dd.prototype.st=function(x,f){
+var c=this.c[x], h=this.h[x], p=h.getElementsByTagName('a')[0];
+clearInterval(c.t); c.style.overflow='hidden';
+if(f){
+p.className+=' '+a;
+if(!c.mh){c.style.display='block'; c.style.height=''; c.mh=c.offsetHeight; c.style.height=0}
+if(c.mh==c.offsetHeight){c.style.overflow='visible'}
+else{c.style.zIndex=z; z++; c.t=setInterval(function(){sl(c,1)},t)}
+}else{p.className=p.className.replace(a,''); c.t=setInterval(function(){sl(c,-1)},t)}
+}
+function sl(c,f){
+var h=c.offsetHeight;
+if((h<=0&&f!=1)||(h>=c.mh&&f==1)){
+if(f==1){c.style.filter=''; c.style.opacity=1; c.style.overflow='visible'}
+clearInterval(c.t); return
+}
+var d=(f==1)?Math.ceil((c.mh-h)/s):Math.ceil(h/s), o=h/c.mh;
+c.style.opacity=o; c.style.filter='alpha(opacity='+(o*100)+')';
+c.style.height=h+(d*f)+'px'
+}
+return{dd:dd}
+}();
+</SCRIPT>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="http://www.juma.io"></a>
+</div>
+<div id="navbar" class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href="http://www.juma.io/doc/zh/introduction.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards.html">硬件</a></li>
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk.html">嵌入式</a></li>
+<li><a href="http://www.juma.io/doc/zh/android_sdk.html">Android</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk.html">iOS</a></li>
+</ul>
+</div><!-- /.nav-collapse -->
+</div><!-- /.container -->
+</nav><!-- /.navbar -->
+<div class="container">
+<div class="row row-offcanvas row-offcanvas-right">
+<div class="col-xs-12 col-sm-9">
+<h1 id="第一个例子echo">第一个例子：ECHO</h1>
+<hr />
+<h2 id="本例概述">本例概述</h2>
+<pre><code>    ECHO的意思是APP给硬件发送一个数据，硬件给APP返回一个同样的数据。
+
+    通过“ECHO”的例子，我们可以：  
+    1. 熟悉iOS SDK的使用
+    2. 熟悉iOS SDK的Demo APP
+    3. 和嵌入式SDK配合实现蓝牙的数据通信</code></pre>
+<hr />
+<h2 id="第一步搭建硬件平台">第一步：搭建硬件平台</h2>
+<h3 id="安装硬件下载环境">1. 安装硬件下载环境</h3>
+<ul>
+<li>参考嵌入式SDK环境配置：<br /> <a href="http://www.juma.io/doc/zh/embedded_sdk/embedded_guide/environment.html" class="uri">http://www.juma.io/doc/zh/embedded_sdk/embedded_guide/environment.html</a></li>
+</ul>
+<h3 id="为硬件烧入底层固件">2. 为硬件烧入底层固件</h3>
+<ul>
+<li><p>下载嵌入式SDK：<br /> <a href="https://github.com/JUMA-IO/juma-embedded-sdk" class="uri">https://github.com/JUMA-IO/juma-embedded-sdk</a></p></li>
+<li><p>进入到 juma_sdk/images 文件夹下，点击flash即可。</p></li>
+</ul>
+<pre><code>    为芯片烧写底层的通用固件，这包括了：
+    juma-sdk-nrf51822-256k.hex          - JUMA嵌入式SDK
+    s110_nrf51822_7.0.0_softdevice.hex  - Nordic nRF51822的蓝牙协议栈</code></pre>
+<div class="figure">
+<img src="first1.png" />
+
+</div>
+<h3 id="为硬件烧入echo固件">3. 为硬件烧入ECHO固件</h3>
+<ul>
+<li>找到嵌入式SDK的ECHO例程</li>
+</ul>
+<pre><code>  x:\juma-embedded-sdk-master\examples\echo\arm\Template.uvproj    </code></pre>
+<ul>
+<li>打开的工程 编译 &amp; 下载（烧入）：<br /><img src="first2.png" alt="Smaller icon" /></li>
+</ul>
+<hr />
+<h2 id="第二步编译demo-app">第二步：编译Demo APP</h2>
+<ul>
+<li>下载iOS SDK Demo APP：<br /> <a href="https://github.com/JUMA-IO/juma-ios-sdk-lite" class="uri">https://github.com/JUMA-IO/juma-ios-sdk-lite</a></li>
+</ul>
+<pre><code>    iOS SDK为库文件，位于：
+    JumaSDK-iOS-lite-demo/JumaSDK-iOS-lite-demo/JumaBleKit.framework</code></pre>
+<ul>
+<li><p>关于iOS SDK在APP中的使用，请参阅：<br /> <a href="http://www.juma.io/doc/zh/ios_sdk/ios_guide/environment.html" class="uri">http://www.juma.io/doc/zh/ios_sdk/ios_guide/environment.html</a></p></li>
+<li><p>编译工程，将APP安装到手机：<br /><img src="first3.png" alt="Smaller icon" /></p></li>
+</ul>
+<hr />
+<h2 id="第三步检验成果">第三步：检验成果</h2>
+<h4 id="打开app">1. 打开APP</h4>
+<ul>
+<li>APP界面<br /><img src="ios0.jpg" alt="Smaller icon" /></li>
+</ul>
+<pre><code>    该APP提供蓝牙扫描、连接、发送数据、显示接受数据的功能，是一个功能齐全的蓝牙调试助手。</code></pre>
+<h4 id="扫描蓝牙硬件设备">2. 扫描蓝牙硬件设备</h4>
+<ul>
+<li>启动完成后, 会自动开始扫描周围的蓝牙设备, 并在APP中列出已经扫描到的设备</li>
+<li>跳转到其他页面再返回首页之后, 会重新开始扫描</li>
+</ul>
+<h4 id="建立连接">3. 建立连接</h4>
+<ul>
+<li>点击列出的某个设备, 可以连接设备</li>
+<li>如果连接失败, 会弹出一个HUD进行提示<br /></li>
+<li>如果连接成功, 会跳转到另一个页面<br /><img src="ios1.jpg" alt="Smaller icon" /></li>
+</ul>
+<h4 id="编辑待发送数据">4. 编辑待发送数据</h4>
+<ul>
+<li>在每一行的第一个输入框中修改数据的类型, 类型必须大于等于 0 并且小于 128</li>
+<li>在每一行的第二个输入框中修改数据的内容, 内容的长度必须小于 199</li>
+</ul>
+<h4 id="添加和删除数据行">4. 添加和删除数据行</h4>
+<ul>
+<li>点击页面右上方的 + 按钮即可添加一行</li>
+<li>在每行上左划, 就会出现红色的删除按钮, 点击删除按钮即可删除一行<br /><img src="ios2.jpg" alt="Smaller icon" /></li>
+</ul>
+<h4 id="发送和接收数据">5. 发送和接收数据</h4>
+<ul>
+<li>点击某一行右侧的 send 按钮, 即可向蓝牙外设发送数据</li>
+<li>返回的数据会以弹窗的形式展示出来<br /><img src="ios3.jpg" alt="Smaller icon" /></li>
+</ul>
+<pre><code>    截图中的蓝牙外设的固件并非本文开头提供的 ECHO 固件, 所以返回的数据和发出的数据并不相同
+    假如您的蓝牙外设刷入了 ECHO 固件，则返回的数据和发出的数据会是相同的。</code></pre>
+
+</div>
+<div class="col-xs-6 col-sm-3" id="sidebar">
+<div class="list-group">
+
+<h4><Strong>教程</Strong></h4>
+
+<a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction.html">使用说明</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction/stepByStep.html">在工程中使用SDK</a></li>
+
+</ul>
+
+
+<h4><Strong>API</Strong></h4>
+
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/manager.html">管理者</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/init.html">初始化</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didUpdateState.html">蓝牙状态事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/retrieve.html">检索扫描记录</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/scan.html">开始扫描</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/stopScan.html">停止扫描</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDiscover.html">发现设备事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didStopScan.html">停止扫描事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/connect.html">建立连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/disconnect.html">断开连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didConnect.html">连接成功事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didFailToConnect.html">连接失败事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDisconnect.html">连接断开事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionRestoreIdentifierKey.html">状态保存和恢复</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionShowPowerAlertKey.html">显示蓝牙状态警告</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerScanOptionAllowDuplicatesKey.html">重复设备报告</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/device.html">设备</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/readRSSI.html">读取信号强度</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didReadRSSI.html">读取信号强度事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/updateFirmware.html">更新固件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateFirmware.html">更新固件事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/writeData.html">发送数据</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateData.html">接受数据事件</a></li>
+
+</ul>
+
+
+</div>
+</div><!--/.sidebar-offcanvas-->
+</div><!--/row-->
+<hr>
+<footer>
+<p>&copy; Juma Docs 2015</p>
+</footer>
+</div><!--/.container-->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://www.juma.io/static/js/jquery.min.js"></script>
+<script src="http://www.juma.io/static/js/bootstrap.min.js"></script>
+</body>
+</html>
