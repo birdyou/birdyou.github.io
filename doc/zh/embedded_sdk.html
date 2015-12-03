@@ -122,10 +122,6 @@ return{dd:dd}
 <li><h4 id="vcc测量数据"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/adc/vcc_measure.html">VCC测量数据</a></h4></li>
 <li><h4 id="获取芯片温度"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/adc/get_temperature.html">获取芯片温度</a></h4></li>
 </ul>
-<h3 id="beacon"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon.html">Beacon</a></h3>
-<ul>
-<li><h4 id="beacon配置"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon/beacon_setup.html">Beacon配置</a></h4></li>
-</ul>
 <h3 id="数据存储"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/data_storage.html">数据存储</a></h3>
 <ul>
 <li><h4 id="读数据"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/data_storage/data_storage_read.html">读数据</a></h4></li>
@@ -147,14 +143,17 @@ return{dd:dd}
 <li><h4 id="绘制字符"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gfx/gfx_draw_char.html">绘制字符</a></h4></li>
 <li><h4 id="绘制字符串"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gfx/gfx_draw_string.html">绘制字符串</a></h4></li>
 </ul>
+<h3 id="外部中断"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int.html">外部中断</a></h3>
+<ul>
+<li><h4 id="注册回调函数"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_watch.html">注册回调函数</a></h4></li>
+<li><h4 id="解除回调函数"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_unwatch.html">解除回调函数</a></h4></li>
+<li><h4 id="gpio状态变化"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_on_change.html">GPIO状态变化</a></h4></li>
+</ul>
 <h3 id="gpio"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio.html">GPIO</a></h3>
 <ul>
 <li><h4 id="配置gpio"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_setup.html">配置GPIO</a></h4></li>
 <li><h4 id="读取gpio"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_read.html">读取GPIO</a></h4></li>
 <li><h4 id="写入gpio"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_write.html">写入GPIO</a></h4></li>
-<li><h4 id="注册回调函数"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_watch.html">注册回调函数</a></h4></li>
-<li><h4 id="解除回调函数"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_unwatch.html">解除回调函数</a></h4></li>
-<li><h4 id="gpio状态变化"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_on_change.html">GPIO状态变化</a></h4></li>
 </ul>
 <h3 id="红外"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/infrared.html">红外</a></h3>
 <ul>
@@ -174,6 +173,11 @@ return{dd:dd}
 <li><h4 id="串口配置"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_setup.html">串口配置</a></h4></li>
 <li><h4 id="串口发送数据"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_send.html">串口发送数据</a></h4></li>
 <li><h4 id="串口收到数据事件"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_on_data.html">串口收到数据事件</a></h4></li>
+</ul>
+<h3 id="spi"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi.html">SPI</a></h3>
+<ul>
+<li><h4 id="spi配置"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_setup.html">SPI配置</a></h4></li>
+<li><h4 id="spi发送接收"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_transmit_receive.html">SPI发送接收</a></h4></li>
 </ul>
 <h3 id="蜂鸣器"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/sound.html">蜂鸣器</a></h3>
 <ul>
@@ -196,6 +200,13 @@ return{dd:dd}
 <li><h4 id="开始计时"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_start.html">开始计时</a></h4></li>
 <li><h4 id="结束计时"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_stop.html">结束计时</a></h4></li>
 <li><h4 id="计时完毕事件"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_on_fired.html">计时完毕事件</a></h4></li>
+</ul>
+<h3 id="看门狗"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog.html">看门狗</a></h3>
+<ul>
+<li><h4 id="看门狗配置"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Config.html">看门狗配置</a></h4></li>
+<li><h4 id="看门狗开始"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Start.html">看门狗开始</a></h4></li>
+<li><h4 id="看门狗喂狗"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_user_dogX_RR.html">看门狗喂狗</a></h4></li>
+<li><h4 id="看门狗回调"><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_on_timerout.html">看门狗回调</a></h4></li>
 </ul>
 
 </div>
@@ -256,13 +267,6 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon.html">Beacon</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon/beacon_setup.html">Beacon配置</a></li>
-
-</ul>
-
 <a href="http://www.juma.io/doc/zh/embedded_sdk/api/data_storage.html">数据存储</a>
 <ul class="menu_wwwzzjsnet">
 
@@ -303,6 +307,17 @@ return{dd:dd}
 
 </ul>
 
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int.html">外部中断</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_watch.html">注册回调函数</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_unwatch.html">解除回调函数</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_on_change.html">GPIO状态变化</a></li>
+
+</ul>
+
 <a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio.html">GPIO</a>
 <ul class="menu_wwwzzjsnet">
 
@@ -311,12 +326,6 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_read.html">读取GPIO</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_write.html">写入GPIO</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_watch.html">注册回调函数</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_unwatch.html">解除回调函数</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_on_change.html">GPIO状态变化</a></li>
 
 </ul>
 
@@ -352,6 +361,15 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_send.html">串口发送数据</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_on_data.html">串口收到数据事件</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi.html">SPI</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_setup.html">SPI配置</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_transmit_receive.html">SPI发送接收</a></li>
 
 </ul>
 
@@ -392,6 +410,19 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_stop.html">结束计时</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_on_fired.html">计时完毕事件</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog.html">看门狗</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Config.html">看门狗配置</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Start.html">看门狗开始</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_user_dogX_RR.html">看门狗喂狗</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_on_timerout.html">看门狗回调</a></li>
 
 </ul>
 

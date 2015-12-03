@@ -93,33 +93,28 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="收到数据事件">收到数据事件</h1>
+<h2 id="设置升级模式">设置升级模式</h2>
 <hr />
-<h2 id="函数声明">函数声明</h2>
-<pre><code>public void onReciver(byte type, byte[] message);</code></pre>
+<h3 id="函数声明">函数声明</h3>
+<pre><code>- (void)setOtaMode;</code></pre>
 <hr />
-<h2 id="函数用途">函数用途</h2>
-<p>接收到蓝牙设备发送过来的消息时，会触发此回调。</p>
+<h3 id="函数用途">函数用途</h3>
+<p>向蓝牙设备发送某些特定的数据, 使蓝牙设备在升级模式下工作. 在升级模式下, 可以通过无线传输的方式升级蓝牙设备的固件.</p>
 <hr />
-<h2 id="函数参数">函数参数</h2>
+<h3 id="函数参数">函数参数</h3>
 <table>
 <thead>
 <tr class="header">
 <th align="left">参数</th>
-<th align="left">数据类型</th>
+<th align="left">类型</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">type</td>
-<td align="left">byte</td>
-<td align="left">消息类型</td>
-</tr>
-<tr class="even">
-<td align="left">message</td>
-<td align="left">byte[]</td>
-<td align="left">消息数据</td>
+<td align="left"><em>返回值</em></td>
+<td align="left">void</td>
+<td align="left">无</td>
 </tr>
 </tbody>
 </table>
@@ -130,83 +125,69 @@ return{dd:dd}
 
 <h4><Strong>教程</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction.html">使用说明</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction.html">使用说明</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction/environment.html">在工程中使用SDK</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction/stepByStep.html">在工程中使用SDK</a></li>
 
 </ul>
 
 
 <h4><Strong>API</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper.html">扫描</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/manager.html">管理者</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/constant.html">常量</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/init.html">初始化</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/enable.html">启用蓝牙</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didUpdateState.html">蓝牙状态事件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/disable.html">禁用蓝牙</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/retrieve.html">检索扫描记录</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/getVersion.html">获取版本号</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/scan.html">开始扫描</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/isEnabled.html">是否开启</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/stopScan.html">停止扫描</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/startScan.html">开启扫描</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDiscover.html">发现设备事件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/stopScan.html">关闭扫描</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didStopScan.html">停止扫描事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/connect.html">建立连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/disconnect.html">断开连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didConnect.html">连接成功事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didFailToConnect.html">连接失败事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDisconnect.html">连接断开事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionRestoreIdentifierKey.html">状态保存和恢复</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionShowPowerAlertKey.html">显示蓝牙状态警告</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerScanOptionAllowDuplicatesKey.html">重复设备报告</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback.html">扫描回调</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/device.html">设备</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback/onDiscover.html">发现设备事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/readRSSI.html">读取信号强度</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback/onScanStateChange.html">扫描状态变化事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didReadRSSI.html">读取信号强度事件</a></li>
 
-</ul>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/writeData.html">发送数据</a></li>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice.html">设备</a>
-<ul class="menu_wwwzzjsnet">
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didWriteData.html">发送数据事件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/constant.html">常量</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateData.html">接收数据事件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getVersion.html">获取版本号</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/setOtaMode.html">设置升级模式</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/disconnect.html">断开连接</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/updateFirmware.html">更新固件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/connect.html">建立连接</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getName.html">获取设备名称</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getRemoteRssi.html">获取设备RSSI</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getUuid.html">获取设备UUID</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/isConnected.html">是否已连接</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/send.html">发送数据</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/updateFirmware.html">更新固件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/isFirmwareUpdating.html">是否在固件更新</a></li>
-
-</ul>
-
-<a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback.html">设备回调</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onConnectionStateChange.html">连接状态变化事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onSend.html">发送数据事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onReciver.html">接受数据事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onRemoteRssi.html">获取RSSI事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onUpdateFirmware.html">更新固件事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateFirmware.html">更新固件事件</a></li>
 
 </ul>
 

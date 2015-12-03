@@ -93,13 +93,16 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="gipo状态变化事件">GIPO状态变化事件</h1>
+<h1 id="看门狗配置">看门狗配置</h1>
 <hr />
 <h2 id="函数声明">函数声明</h2>
-<pre><code>void gpio_on_change(uint32_t pins_state);</code></pre>
+<pre><code>uint32_t watchDog_Config(uint32_t juma_wdt_en);</code></pre>
 <hr />
 <h2 id="函数功能">函数功能</h2>
-<p>在外部 GPIO 的状态被改变后由系统调用。 （当前仅支持一个外部的引脚，若同时使用两个及以上可能导致全部失效） 用于处理 GIPOI 状态变化后的任务。</p>
+<p>看门狗模块的配置。</p>
+<hr />
+<h2 id="函数特点">函数特点</h2>
+<p>在JUMA SDK中，提供看门狗的使用接口，通过该接口可以快速简单的配置看门狗模块。</p>
 <hr />
 <h2 id="函数参数">函数参数</h2>
 <table>
@@ -112,49 +115,55 @@ return{dd:dd}
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><em>pins_state</em></td>
-<td align="left">uint8_t</td>
-<td align="left">当前引脚的状态</td>
+<td align="left"><em>juma_wdt_en</em></td>
+<td align="left">uint32_t</td>
+<td align="left">将要使能的看门狗</td>
 </tr>
 <tr class="even">
 <td align="left"><em>返回值</em></td>
-<td align="left">void</td>
+<td align="left">无</td>
 <td align="left">无</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h3 id="关于-new_state-参数">关于 <em>new_state</em> 参数</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="left"><em>new_state</em> 的数值</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">0-0xffffff</td>
-<td align="left">当前的引脚的状态</td>
-</tr>
-</tbody>
-</table>
+<h3 id="关于-juma_wdt_en-的描述">关于 <em>juma_wdt_en</em> 的描述</h3>
+<p>关于juma_wdt_en可取得值，在juma_sdk_types.h中有如下的定义:</p>
+<pre><code>#define JUMA_WDT_EN_USER_DOG1   0x01
+#define JUMA_WDT_EN_USER_DOG2   0x02
+#define JUMA_WDT_EN_USER_DOG3   0x04
+#define JUMA_WDT_EN_USER_DOG4   0x08
+              
+#define JUMA_WDT_EN_SYS_SDK_DOG 0x80</code></pre>
+<p>其中 JUMA_WDT_EN_USER_DOG1 ~ JUMA_WDT_EN_USER_DOG4 是提供给用户使用的。用户在使能了这些看门狗后，需要用对应的喂狗函数来进行喂狗，负责程序在看门狗时钟到达后会产生void watchDog_on_timerout(uint32_t juma_wdt_statue);的回调。没有使能的看门狗不需要进行喂狗。喂狗函数如下所示。详情请参照该函数具体的位置。</p>
+<pre><code>void watchDog_user_dog1_RR(void);
+void watchDog_user_dog2_RR(void);
+void watchDog_user_dog3_RR(void);
+void watchDog_user_dog4_RR(void);</code></pre>
+<p>而其中 JUMA_WDT_EN_SYS_SDK_DOG 则对应的是 JUMA SDK部分，如果使能了该看门狗，那么当 juma sdk内部发生错误的时候，也会像用户的看门狗一样产生void watchDog_on_timerout(uint32_t juma_wdt_statue);的回调。</p>
 <hr />
 <h2 id="函数举例">函数举例</h2>
-<pre><code>    //当前函数
-    void    gpio_on_change(uint32_t  pins_state)
+<pre><code>
+    // 定时器时间到后的处理函数
+    void watchDog_on_timerout(uint32_t juma_wdt_statue)
     {
         ...
-        
-        if(new_state == 0)
-        {
-            red_led_blink();    //伪指令
-        }
-        else
-        {
-            green_led_blink();  //伪指令
-        }
-        
+            NVIC_SystemReset();
+        ...
+    }
+
+    //当前函数
+    void foo()
+    {
+        ...
+        //看门狗的配置（使能了JUMA SDK内部的看门狗 和 用户 的看门狗1）
+        watchDog_Config(JUMA_WDT_EN_SYS_SDK_DOG | JUMA_WDT_EN_USER_DOG1);
+        //看是看门狗运行。  
+        //（参数的选取应该按照实际的使用情况选取，如果选的值太大，可能不能达到很好的效果，如果太小，可能导致程序无法正常的使用)   
+        watchDog_Start(7000);
+        //喂狗操作，由于使能了用户看门狗1所以需要执行喂狗操作，否则，系统将会回调void watchDog_on_timerout(uint32_t juma_wdt_statue);
+        //JUMA_WDT_EN_SYS_SDK_DOG 使能的看门狗不需要用户执行喂狗操作，由JUMA SDK内部完成喂狗动作。
+        watchDog_user_dog1_RR();
         ...
     }</code></pre>
 
@@ -216,13 +225,6 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon.html">Beacon</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/beacon/beacon_setup.html">Beacon配置</a></li>
-
-</ul>
-
 <a href="http://www.juma.io/doc/zh/embedded_sdk/api/data_storage.html">数据存储</a>
 <ul class="menu_wwwzzjsnet">
 
@@ -263,6 +265,17 @@ return{dd:dd}
 
 </ul>
 
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int.html">外部中断</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_watch.html">注册回调函数</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_unwatch.html">解除回调函数</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/ext_int/gpio_on_change.html">GPIO状态变化</a></li>
+
+</ul>
+
 <a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio.html">GPIO</a>
 <ul class="menu_wwwzzjsnet">
 
@@ -271,12 +284,6 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_read.html">读取GPIO</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_write.html">写入GPIO</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_watch.html">注册回调函数</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_unwatch.html">解除回调函数</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/gpio/gpio_on_change.html">GPIO状态变化</a></li>
 
 </ul>
 
@@ -312,6 +319,15 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_send.html">串口发送数据</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/serial/serial_on_data.html">串口收到数据事件</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi.html">SPI</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_setup.html">SPI配置</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/spi/spi_transmit_receive.html">SPI发送接收</a></li>
 
 </ul>
 
@@ -352,6 +368,19 @@ return{dd:dd}
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_stop.html">结束计时</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/timer/timer_on_fired.html">计时完毕事件</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog.html">看门狗</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Config.html">看门狗配置</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_Start.html">看门狗开始</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_user_dogX_RR.html">看门狗喂狗</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/api/watch_dog/watchDog_on_timerout.html">看门狗回调</a></li>
 
 </ul>
 

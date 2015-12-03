@@ -134,9 +134,6 @@ return{dd:dd}
 </tbody>
 </table>
 <hr />
-<h4 id="关于-delegate-参数">关于 <em>delegate</em> 参数</h4>
-<p>如果 delegate 为 nil, 这个函数会返回 nil.</p>
-<hr />
 <h4 id="关于-queue-参数">关于 <em>queue</em> 参数</h4>
 <p>如果 queue 为 nil, 则 JumaManager 会使用 main queue.</p>
 <hr />
@@ -206,13 +203,17 @@ JumaManager *manager = [[JumaManager alloc] initWithDelegate:self queue:nil opti
 
 <li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didReadRSSI.html">读取信号强度事件</a></li>
 
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/writeData.html">发送数据</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didWriteData.html">发送数据事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateData.html">接收数据事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/setOtaMode.html">设置升级模式</a></li>
+
 <li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/updateFirmware.html">更新固件</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateFirmware.html">更新固件事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/writeData.html">发送数据</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateData.html">接受数据事件</a></li>
 
 </ul>
 

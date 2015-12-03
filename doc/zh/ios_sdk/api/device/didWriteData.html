@@ -93,100 +93,121 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="获取ble硬件">获取BLE硬件</h1>
+<h2 id="发送数据事件">发送数据事件</h2>
 <hr />
-<h2 id="nordic-nrf51822">Nordic nRF51822</h2>
+<h3 id="函数声明">函数声明</h3>
+<pre><code>- (void)device:(JumaDevice *)device didWriteData:(NSError *)error;</code></pre>
 <hr />
-<h3 id="nordic-nrf51822模块">Nordic nRF51822模块</h3>
-<div class="figure">
-<img src="51822_modules.png" />
-
-</div>
-<ul>
-<li>详情见：<a href="http://www.juma.io/doc/zh/boards.html" class="uri">http://www.juma.io/doc/zh/boards.html</a></li>
-</ul>
+<h3 id="函数用途">函数用途</h3>
+<p>向蓝牙设备发送数据后, 这个方法会被调用, 以此表示数据发送是否成功.</p>
 <hr />
-<h3 id="nordic-nrf51822开发板">Nordic nRF51822开发板</h3>
-<h4 id="nova">NOVA</h4>
-<div class="figure">
-<img src="nova1.png" />
-
-</div>
-<ul>
-<li>面向DIY爱好者、原型开发和小厂商的智能硬件核心板</li>
-<li>详情见：<a href="http://www.juma.io/doc/zh/boards.html" class="uri">http://www.juma.io/doc/zh/boards.html</a></li>
-</ul>
-<h4 id="smart-motion-platform">Smart Motion Platform</h4>
-<div class="figure">
-<img src="icon_smp_result.png" />
-
-</div>
-<ul>
-<li>可测量运动数据的开发板</li>
-<li>详情见：<a href="http://www.juma.io/doc/zh/boards.html" class="uri">http://www.juma.io/doc/zh/boards.html</a></li>
-</ul>
+<h3 id="函数参数">函数参数</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">参数</th>
+<th align="left">类型</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><em>device</em></td>
+<td align="left">JumaDevice *</td>
+<td align="left">给出这个信息的对象</td>
+</tr>
+<tr class="even">
+<td align="left"><em>error</em></td>
+<td align="left">NSError *</td>
+<td align="left">错误描述</td>
+</tr>
+<tr class="odd">
+<td align="left"><em>返回值</em></td>
+<td align="left">void</td>
+<td align="left">无</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="stm-bluenrg">STM BlueNRG</h2>
-<div class="figure">
-<img src="bluenrg.png" />
-
-</div>
-<ul>
-<li>详情见：<a href="http://www.juma.io/doc/zh/boards.html" class="uri">http://www.juma.io/doc/zh/boards.html</a></li>
-</ul>
+<h3 id="函数举例">函数举例</h3>
+<pre><code>- (void)device:(JumaDevice *)device didWriteData:(NSError *)error {    
+    if (error) {      
+        NSLog(@&quot;did fail to send data to %@, error : %@&quot;, device.name, error); 
+    }
+    else {        
+        NSLog(@&quot;did send data to %@&quot;, device.name);
+    }    
+}</code></pre>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>SDK相关</Strong></h4>
+<h4><Strong>教程</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/introduction/sdk/platform.html">SDK</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction.html">使用说明</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/overview.html">SDK介绍</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html">下载SDK及DEMO</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/hardwares.html">支持硬件</a></li>
-
-</ul>
-
-<a href="http://www.juma.io/doc/zh/introduction/sdk/feedback.html">交流和反馈</a>
-<ul class="menu_wwwzzjsnet">
-
-</ul>
-
-<a href="http://www.juma.io/doc/zh/introduction/sdk/aboutus.html">关于我们</a>
-<ul class="menu_wwwzzjsnet">
-
-</ul>
-
-<a href="http://www.juma.io/doc/zh/introduction/sdk/legal.html">法律</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/introduction/sdk/legal/developer.html">开发者协议</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/guide/instruction/stepByStep.html">在工程中使用SDK</a></li>
 
 </ul>
 
 
-<h4><Strong>技术话题</Strong></h4>
+<h4><Strong>API</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/introduction/topic/ble.html">BLE技术</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/manager.html">管理者</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/introduction/topic/ble/basics.html">BLE入门</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/init.html">初始化</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didUpdateState.html">蓝牙状态事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/retrieve.html">检索扫描记录</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/scan.html">开始扫描</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/stopScan.html">停止扫描</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDiscover.html">发现设备事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didStopScan.html">停止扫描事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/connect.html">建立连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/disconnect.html">断开连接</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didConnect.html">连接成功事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didFailToConnect.html">连接失败事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/didDisconnect.html">连接断开事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionRestoreIdentifierKey.html">状态保存和恢复</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerOptionShowPowerAlertKey.html">显示蓝牙状态警告</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/manager/JumaManagerScanOptionAllowDuplicatesKey.html">重复设备报告</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/introduction/topic/iot.html">物联网技术</a>
+<a href="http://www.juma.io/doc/zh/ios_sdk/api/device.html">设备</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/introduction/topic/iot/async.html">论物联网与异步编程</a></li>
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/readRSSI.html">读取信号强度</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didReadRSSI.html">读取信号强度事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/writeData.html">发送数据</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didWriteData.html">发送数据事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateData.html">接收数据事件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/setOtaMode.html">设置升级模式</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/updateFirmware.html">更新固件</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/ios_sdk/api/device/didUpdateFirmware.html">更新固件事件</a></li>
 
 </ul>
 
