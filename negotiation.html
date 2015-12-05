@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -303,7 +304,7 @@
                 </div>
 			</div>	
 		</form>
-		<div class="row" style="text-align: center"><button  style="margin:auto;float: none" class="btn btn-primary col-xs-10 col-sm-10 col-md-2">提交</button></div>
+		<div class="row" style="text-align: center"><button id="submit" style="margin:auto;float: none" class="btn btn-primary col-xs-10 col-sm-10 col-md-2">提交</button></div>
 	</div>
 <div class="container">
     <footer>
@@ -342,7 +343,7 @@
         };
         Survey = function(){
             this.report = {};
-        }
+        };
 
         Survey.prototype = {
             init:function(){
@@ -369,22 +370,35 @@
 <script>
 	$('.city-picker').cityPicker({required: true});
     var survey = new Survey();
-    $("button").one("click",function(){
+    $("#submit").on("click",function(){
         btFun($(this));
     });
     function btFun(but){
+        if(!validate()) return;
         but.attr("disabled","disabled");
+        but.unbind("click");
         survey.save(function(result){
             if(result.status===true){
                 alert("感谢您的参与，我们将尽快联系您！");
                 window.location = "http://www.juma.io";
             }else{
                 alert("提交失败……");
-                but.one("click",function(){
+                but.on("click",function(){
                     btFun(but);
                 });
             }
         });
+    }
+    function validate(){
+        var inputs = $("form input");
+        for(var i in inputs){
+            if($(inputs[i]).attr("required") && !$.trim($(inputs[i]).val())) {
+                alert("必填信息不完整，请先完成");
+                $(inputs[i]).parent().addClass("has-error").removeClass("has-success");
+                return false;
+            }
+        }
+        return true;
     }
     $("form input").on("blur",function(){
         if($(this).attr("required") && !$.trim($(this).val()) ){
