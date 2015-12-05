@@ -333,6 +333,11 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://117.121.38.2:81/search/city-picker.js"></script>
 <script>
+    var requiredNames = [];
+//    var restUrl = "http://localhost:81/"
+    var restUrl = "http://117.121.38.2:81/"
+</script>
+<script>
     +(function(window,$){
 
         window.Survey = window.Survey || {};
@@ -346,21 +351,21 @@
         };
 
         Survey.prototype = {
-            init:function(){
+            save:function(callback){
                 var inputsStr = $("form").serialize();
                 inputsStr = decodeURIComponent(inputsStr,true);
                 var inputsArr = inputsStr.split("&");
                 for(var i=0;i<inputsArr.length;i++){
                     var key = inputsArr[i].split("=")[0];
-                    var value = inputsArr[i].split("=")[1];
-                    this.report[key] = value;
+                    this.report[key] = inputsArr[i].split("=")[1];
                 }
-            },
-            save:function(callback){
-                this.init();
-                // url :http://117.121.38.2:81/ http://192.168.1.101:81/
-//                $.post("http://localhost:81/api/v1/question",this.report,function(result){
-                $.post("http://117.121.38.2:81/api/v1/question",this.report,function(result){
+                for(var i=0; i < requiredNames.length; i++){
+                    if(!$.trim(this.report[requiredNames[i]])) {
+                        callback({status:"required",name:requiredNames[i]})
+                        return;
+                    }
+                }
+                $.post(restUrl + "api/v1/question",this.report,function(result){
                     callback(result)
                 },"json");
             }
@@ -369,36 +374,35 @@
 </script>
 <script>
 	$('.city-picker').cityPicker({required: true});
+    var inputs = $("form .form-group");
+    for(var i = 0; i< inputs.length; i++){
+        if($(inputs[i]).find("label").data("regular") == "*"){
+            requiredNames.push($(inputs[i]).find("input").attr("name") || $(inputs[i]).find("textarea").attr("name"));
+        }
+    }
     var survey = new Survey();
     $("#submit").on("click",function(){
         btFun($(this));
     });
     function btFun(but){
-        if(!validate()) return;
         but.attr("disabled","disabled");
         but.unbind("click");
         survey.save(function(result){
             if(result.status===true){
                 alert("感谢您的参与，我们将尽快联系您！");
                 window.location = "http://www.juma.io";
+                return;
+            }else if(result.status == "required") {
+                alert("表单信息填写不完整，请补充");
+                $("input[name='"+result.name+"']").parent().addClass("has-error").removeClass("has-success");
             }else{
                 alert("提交失败……");
-                but.on("click",function(){
-                    btFun(but);
-                });
             }
+            but.removeAttr("disabled","disabled");
+            but.on("click",function(){
+                btFun(but);
+            });
         });
-    }
-    function validate(){
-        var inputs = $("form input");
-        for(var i in inputs){
-            if($(inputs[i]).attr("required") && !$.trim($(inputs[i]).val())) {
-                alert("必填信息不完整，请先完成");
-                $(inputs[i]).parent().addClass("has-error").removeClass("has-success");
-                return false;
-            }
-        }
-        return true;
     }
     $("form input").on("blur",function(){
         if($(this).attr("required") && !$.trim($(this).val()) ){
