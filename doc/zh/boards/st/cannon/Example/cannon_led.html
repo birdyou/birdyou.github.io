@@ -81,7 +81,7 @@ return{dd:dd}
 </div>
 <div id="navbar" class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
-<li><a href="http://www.juma.io/doc/zh/introduction.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/introduction/index.html">概述</a></li>
 <li><a href="http://www.juma.io/doc/zh/boards.html">硬件</a></li>
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk.html">嵌入式</a></li>
 <li><a href="http://www.juma.io/doc/zh/android_sdk.html">Android</a></li>
@@ -93,7 +93,7 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="bluenrg蓝牙点灯例程说明">BlueNRG蓝牙点灯例程说明</h1>
+<h1 id="cannon蓝牙点灯例程说明">Cannon蓝牙点灯例程说明</h1>
 <hr />
 <h2 id="获取sdk集成包">1. 获取SDK集成包</h2>
 <p>下载最新的SDK集成包：<br /><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html" class="uri">http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html</a></p>
@@ -121,7 +121,7 @@ return{dd:dd}
 </div>
 <h3 id="step4.使用安卓调试助手连接cannon板子">Step4.使用安卓调试助手连接CANNON板子</h3>
 <p>安装好安卓调试助手后：<br /><img src="./ndCv2Ee.png" /></p>
-<p>点击Scan进行设备扫描。之后会看到如下的扫描结果：<br /><img src="./OIezg9Y.png" /></p>
+<p>点击Scan进行设备扫描，之后会看到如下的扫描结果：<br /><img src="./OIezg9Y.png" /></p>
 <p>点击BlueNRG_LED,再点击CONNECT按钮进行连接。</p>
 <p>之后可以通过 Android发送相应的数据（数据格式：第一个字节为类型，第二个字节为接下来的数据的数据长度，第三个字节为数据。<br />目前类型这一字节暂时无任何意义可随意填写，例如：0x010101，代表类型：01，长度：01，数据：01。</p>
 <p>点亮LED时数据位为：0x01，应发送（0x010101）；熄灭时数据位为：0x00，应发送（0x010100）。</p>
@@ -182,7 +182,9 @@ return{dd:dd}
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
 
 </ul>
 
