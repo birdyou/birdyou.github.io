@@ -172,12 +172,13 @@ return{dd:dd}
 <pre><code>    //用户自定义回调函数
     void on_adc_complete(void* args)
     {
-        adc_result_t *result = (adc_result_t*)args; uint8_t buffer[2];
+        uint8_t buffer[2];
+        adc_result_t *result = (adc_result_t*)args; 
         //这里的result就是最终采集的到的数据
-        
         ...
-        buffer[0] = result-&gt;value &gt;&gt; 8; buffer[1] = result-&gt;value &amp; 0xff;
-        ble_device_send(buffer, 2);
+        buffer[0] = result-&gt;value &gt;&gt; 8; 
+        buffer[1] = result-&gt;value &amp; 0xff;
+        ble_device_send(01, 2, buffer);
     }
     
     //当前函数
