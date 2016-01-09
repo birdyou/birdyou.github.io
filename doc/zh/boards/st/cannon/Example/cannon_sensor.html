@@ -81,7 +81,7 @@ return{dd:dd}
 </div>
 <div id="navbar" class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
-<li><a href="http://www.juma.io/doc/zh/introduction.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/introduction/index.html">概述</a></li>
 <li><a href="http://www.juma.io/doc/zh/boards.html">硬件</a></li>
 <li><a href="http://www.juma.io/doc/zh/embedded_sdk.html">嵌入式</a></li>
 <li><a href="http://www.juma.io/doc/zh/android_sdk.html">Android</a></li>
@@ -93,98 +93,96 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h2 id="教程">教程</h2>
+<h1 id="cannon读取传感器数据例程说明">Cannon读取传感器数据例程说明</h1>
 <hr />
-<h3 id="使用说明">使用说明</h3>
-<ul>
-<li><h4 id="在工程中使用sdk"><a href="./guide/instruction/environment.html">在工程中使用SDK</a></h4></li>
-</ul>
+<h2 id="获取sdk集成包">1. 获取SDK集成包</h2>
+<p>下载最新的SDK集成包：<br /><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html" class="uri">http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html</a></p>
+<p>如：&quot;JUMA SDK 打包下载 2015.09.27&quot;<br /><img src="./sdk_all_in_one.png" /></p>
+<hr />
+<h2 id="手机安装st_sensor调试助手">2. 手机安装ST_SENSOR调试助手</h2>
+<p>如果使用Android手机，在SDK集成包里含有“STSensor.apk”，可以直接安装： <img src="./sensor_apk.jpg" /></p>
+<hr />
+<h2 id="和手机app通信">3. 和手机APP通信</h2>
+<h3 id="step1.-打开样本工厂">Step1. 打开样本工厂：</h3>
+<pre><code>x:/cannon/Product/Application/Sensor_Tag/MDK-ARM/CAF.uvproj</code></pre>
+<div class="figure">
+<img src="sensor_embedded.jpg" />
+
+</div>
+<h3 id="step2.-编译工程">Step2. 编译工程</h3>
+<div class="figure">
+<img src="./yiwI1p2.png" />
+
+</div>
+<h3 id="step3.-烧入固件">Step3. 烧入固件</h3>
+<div class="figure">
+<img src="./yatJwos.png" />
+
+</div>
+<h3 id="step4.使用安卓调试助手连接cannon板子">Step4.使用安卓调试助手连接CANNON板子</h3>
+<p>安装好ST_SENSOR调试助手后：<br /><img src="./sensor_app0.jpg" /></p>
+<p>点击“Select Device”连接设备，之后结果如下：<br /><img src="./sensor_app1.jpg" /></p>
+<p>可以看到，Cannon将板载的传感器采样得到的数据周期性地传送到了手机APP上。</p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>教程</Strong></h4>
+<h4><Strong>Noridc nRF51822</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction.html">使用说明</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction/environment.html">在工程中使用SDK</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">概述</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/dev_env_build.html">环境配置</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发板指南</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Resource/nova_resource.html">板子介绍</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Download/Down_load_process.html">烧入方法</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Example/Example_Explain.html">入门案例</a></li>
+
+</ul>
+
+<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发板指南</a>
+<ul class="menu_wwwzzjsnet">
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Resource/smp_resource.html">板子介绍</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Download/Down_load_process.html">烧入方法</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Example/Example_Explain.html">入门案例</a></li>
 
 </ul>
 
 
-<h4><Strong>API</Strong></h4>
+<h4><Strong>ST BlueNRG</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper.html">扫描</a>
+<a href="http://www.juma.io/doc/zh/boards/st/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/constant.html">常量</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">概述</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/enable.html">启用蓝牙</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/disable.html">禁用蓝牙</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/getVersion.html">获取版本号</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/isEnabled.html">是否开启</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/startScan.html">开启扫描</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanHelper/stopScan.html">关闭扫描</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback.html">扫描回调</a>
+<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发板指南</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback/onDiscover.html">发现设备事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">板子介绍</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/ScanCallback/onScanStateChange.html">扫描状态变化事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-</ul>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice.html">设备</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/constant.html">常量</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getVersion.html">获取版本号</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/disconnect.html">断开连接</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/connect.html">建立连接</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getName.html">获取设备名称</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getRemoteRssi.html">获取设备RSSI</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/getUuid.html">获取设备UUID</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/isConnected.html">是否已连接</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/send.html">发送数据</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/updateFirmware.html">更新固件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/isFirmwareUpdating.html">是否在固件更新</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDevice/setOtaMode.html">设置OTA模式</a></li>
-
-</ul>
-
-<a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback.html">设备回调</a>
-<ul class="menu_wwwzzjsnet">
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onConnectionStateChange.html">连接状态变化事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onSend.html">发送数据事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onReceive.html">接受数据事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onRemoteRssi.html">获取RSSI事件</a></li>
-
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onUpdateFirmware.html">更新固件事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
 
 </ul>
 
