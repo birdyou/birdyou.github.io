@@ -1,203 +1,274 @@
-
 <!DOCTYPE html>
-<head>
-<meta charset='utf-8' />
-<meta content='width=device-width, initial-scale=1, user-scalable=yes' name='viewport' />
-<!--[ if IE ]>
-<meta content='IE=edge' http-equiv='X-UA-Compatible' />
-<![endif]-->
-<meta content='' name='description' />
+<!-- saved from url=(0064)http://ironsummitmedia.github.io/startbootstrap-modern-business/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>首页 | 北京聚码科技有限公司</title>
-<link rel="icon" href="images/toplogo.png" />
-<meta content="images/logo.png" name='TileImage' />
-<meta content='#ff1d00' name='msapplication-TileColor' />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<link href="css/fonts.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="css/application-6b20bfa54413ccace1a77b956994428b.css" media="screen" rel="stylesheet" type="text/css" />
-<!-- Made by JUMA Tech. -->
+    <title>JUMA 首页</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./css/modern-business.css" rel="stylesheet">
+    <link rel="icon" href="./images/jumafav.png" />
+    
+	<style>
+	    .navbar-brand{
+	        padding:0px;
+	        width: 120px;
+	        background-image: url("./images/JUMA-LOGO.png");
+	        background-size: 60% 40%;
+	        background-repeat: no-repeat;
+	        background-position: center;	        
+	    }  
+		.content-section-a {
+		    padding: 20px 0;
+		    background-color: #f8f8f8;       
+		}
+
+
+		.well-font { font-size: 16px; }
+
+	</style>
+
+    <!-- Custom Fonts -->
+    <link href="./css/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="./js/browser/html5shiv.js"></script>
+        <script src="./js/browser/respond.min.js"></script>
+    <![endif]-->
 
 </head>
-<body class='home index'>
 
-<header class='global'>
-<nav class='global'>
-<h1 id='branding'>
-<a href="/" title="JUMA"><img alt="JUMA_Logo" height="10" width="80" src="./images/logo.png"/></a>
-</h1>
-<nav class='top-bar' data-options='is_hover: false' data-topbar=''>
-<ul class='title-area'>
-<li class='name'></li>
-<li class='toggle-topbar menu-icon'><a href="/">menu<span></span></a></li>
-</ul>
-<section class='top-bar-section'>
-<ul class='nav-main__list'>
-<li class='nav-main__list__ele'>
-<a href="negotiation.html" class="nav-main__list__link">项目合作</a>
-</li>
-<li class='nav-main__list__ele'>
-<a href="./sdk.html" class="nav-main__list__link">SDK</a>
-</li>
-<li class='nav-main__list__ele'>
-<a href="./platform.html" class="nav-main__list__link">平台</a>
-</li>
-<li class='nav-main__list__ele'>
-<a href="./solutions.html" class="nav-main__list__link">技术</a>
-</li>
-<li class='nav-main__list__ele'>
-<a href="./services.html" class="nav-main__list__link">服务</a>
-</li>
-<li class='nav-main__list__ele'>
-<a href="./about.html" class="nav-main__list__link">关于</a>
-</li>
-</ul>
-</section>
-</nav>
-</nav>
-</header>
+<body>
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="./index.html"></a>
+							
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+					  <a href="./index.html">首页</a>
+					</li>
+					<li>
+					  <a href="./sdk.html">SDK</a>
+					</li>					
+					<li>
+					  <a href="./platform.html">平台</a>
+					</li>
+					<li>
+					  <a href="./solutions.html">技术</a>
+					</li>
+					<li>
+					  <a href="./services.html">服务</a>
+					</li>					
+					<li>
+					  <a href="./about.html">关于</a>
+					</li>                        
+				</ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-<div id='layout'>
-<div id='container'>
-<article id='intro-group'>
-<section class='container'>
-<h1>蓝牙开发可以如此简单！</h1>
-<br /><br />
-<nav class='inline-grid'>
-<div>
-<a href="negotiation.html" class="border-button">项 目 合 作</a>
-</div>
-<div>
-<a href="https://github.com/JUMA-IO/JUMA_SDK_Release/archive/v1.1.zip" class="border-button">SDK V1.1 下 载</a>
-</div>
-</nav>
-</section>
-</article>
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
 
-<article class='customer-group'>
-<section>
-<h1>低功耗蓝牙 · 浪潮已起 远未及巅</h1>
-<div class='customer-list'>
-<div>
-<img alt="SDK" height="60" src="images/res-6.png" width="60" />
-<h3>SDK</h3>
-<blockquote>
-赋以蓝牙开发最简单的API，节省60%工作量。
-</blockquote>
-<a href="./sdk.html" class="border-button">详情</a>
-</div>
-<div>
-<img alt="硬件平台" height="60" src="images/res-4.png" width="60" />
-<h3>硬件平台</h3>
-<blockquote>
-JUMA系列低功耗蓝牙开发板，只为了更便捷。
-</blockquote>
-<a href="./platform.html" class="border-button">详情</a>
-</div>
-<div>
-<img alt="技术方案" height="60" src="images/res-5.png" width="60" />
-<h3>技术架构</h3>
-<blockquote>
-成熟的IP组件，方便您快速将组件融合进项目。
-</blockquote>
-<a href="./solutions.html" class="border-button">详情</a>
-</div>
-</div>
-</section>
-</article>
-<br /><br />
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+			<div class="item active">
+			    <div class="fill" style="background-image:url(./images/b7_result.jpg);"></div>
+			    <!-- 4,6,7,8,14,15 -->
+			    <div class="carousel-caption">
+		        <div class="row">
+			        <h2><b>低功耗蓝牙 · 浪潮已起 远未及巅</b></h2>		
+			        <br />			
+			    </div>    
+		        <div class="row">
+		            <div class="col-md-4">
+		            </div>
+					<div class="col-md-4">
+					<a class="btn btn-danger  btn-block btn-lg" href="./sdk.html"><b>获取开源SDK</b></a>					
+					</div>		            
+					<div class="col-md-4">
+					</div>					
+		        </div>    
+		                			        
+			    </div>
+			</div>
+        </div>
+    </header>
 
 
-<article class='content-body what-you-get'>
-<section class='content-body__section'>
-<h1>聚码服务</h1>
-<div class='ico-block'>
-<div class='ico-block_group'>
-<i class='ico-block_group__icon icon-book'></i>
-<h3 class='ico-block_group__h3'>原型机快速开发服务</h3>
-<blockquote>根据客户产品需要，快速定制化开发产品选型，帮助客户验证方案可行性。</blockquote>
-</div>
-<div class='ico-block_group'>
-<i class='ico-block_group__icon icon-comments'></i>
-<h3 class='ico-block_group__h3'>蓝牙技术咨询和支持服务</h3>
-<blockquote>提供蓝牙方面技术支持服务，帮您解决开发过程中遇到各种的蓝牙难题。</blockquote>
-</div>
-<div class='ico-block_group'>
-<i class='ico-block_group__icon icon-star'></i>
-<h3 class='ico-block_group__h3'>JUMA物联开发者联盟</h3>
-<blockquote>借鉴共享经济模式，让普通创业者在JUMA平台获得专家的咨询、技术支持、甚至开发服务。</blockquote>
-</div>
-</div>
-<a href="./services.html" class="border-button">了解更多
-</a></section>
-</article>
+    <!-- Page Content -->
+    <div class="container">
 
-<!--article id='partners-group'>
-<section>
-<h1>
-关于我们
-</h1>
-<p>————————————————————</p>
-</section>
-</article-->
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <br />
+<!--                <h2 align="center">
+                    低功耗蓝牙 · 浪潮已起 远未及巅
+                </h2>-->
+
+                <br />
+            </div>
+
+            <div class="col-lg-12">
+			<div class="col-md-1">
+			</div>            
+			<div class="col-md-10">
+				<div class="col-md-4">
+				    <div class="panel panel-default">
+				        <div class="panel-heading">
+				            <h4 align="center"><i class="fa fa-fw fa-check" ></i>开源SDK</h4>
+				        </div>
+				        <div class="panel-body">
+				            <p>一个凝结了多年专业经验的SDK，赋以蓝牙开发最简单的API，帮助开发者节省60%工作量。</p>
+				            <div align="right">
+				            	<a href="./sdk.html" class="btn btn-default" >了解详情</a>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-md-4">
+				    <div class="panel panel-default">
+				        <div class="panel-heading">
+				            <h4 align="center"><i class="fa fa-fw fa-gift"></i> 硬件平台</h4>
+				        </div>
+				        <div class="panel-body">
+				            <p>各类标准化的硬件平台，覆盖硬件产品全生命周期，包括原型设计、物料供给、硬件生产等。</p>
+							<div align="right">
+								<a href="./platform.html" class="btn btn-default" >了解详情</a>
+							</div>
+				        </div>
+				    </div>
+				</div>
+				<div class="col-md-4">
+				    <div class="panel panel-default">
+				        <div class="panel-heading">
+				            <h4 align="center"><i class="fa fa-fw fa-compass"></i> 技术方案</h4>
+				        </div>
+				        <div class="panel-body">
+				            <p>一站式提供聚合IP组件，包括算法、协议、驱动，方便开发者集成进项目，更专业、更稳定。</p>
+							<div align="right">
+								<a href="./solutions.html" class="btn btn-default" >了解详情</a>
+							</div>
+				        </div>
+				    </div>
+				</div>			
+			</div>            
+			<div class="col-md-1">
+			</div>            
+            </div>
+            
+
+        </div>
+        <!-- /.row -->
 
 
-<footer class='global' role='footer-main'>
-<article id='footer-main'>
-<section role='footer-group'>
-<div>
-<h2>资源</h2>
-<ul>
-<li>
-<a href="platform.html">硬件平台</a>
-</li>
-<li>
-<a href="sdk.html">SDK下载</a>
-</li>
-<li>
-<a href="./sdk/">SDK文档</a>
-</li>
-</ul>
-</ul>
-</div>
-<div>
-<h2>法律</h2>
-<ul>
-<li>
-<a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a>
-</li>
-<li>
-<a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a>
-</li>
-<li>
-<a href="http://www.juma.io/sdk/introduction/sdk/legal/developer.html">开发者协议</a>
-</ul>
-</div>
-<div>
-<h2>JUMA</h2>
-<ul>
-<li>
-<a href="about.html">关于我们</a>
-</li>
-<li>
-<a href="http://weibo.com/jumaio">聚码微博</a>
-</li>
-</ul>
-</div>
-<div>
-<h2>帮助</h2>
-<ul>
-<li>
-<a href="#">FAQ</a>
-</li>
-<li>
-<a href="about.html#contact">联系JUMA</a>
-</ul>
-</div>
-<div class="copyright">
-	<label>&copy;2015&nbsp;JUMA&nbsp;Inc.&nbsp;</label>
-</div>
-</section>
-</article>
-</footer>
-</body>
+        <!-- /.row -->
+		<!--<br />-->
+		<hr>
+        <!-- Features Section -->
+
+        <div class="container">
+	        <div class="row">
+				<div class="col-lg-12">
+				<div class="col-md-1">
+				</div>   
+				<div class="col-md-10">
+					<div class="col-md-5">
+						<p  align="center" >
+					    <img class="img-thumbnail" src="./images/c1.jpg"  width="300" height="300" alt="">
+					    </p>			    
+					</div>            
+					<div class="col-md-5">
+					    <h3 >Cannon开发平台</h3>     
+					    <p>Cannon是JUMA最新发布的开发平台，特色为：</p>
+					    <ul>
+					        <li>适用于快速原型开发、方案验证等阶段；</li>                  
+					        <li>全系列ST芯片，包括MCU、Sensor、BLE；</li>                  
+					        <li>如同名片一般的大小，方便随身携带；</li>    
+					        <li>供电灵活，支持USB和外部电池供电；</li>                  					        					        
+					        <li>整合驱动和中间件代码，保证软件一致性；</li>  
+					        <li>完备的供应链体系，包括选型、供货和生产；</li>                                                                                                  
+					    </ul>
+					    <br />
+						<p  align="right" ><a href="./platform/cannon.html" class="btn btn-success btn">立即体验</a></p>
+					</div>				
+				</div>
+				<div class="col-md-1">
+				</div>   
+				</div>        
+	        </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-inline">
+				<li><a href="./doc/zh/introduction/index.html">SDK文档</a></li>              
+				<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+				<li><a href="./about.html#contact">联系我们</a></li>
+				<li><a href="./doc/zh/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+				<li><a href="./doc/zh/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+
+				<li class="pull-right"><a href="#">English</a></li>				
+				<li class="pull-right"><a href="#">|</a></li>				
+				<li class="pull-right"><a href="#">中文</a></li>								
+            </ul>
+
+
+            <p>Copyright © 2015 JUMA INC</p>
+
+          </div>
+        </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="./page_files/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="./page_files/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
+
+
+</body></html>
