@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://ironsummitmedia.github.io/startbootstrap-modern-business/ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="北京聚码科技有限公司">
+    <meta name="author" content="JUMA">
+
+    <title>技术 | 北京聚码科技有限公司</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../page_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../page_files/modern-business.css" rel="stylesheet">
+    <link rel="icon" href="images/toplogo.png" />  
+	<style>
+	.navbar-brand{
+	padding:0px;
+	width: 120px;
+	background-image: url("../images/JUMA-LOGO.png");
+	background-size: 60% 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+	.content-section-a {
+	padding: 20px 0;
+	background-color: #f8f8f8;
+	}
+	.well-font { font-size: 16px; }
+	</style>
+    <link href="../page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="../page_files/browser/html5shiv.js"></script>
+        <script src="../page_files/browser/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"></a>
+							
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+					  <a href="./index.html">首页</a>
+					</li>
+					<li>
+					  <a href="./negotiation.html">项目合作</a>
+					</li>
+					<li>
+					  <a href="./sdk.html">SDK</a>
+					</li>					
+					<li>
+					  <a href="./platform.html">平台</a>
+					</li>
+					<li class="active">
+					  <a href="./solutions.html">技术</a>
+					</li>
+					<li>
+					  <a href="./services.html">服务</a>
+					</li>					
+					<li>
+					  <a href="./about.html">关于</a>
+					</li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+			<br />
+			
+			<div class="col-sm-8 col-sm-offset-2">
+			    <ol class="breadcrumb">
+			        <li><a href="../index.html">Home</a></li>
+			        <li><a href="../solutions.html">技术</a></li>
+			        <li><a href="../solutions.html#iBeacon">iBeacon</a></li>
+			        <li class="active"><a href="#">iBeacon定位，在人群中找到属于你的Ta</a></li>
+			    </ol>
+			</div>
+		
+      <div class="col-sm-8 col-sm-offset-2">
+
+		<div>
+			<h3>iBeacon定位，在人群中找到属于你的Ta</h3>
+			<hr />
+			 
+			
+			<h4>方案背景</h4>
+			<p>iBeacon是一种基于低功耗蓝牙(Bluetooth Low Energy)的信号广播设备，每一个设备都有一个唯一的ID。我们把iBeacon设备放在一个区域，当用户携带着智能手机走进这个区域时，能够收到含有iBeacon设备ID的广播信号，以此知道自己所处的区域。目前，iBeacon引申出了很多新潮的应用，比如，帮助您在停车场中找到爱车，或者在零售店中根据所处位置提供优惠券，或者在人头攒动的商场中找到那个Ta。</p>
+			
+			<img src="./images/location1.jpg" class="img-responsive center-block ">
+			<br />
+			
+			<hr />
+			
+			<h4>方案概述</h4>
+			<p>iBeacon的信号覆盖范围一般为10~20米，信号强度值(RSSI, Received Signal Strength Indication)会随着距离的远近而变化。我们可以通过这个数值作为定位的依据。如，将RSSI分成几个等级，分别对应不同的距离，手机APP根据当前的RSSI判断用户所属的位置：</p>
+			
+			<img src="./images/location2.jpg" class="img-responsive center-block ">
+			<br />		
+			
+			<p>如果需要提高定位精度，可以在一个区域内增加部署iBeacon设备。用户手机接收到多个iBeacon设备的广播和其RSSI，通过定位算法精确的计算出用户所在的方位。定位算法有两种类型：</p>	
+			
+			<h5><strong>基于等位的算法</strong></h5>
+			<p>考虑一个场景中iBeacon-1和iBeacon-2分别处于A位置和B位置。当用户处于两个iBeacon的信号范围内时，可以获得两个iBeacon的RSSI值，如-70db和-80db，绘制-70db和-80db的等位线得到两个焦点C和D。定位算法根据实际情况淘汰一个交叉点，如C点其实是墙壁外侧，于是将另一个交叉点D点作为真实的位置，绘制于地图。当然，如果有办法获取更多iBeacon的RSSI值会有利于精细定位，比如如果在C点部署一个iBeacon-3，则手机同时也受到iBeacon-3的RSSI，就很容易判断出用户当前的位置是D点。</p>
+			<img src="./images/location3.png" class="img-responsive center-block ">
+			<br />		
+			
+			<h5><strong>基于样本的算法</strong></h5>
+			<p>基于样本的算法分为两个阶段：</p>	
+			<p>i. 样本采集阶段：在整个应用场所部署好iBeacon设备。选取一些固定参考点，在每个参考点上，把所有能扫描到iBeacon的信号强度收集起来，存放至样本库。</p>	
+			<p>ii.样本对比阶段：当用户处于未知位置，把这时扫描到的iBeacon的信号强度和样本库中的数据对比，找到最大相似点，即认为是iBeacon当前所在位置，绘制地图位置信息。</p>	
+			<img src="./images/location4.png" class="img-responsive center-block ">
+			<br />		
+			
+			<hr />
+			
+			
+			<h4>技术指标</h4>
+			<ul>
+			<li>iBeacon信号范围：10~20米以内；</li>
+			<li>iBeacon设备尺寸：32mm*32mm*6mm；</li>			
+			<li>iBeacon定位精度：0.5米，取决于iBeacon设备部署的密集程度；</li>			
+			<li>iBeacon硬件规格：<a href="./files/iBeacon.pdf">iBeacon.pdf</a>；</li>			
+			<li>支持Android和iOS等移动设备；</li>
+			</ul>
+			<hr />
+			
+			<h4>服务内容</h4>
+			<ul>
+			<li>提供iBeacon成品；</li>
+			<li>提供iBeacon配置助手APP；</li>			
+			<li>提供"易企秀"网页制作服务(可选)；</li>			
+			</ul>
+			<hr />				
+			
+			
+			<h4>方案咨询</h4>
+			<p>请发邮件至<a href=mailto:hello@jumacc.com>hello@jumacc.com</a>，客服人员会和您联系。</p>
+			<hr />
+			
+		</div>
+
+      </div>
+
+        </div>			        
+        <!-- /.row -->
+
+        <!-- Footer -->
+       <div class="container">
+        <footer>
+        <div class="row">
+          <div class="col-md-12">
+
+            <ul class="list-inline">
+				<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+				<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+				<li><a href="./about.html#contact">联系我们</a></li>
+				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+
+				<li class="pull-right"><a href="#">English</a></li>				
+				<li class="pull-right">|</li>				
+				<li class="pull-right"><a href="#">中文</a></li>								
+            </ul>
+            
+            <p>Copyright © 2015 JUMA INC</p>
+
+          </div>
+        </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../page_files/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../page_files/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
+
+
+</body></html>
