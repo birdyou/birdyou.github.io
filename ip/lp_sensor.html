@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://ironsummitmedia.github.io/startbootstrap-modern-business/ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="北京聚码科技有限公司">
+    <meta name="author" content="JUMA">
+
+    <title>技术 | 北京聚码科技有限公司</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../page_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../page_files/modern-business.css" rel="stylesheet">
+    <link rel="icon" href="images/toplogo.png" />  
+	<style>
+	.navbar-brand{
+	padding:0px;
+	width: 120px;
+	background-image: url("../images/JUMA-LOGO.png");
+	background-size: 60% 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+	.content-section-a {
+	padding: 20px 0;
+	background-color: #f8f8f8;
+	}
+	.well-font { font-size: 16px; }
+	</style>
+    <link href="../page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="../page_files/browser/html5shiv.js"></script>
+        <script src="../page_files/browser/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"></a>
+							
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+					  <a href="./index.html">首页</a>
+					</li>
+					<li>
+					  <a href="./negotiation.html">项目合作</a>
+					</li>
+					<li>
+					  <a href="./sdk.html">SDK</a>
+					</li>					
+					<li>
+					  <a href="./platform.html">平台</a>
+					</li>
+					<li class="active">
+					  <a href="./solutions.html">技术</a>
+					</li>
+					<li>
+					  <a href="./services.html">服务</a>
+					</li>					
+					<li>
+					  <a href="./about.html">关于</a>
+					</li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+			<br />
+			
+			<div class="col-sm-8 col-sm-offset-2">
+			    <ol class="breadcrumb">
+			        <li><a href="../index.html">Home</a></li>
+			        <li><a href="../solutions.html">技术</a></li>
+			        <li><a href="../solutions.html#wsn">无线传感器</a></li>
+			        <li class="active"><a href="#">一种和手机按需通信的超低功耗蓝牙无线传感器</a></li>
+			    </ol>
+			</div>
+		
+      <div class="col-sm-8 col-sm-offset-2">
+
+		<div>
+			<h3>一种和手机按需通信的超低功耗蓝牙无线传感器</h3>
+			<hr />
+			 
+			
+			<h4>方案背景</h4>
+			<p>最近，我国东部大面积地区雾霾严重，云遮雾罩，PM2.5连日爆表，几百米之外不见人影。考虑到PM2.5在整个城市内分布不均匀，有小伙伴在制作可随身携带的便携式PM2.5检测仪，当检测到用户所在环境PM2.5超标的时候，提醒用户佩戴口罩。</p>
+			
+			<p>该PM2.5检测仪使用低功耗蓝牙(Bluetooth Low Energy)和手机通信，将检测数据发送给手机APP，手机APP继而可以实现数据分析、超标提醒、用户分享、社区服务等功能。</p>	
+			
+			<p>由于对产品的外观和体积有一定要求，该PM2.5检测仪使用了容量较小的电池。为了提高续航时间，降低设备在蓝牙层面上所花的功耗，在此提出一种低功耗的蓝牙数据发送机制。</p>	
+			<hr />
+			
+			<h4>方案概述</h4>
+			<p>首先，补充一些低功耗蓝牙(Bluetooth Low Energy)的概念。让设备和手机进行数据通信，会涉及以下几个步骤：</p>			
+			<ul>
+			<li>设备(Slave)发送广播；</li>	
+			<li>手机(Master)监听到广播并请求“连接”；</li>	
+			<li>设备和手机建立起连接；</li>	
+			<li>设备和手机进行数据交互；</li>	
+			<li>数据交互完成，设备或者手机断开连接；</li>	
+			</ul>			
+			<br />
+						
+			<h5><strong>设备端</strong></h5>
+			<p>为了将传感器采集到的数据递交给手机，有以下几种做法：</p>
+			<em><p>(1) 建立蓝牙连接发送数据</p></em>
+			<p>这种做法的大体流程是：当设备和手机处于蓝牙信号范围以内时，两者就建立起蓝牙连接，随之设备将传感器数据实时的发送给手机。即，断开连接后设备周期性广播，建立连接后设备发送数据。这是一种相对传统的做法，特点是在建立连接后，设备发送数据的延时性(latency)很小，但是由于设备可能长时间保持着蓝牙连接或是长时间周期性广播，功耗较大。</p>
+			
+			<em><p>(2) 通过蓝牙广播发送数据</p></em>
+			<p>很多传感器采样得到的数据量不大，如温度传感器每次采样得到一个温度、本例的PM2.5传感器每次采样得到一个PM2.5数值，这通常就是几个字节的数据量。在这种情况下，传感器采样的数据可以通过蓝牙广播的直接发送出去，设备和手机无需建立起蓝牙连接。由于“蓝牙广播”是散射的，周围的手机都可以监听到，如果对数据隐私有一定要求，可以在蓝牙广播中加入一些安全加密的算法。</p>		
+
+			<p>考虑蓝牙层面的功耗，蓝牙广播包的发射电流通常为10~20mA，发射电流通常是一个瞬时脉冲。如果以2秒的间隔发送蓝牙广播，除了发送蓝牙广播的瞬间，其他时候芯片处于待机状态，待机电流一般在几个uA。平均下来，2秒发一个广播包的平均电流在15uA左右。一颗CR2032纽扣电池的容量为200mAh，能够为其供电一年以上。</p>	
+			
+			<p>进一步考虑功耗问题，本例中PM2.5检测仪是想在环境发生变化的时候记录数据和通报手机，比如，当用户进入一个PM2.5比较严重的区域时。在其余时候，如果用户待在同一个区域，PM2.5数据很稳定，频繁多次的发送PM2.5数据给手机APP是无意义的。基于这个认知，我们调整蓝牙广播的发送机制，也就是当发现PM2.5传感器两次采样的数据变化大于一定阈值，开启蓝牙广播，将数据发送出去，连续发送多次后停止广播。从整个时域来看，设备不是一直在发送蓝牙数据，而是有时发送，有时停止。我们把这种机制称为<strong>“按需发送的蓝牙广播”</strong>：</p>
+
+			<img src="./images/interval.png" class="img-responsive center-block ">
+			<br />
+
+			<h5><strong>手机端</strong></h5>
+			<p>目前火热的iBeacon技术就是一种符合特定格式的蓝牙广播(详见<a href="./ibeacon_cfg.html">iBeacon配置工具</a>)，这种格式是由Apple标准化定义的，iPhone4s以上的Apple移动设备都予以支持。Android 4.3以上移动设备支持低功耗蓝牙，软件层面可以实现iBeacon应用。近来，Android也推出了一套自己的标准，称之为Eddystone技术。</p>
+			
+			<p>设备端发送iBeacon或是Eddystone的广播包，如iBeacon中的Major和Minor字段可以用来携带传感器数据。移动端使用iBeacon或Eddystone的API就可以接收到数据。如果不使用iBeacon或是Eddystone等规范的话，移动端就需要自行设计一套扫描机制，长时间监听着周围的蓝牙广播，并且该APP需要做到后台运行和常驻内存，这在iOS和Android上多少会有一些困难，不如使用系统所支持的iBeacon或Eddystone来的方便。</p>		
+			
+			<p>综上，通过这种“按需发送的蓝牙广播”的机制来和手机传输数据，它让设备整体的功耗降到最低，可以适配各类传感器，应用到可穿戴、智能家居、安防监控等领域。</p>
+			
+			<hr />
+			
+			<h4>技术指标</h4>
+			<p>蓝牙</p>
+			<ul>
+			<li>芯片：Nordic nRF51822等；</li>					
+			<li>广播：支持iBeacon/Eddystone等；</li>		
+			<li>距离：10~20m；</li>					
+			</ul>				
+			<p>续航时间</p>
+			<ul>
+			<li>供电：200mAh CR2032纽扣电池；</li>					
+			<li>典型运行时间：1年以上；</li>		
+			</ul>												
+			<p>移动端</p>
+			<ul>
+			<li>支持：iOS和Android；</li>					
+			</ul>					
+			<hr />
+			
+						
+			<h4>服务内容</h4>		
+			<p>软件</p>
+			<ul>
+			<li>蓝牙SDK；</li>					
+			<li>Demo案例和说明；</li>	
+			<li>方案定制和技术支持；</li>	
+			</ul>				
+			<p>硬件</p>
+			<ul>
+			<li>提供标准蓝牙模块，支持iBeacon或Eddystone；</li>					
+			<li>传感器选型和适配；</li>	
+			</ul>			
+			<hr />			
+			
+			
+			<h4>方案咨询</h4>
+			<p>请发邮件至<a href=mailto:hello@jumacc.com>hello@jumacc.com</a>，客服人员会和您联系。</p>
+			<hr />
+			
+		</div>
+
+      </div>
+
+        </div>			        
+        <!-- /.row -->
+
+        <!-- Footer -->
+       <div class="container">
+        <footer>
+        <div class="row">
+          <div class="col-md-12">
+
+            <ul class="list-inline">
+				<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+				<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+				<li><a href="./about.html#contact">联系我们</a></li>
+				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+
+				<li class="pull-right"><a href="#">English</a></li>				
+				<li class="pull-right">|</li>				
+				<li class="pull-right"><a href="#">中文</a></li>								
+            </ul>
+            
+            <p>Copyright © 2015 JUMA INC</p>
+
+          </div>
+        </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../page_files/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../page_files/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
+
+
+</body></html>
