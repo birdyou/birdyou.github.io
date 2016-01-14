@@ -28,6 +28,15 @@
 				background-color: #f8f8f8;
 		}
 		.well-font { font-size: 16px; }
+		
+		.mybg {
+			background: url("./images/b2.jpg");
+			background-repeat: no-repeat;
+			background-position: top;
+		    background-size: cover;
+		    height: 150px;  		        
+		    color:#FFFFFF;
+		}		
 		</style>
 		
 		<!-- Custom Fonts -->
@@ -87,131 +96,145 @@
         <!-- /.container -->
     </nav>
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-    		<div class="item active">
-    		    <div class="fill" style="background-image:url(./images/santi.jpg);"></div>
-    		    <!-- 4,6,7,8,14,15 -->
-    		    <div class="carousel-caption">
-    	        <div class="row">
-    		        <h2><b></b></h2>		
-    		        <br />			   				
-    	        </div>           			        
-    		    </div>
-    		</div>
-    </div>
+    <header >
+		<div class="row">
+		<div class="mybg">
+		    <div class="container">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<h1>蓝牙SDK</h1>
+				<h3>我们专注做好通信 您专注做好产品</h3>
+			</div>
+			<div class="col-md-2">
+			</div>	
+			</div>
+			</div>
+		</div>   
     </header>
     
     <!-- Page Content -->
 
 	<div class="container">
-			<div class="row">
+		<div class="row">
 	         <div class="col-lg-12">
 	              <br />
 	              <br />
 	         </div>
 	    </div>
-  		<div class="well well-font">
-	    	<div class="row">
-	        	<div class="col-md-4">
-	            <h3><strong>nRF51 SDK</strong></h3>   
-	            <h5>“模块化”封装，大大降低了蓝牙开发门槛。</h5>             
-	        	</div>
-	
-							<div class="col-md-2" align="center" >
-								<img class="img-thumbnail" src="images/document.png"  width="48" height="48" alt="" >
-							    <a class="btn btn-default btn-block" href="http://www.juma.io/doc/zh/embedded_sdk.html">文档</a>
-							</div>
-	
-							<div class="col-md-2" align="center" >
-								<img class="img-thumbnail" src="images/github5.png"  width="48" height="48" alt="" >
-							    <a class="btn btn-default btn-block" href="https://github.com/JUMA-IO/nRF51_Platform">Github</a>
-							</div>       
-			
-							<div class="col-md-2" align="center" >
-								<img class="img-thumbnail" src="images/download.png"  width="48" height="48" alt="" >
-							    <a class="btn btn-default btn-block" href="https://github.com/JUMA-IO/nRF51_Platform/archive/v1.0.1.zip">源码下载</a>
-							</div> 
-							<div class="col-md-2" align="center" >
-								<img class="img-thumbnail" src="images/hex.png"  width="48" height="48" alt="" >
-							    <a class="btn btn-default btn-block" href="./sdk/juma_nRF51_sdk.zip">SDK.HEX下载</a>
-							</div>      
-	        </div>
-    	</div>
-    	<br />
+
     	<div class="well well-font">
             <div class="row">
                 <div class="col-md-6">
-                    <h3><strong>Cannon SDK</strong></h3>                
-                    <h5>一系列高性能的Sensor,满足一切原型开发需求</h5>
+                    <h3><strong>STM32 Embedded SDK</strong></h3>                
+                    <h5>适用于Cannon开发板，整合全套ST Sensor API，实现快速原型开发。</h5>
                 </div>
     
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/document.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="http://www.juma.io/doc/zh/embedded_sdk.html">文档</a>
-    							</div>
-    
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/github5.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="https://github.com/JUMA-IO/STM32_Platform">Github</a>
-    							</div>       
-    			
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/download.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="">源码下载</a>
-    							</div> 
+				<div class="col-md-2" align="center" >
+					<a href="http://www.juma.io/doc/zh/embedded_sdk.html">
+						<img src="images/document.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="http://www.juma.io/doc/zh/embedded_sdk.html">文档</a>
+				</div>
+
+				<div class="col-md-2" align="center" >
+					<a href="https://github.com/JUMA-IO/STM32_Platform">
+						<img src="images/github5.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/STM32_Platform">源码</a>
+				</div>       
+
+				<div class="col-md-2" align="center" >
+					<a href="https://github.com/JUMA-IO/STM32_Platform/releases">
+						<img src="images/download.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/STM32_Platform/releases">下载</a>
+				</div> 
             </div>
         </div>
-    <br />
-    <div class="well well-font">
+    	<br />
+    		    
+  		<div class="well well-font">
+	    	<div class="row">
+	        	<div class="col-md-6">
+	            	<h3><strong>nRF51 Embedded SDK</strong></h3>   
+	            	<h5>适用于NOVA、SMP开发板，更简明的API，大大降低蓝牙开发门槛。</h5>             
+	        	</div>
+	
+				<div class="col-md-2" align="center" >
+					<a href="http://www.juma.io/doc/zh/embedded_sdk.html">
+						<img src="images/document.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="http://www.juma.io/doc/zh/embedded_sdk.html">文档</a>
+				</div>
+
+				<div class="col-md-2" align="center" >
+					<a href="https://github.com/JUMA-IO/nRF51_Platform">
+						<img src="images/github5.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/nRF51_Platform">源码</a>
+				</div>       
+
+				<div class="col-md-2" align="center" >
+					<a href="https://github.com/JUMA-IO/nRF51_Platform/releases">
+						<img src="images/download.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/nRF51_Platform/releases">下载</a>
+				</div> 
+	        </div>
+    	</div>
+    	<br />
+    	
+    	<div class="well well-font">
             <div class="row">
                 <div class="col-md-6">
-                    <h3><strong>Android SDK</strong></h3>                
-                    <h5>封装Android蓝牙原生接口，抛弃蓝牙复杂概念</h5>
+                    <h3><strong>Android Mobile SDK</strong></h3>                
+                    <h5>封装Android原生蓝牙接口，让手机和设备的通信变得更加容易。</h5>
                 </div>
     
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/document.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="http://www.juma.io/doc/zh/android_sdk.html">文档</a>
-    							</div>
-    
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/github5.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="https://github.com/JUMA-IO/BLE_Debugger_Android">Github</a>
-    							</div>       
-    			
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/download.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="./sdk/juma-sdk.jar">.jar下载</a>
-    							</div>      
+				<div class="col-md-2" align="center" >
+				    <a href="http://www.juma.io/doc/zh/android_sdk.html">				
+						<img src="images/document.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="http://www.juma.io/doc/zh/android_sdk.html">文档</a>
+				</div>
+
+				<div class="col-md-2" align="center" >
+					<img src="images/github5.png"  width="48" height="48" alt="" >
+				    <a class="btn btn-block" href="" disabled="true">未开源</a>
+				</div>       
+
+				<div class="col-md-2" align="center" >
+				    <a href="https://github.com/JUMA-IO/BLE_SDK_Android/releases">				
+						<img src="images/download.png"  width="48" height="48" alt="" ></a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/BLE_SDK_Android/releases">下载</a>
+				</div>      
             </div>
         </div>
-    <br />
-    <div class="well well-font">
+	    <br />
+	    
+    	<div class="well well-font">
             <div class="row">
                 <div class="col-md-6">
-                    <h3><strong>iOS SDK</strong></h3>                
-                    <h5>针对iOS操作系统优化封装的蓝牙开发框架</h5>
+                    <h3><strong>iOS Mobile SDK</strong></h3>                
+                    <h5>针对iOS优化的蓝牙开发框架，让手机和设备的通信变得更加容易。</h5>
                 </div>
     
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/document.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="http://www.juma.io/doc/zh/ios_sdk.html">文档</a>
-    							</div>
-    
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/github5.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="https://github.com/JUMA-IO/BLE_Debugger_iOS">Github</a>
-    							</div>       
-    			
-    							<div class="col-md-2" align="center" >
-    								<img class="img-thumbnail" src="images/download.png"  width="48" height="48" alt="" >
-    							    <a class="btn btn-default btn-block" href="./sdk/juma-iOS-framwork.zip">.framework下载</a>
-    							</div>      
+				<div class="col-md-2" align="center" >
+				    <a href="http://www.juma.io/doc/zh/ios_sdk.html">				
+						<img src="images/document.png"  width="48" height="48" alt="" >
+					</a>
+				    <a class="btn btn-block" href="http://www.juma.io/doc/zh/ios_sdk.html">文档</a>
+				</div>
+
+				<div class="col-md-2" align="center" >
+					<img src="images/github5.png"  width="48" height="48" alt="">
+				    <a class="btn btn-block" href="" disabled="true">未开源</a>
+				</div>       
+
+				<div class="col-md-2" align="center" >
+				    <a href="https://github.com/JUMA-IO/BLE_SDK_iOS/releases">				
+						<img src="images/download.png"  width="48" height="48" alt="" >
+					</a>
+				    <a class="btn btn-block" href="https://github.com/JUMA-IO/BLE_SDK_iOS/releases">下载</a>
+				</div>      
             </div>
-        </div>
+        </div>        
 		<hr />
+		
   <!-- Footer -->
     <footer>
         <div class="row">
