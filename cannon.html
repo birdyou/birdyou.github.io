@@ -11,15 +11,15 @@
     <title>CANNON | 北京聚码科技有限公司</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../page_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./page_files/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="../page_files/modern-business.css" rel="stylesheet">
+    <link href="./page_files/modern-business.css" rel="stylesheet">
     <link rel="icon" href="../images/toplogo.png" />  
 	<style>
 	.navbar-brand{
 	padding:0px;
 	width: 120px;
-	background-image: url("../images/JUMA-LOGO.png");
+	background-image: url("./images/JUMA-LOGO.png");
 	background-size: 60% 40%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -30,10 +30,10 @@
 	}
 	.well-font { font-size: 16px; }
 	</style>
-    <link href="../page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="./page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
-        <script src="../page_files/browser/html5shiv.js"></script>
-        <script src="../page_files/browser/respond.min.js"></script>
+        <script src="./page_files/browser/html5shiv.js"></script>
+        <script src="./page_files/browser/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -56,25 +56,22 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
 					<li>
-					  <a href="../index.html">首页</a>
+					  <a href="./index.html">首页</a>
 					</li>
 					<li>
-					  <a href="../negotiation.html">项目合作</a>
-					</li>
-					<li>
-					  <a href="../sdk.html">SDK</a>
-					</li>					
+					  <a href="./sdk.html">SDK</a>
+					</li>				
 					<li class="active">
-					  <a href="../platform.html">平台</a>
+					  <a href="./platform.html">平台</a>
 					</li>
 					<li>
-					  <a href="../solutions.html">技术</a>
+					  <a href="./solutions.html">技术</a>
 					</li>
 					<li>
-					  <a href="../services.html">服务</a>
+					  <a href="./services.html">服务</a>
 					</li>					
 					<li>
-					  <a href="../about.html">关于</a>
+					  <a href="./about.html">关于</a>
 					</li>                    
                 </ul>
             </div>
@@ -87,7 +84,7 @@
 		    <div class="col-md-12">
 		    <br />
 		        <h5 >
-		            <a href="../platform.html"><<更多硬件平台</a>
+		            <a href="./platform.html"><<更多硬件平台</a>
 		        </h5>
 		    </div>
 		</div>
@@ -100,7 +97,7 @@
 		
 		                <div class="col-md-7 screens">
 		                	<div align="center">
-		                    <img src="../platform/cannon.jpg" class="img-responsive" alt="cannon" />
+		                    <img src="./platform/cannon.jpg" class="img-responsive" alt="cannon" />
 		                    </div>
 		                    <p class="text">
 		                        <h4><strong>原型开发的痛点</strong></h4>
@@ -108,12 +105,14 @@
 		                        - <strong>开发板体积/供电:</strong> 原厂的MCU开发板通常是用来做软件开发，不考虑制作快速原型，体积大，不能用电池供电，导致无法制作一个小尺寸可移动的产品原型，影响快速验证原型。<br /><br />
 		                        - <strong>一致性的软件平台:</strong> 对于应用开发者，要把底层的各种软件都整合到一起，各层都调试到比较好的水平，门槛高。<br /><br />		                        
 		                        <br />
+		                        <hr />
 		                        <h4><strong>设计目标</strong></h4>
 		                        - 小钢炮主板本身构成一个完整的蓝牙智能硬件系统，以及相应的调试好的底层软件。<br /><br />
 		                        - 可以通过丰富接口扩展更多配件。<br /><br />
 		                        - 无需重做PCB，调试底层软件，只需应用编程即可搭建自己的智能硬件。<br /><br />
 		                        - 提供完整的智能硬件范例工程做为起点<br />		                        
 		                        <br />
+		                        <hr />
 		                        <h4><strong>主要资源:</strong></h4>
 		                        <br />
 		                        <strong>1. 处理器<a href="http://www.st.com/web/en/catalog/mmc/FM141/SC1169/SS1577/LN1810">STM32F401</a></strong><br />
@@ -134,26 +133,25 @@
 		                        - MCU通过SPI控制BlueNRG<br />
 		                        - 16Mhz与32.768khz外部晶振<br />
 		                        <br />
-		    					<strong>3. 传感器阵列</strong>
-		                        <br />
-							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1449/PF262168">LSM303AGR</a>磁力计<br />
-							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1448/PF261181">LSM6DS3</a>六轴陀螺仪<br />
-							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1718/PF260067">HTS221</a>温湿度<br />
-							    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1316/PF255230">LPS25H</a>气压计<br />					   
-							     <br />
+							    					<strong>3. 传感器阵列</strong>
+							                        <br />
+												    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1449/PF262168">LSM303AGR</a>磁力计<br />
+												    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1448/PF261181">LSM6DS3</a>六轴陀螺仪<br />
+												    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1718/PF260067">HTS221</a>温湿度<br />
+												    - <a href="http://www.st.com/web/catalog/sense_power/FM89/SC1316/PF255230">LPS25H</a>气压计<br />					   
+												     <br />
 		                        <strong>4. 板载MicroUSB</strong>
 		                        <br /><br />
 		                        <strong>5.强大的扩展性: </strong>SD卡，UART，I2C，GPIO，USB等
 		                        <br /><br />
 		                        <strong>6.其他，</strong>例如：LED,按键，BOOT接口等
 		                        <br /><br />
+		                        <hr />
 		                        <h4><strong>使用</strong></h4>
-							    <br />
-							    使用者可以自行对开发板进行编程，通过SDK里面提供的移动端调试工具进行数据交互，具体烧录方法，参看<a href="http://www.juma.io/doc/zh/boards/st/cannon.html"><strong>开发指南</strong></a>. 
-							    <br />
-							    <br />
-		                    </p>
-		                    <img src="../images/cannon_big.jpg" class="magnifier img-responsive" alt="smp" />
+												    <br />
+												    使用者可以自行对开发板进行编程，通过SDK里面提供的移动端调试工具进行数据交互，具体烧录方法，参看<a href="http://www.juma.io/doc/zh/boards/st/cannon.html"><strong><h4>=><u>开发指南</u></h4></strong></a>. 
+		              </p>
+		                    <!--img src="./images/cannon_big.jpg" width="360" class="magnifier img-responsive" alt="smp" /-->
 		                </div>
 		                <div class="col-md-4 col-md-offset-1 description">
 		                    <div class="info">
@@ -186,8 +184,8 @@
 	                        </p>
 	                        <br />
 	                        <a class="button button-small" href="http://www.juma.io/doc/zh/boards/st/cannon.html"><strong>开发指南</strong></a>
-	                        &nbsp;
-	                        <a class="button button-small" href="http://www.juma.io/spec/cannon.pdf"><strong>SPEC下载</strong></a>
+	                        <br><br>
+	                        <a class="button button-small" href="http://www.juma.io/spec/cannon.pdf"><strong>规范下载</strong></a>
 	                        <br><br>
 	                        <a class="button button-small" href="https://item.taobao.com/item.htm?id=524829093468"><strong>立即购买</strong></a>
 	                    </div>                          
@@ -206,7 +204,7 @@
         		<ul class="list-inline">
         			<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
         			<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
-        			<li><a href="../about.html#contact">联系我们</a></li>
+        			<li><a href="./about.html#contact">联系我们</a></li>
         			<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
         			<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
         
