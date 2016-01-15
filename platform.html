@@ -32,6 +32,15 @@
 	background-color: #f8f8f8;
 	}
 	.well-font { font-size: 16px; }
+	.mybg {
+		background: url("./images/b22_3.jpg");
+		/* b3, b11~15, b22 */
+		background-repeat: no-repeat;
+		background-position: top;
+	    background-size: cover;
+	    height: 150px;  		        
+	    color:#FFFFFF;
+	}		
 	</style>
 
     <!-- Custom Fonts -->
@@ -94,27 +103,52 @@
     </nav>
 
     
-
+	<!-- Header Carousel -->
+	<header >
+		<div class="row">
+		<div class="mybg">
+		    <div class="container">
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-8">
+				<h1>硬件平台</h1>
+				<h3>打造基础硬件 让您的产品不再从“0”开始</h3>
+			</div>
+			<div class="col-md-2">
+			</div>	
+			</div>
+			</div>
+		</div>   
+	</header>
     <!-- Page Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">JUMA BLE开发平台</h2>
+                <!--<h2 class="page-header">JUMA BLE开发平台</h2>-->
+                <br /><br />
             </div>
+            
+			<div class="col-md-6 col-sm-6 text-center">
+				<img src="images/t4.jpg"  >
+			</div>
+			
 			<div class="col-md-6 col-sm-6">
+				<!--<h2 class="page-header">JUMA BLE开发平台</h2>-->
 				<br />
-			    <p class="lead">JUMA BLE开发平台是基于最新的Nordic nRF51822芯片，拥有32位Cortex-M0内核，符合Bluetooh4.0蓝牙标准，拥有丰富的外设资源以及优异的射频性能，适用于各类Bluetooth Smart应用。</p>
-			    <br />
-			</div>            
-            <div class="col-md-6 col-sm-6">
-				<a href="https://rutronik-tec.com/nordic-semiconductor-named-as-2015-ces-innovation-awards-honoree/">
-				<img class="img-responsive img-hover img-thumbnail" src="page_files/nordic51822.jpg" width="480" height="320" class="img-thumbnail"></a>
-            </div>
+				<h4>芯片选型</h4>
+				<p>选用行业领先的Nordic nRF51系列和STMicroelectronics BlueNRG蓝牙芯片。</p>
+				<h4>硬件制造</h4>
+				<p>已经为您的产品铺垫好完整的硬件设计、物料供给、生产加工等供应链体系。</p>
+				<h4>软件聚合</h4>
+				<p>搭载SDK和丰富上层软件资源，确保软件一致性和可靠性，助您缩短开发周期。</p>				
+			</div>
+			
         </div>
 
-
+		<br />
 		<hr />
-		<h3 id="选择您的硬件">选择您的硬件</h3>
+		
+<!--		<h3 id="选择您的硬件">选择您的硬件</h3>
 		<br />
 		<div class="row text-center">
 		    <div class="col-sm-4">
@@ -137,20 +171,81 @@
 		<br />
 		
 		<br />
-		<hr />
+		<hr />-->
 
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>选择您的硬件</h3>
+                <br />
+            </div>
+        </div>
+        <!-- /.row -->
 
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+					<a href="./smp.html"><img class="img-responsive img-hover "  src="./platform/smp_result3.jpg" width="225" height="225"></a>
+                    <div class="caption">
+                        <h3>Smart Motion</h3>
+                        <p>基于nRF51，配备运动传感器</p>
+                        <p>适用于可穿戴设备原型开发</p>
+                        <p>
+                            <a href="https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11176521396.11.IKqBf1&id=520729293015" class="btn btn-primary">立即获取</a> 
+                            <a href="./smp.html" class="btn btn-default">了解详情</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+		    		<a href="./nova.html"><img class="img-responsive img-hover"  src="./platform/nova_result2.jpg" width="225" height="225"></a>
+                    <div class="caption">
+                        <h3>NOVA</h3>
+                        <p>基于nRF51，拥有强大的驱动能力</p>
+                        <p>充分感受DIY的乐趣</p>                        
+                        <p>
+                            <a href="https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11176521396.20.IKqBf1&id=520493573858" class="btn btn-primary">立即获取</a> 
+                            <a href="./nova.html" class="btn btn-default">了解详情</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+		    		<a href="./cannon.html"><img class="img-responsive img-hover"  src="./platform/cannon_result2.jpg" width="225" height="225"></a>
+                    <div class="caption">
+                        <h3>Cannon</h3>
+                        <p>基于STM32，板载BlueNRG和ST传感器</p>
+                        <p>智能硬件中的“瑞士军刀”</p>
+                        <p>
+                            <a href="https://item.taobao.com/item.htm?spm=a1z10.5-c.w4002-11176521396.14.IKqBf1&id=524829093468" class="btn btn-primary">立即获取</a> 
+                            <a href="./cannon.html" class="btn btn-default">了解详情</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+        <hr />
+        
+        
         <!-- Footer -->
         <footer>
         <div class="row">
           <div class="col-lg-12">
 
             <ul class="list-inline">
-				<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+				<li><a href="./doc/zh/introduction/index.html">SDK文档</a></li>              
 				<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
 				<li><a href="./about.html#contact">联系我们</a></li>
-				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
-				<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+				<li><a href="./doc/zh/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+				<li><a href="./doc/zh/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																				
 
 				<li class="pull-right"><a href="#">English</a></li>				
 				<li class="pull-right">|</li>				
