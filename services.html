@@ -14,8 +14,9 @@
     <link href="./page_files/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="./page_files/modern-business.css" rel="stylesheet">
-	<link rel="icon" href="images/toplogo.png" />
+    <!--link href="./page_files/modern-business.css" rel="stylesheet"-->
+    <link href="./css/one-page-wonder.css" rel="stylesheet">
+		<link rel="icon" href="images/toplogo.png" />
 
     <!-- Custom Fonts -->
     <link href="./page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -40,6 +41,15 @@
     background-color: #f8f8f8;
     }
     .well-font { font-size: 16px; }
+    
+    .mybg {
+    	background: url("./images/sky.jpg");
+    	background-repeat: no-repeat;
+    	background-position: top;
+        background-size: cover;
+        height: 150px;  		        
+        color:#FFFFFF;
+    }
     </style>
 
 </head>
@@ -87,94 +97,65 @@
         </div>
         <!-- /.container -->
     </nav>
-
     
+    <!-- Header Carousel -->
+    <header >
+    	<div class="row">
+    	<div class="mybg">
+    	    <div class="container">
+		    		<div class="col-md-2">
+		    		</div>
+		    		<div class="col-md-8">
+		    			<h1>聚码服务</h1>
+		    			<h3>多年蓝牙实践经验 您的想法不只是想法</h3>
+		    		</div>
+    				<div class="col-md-2">
+    				</div>	
+    			</div>
+    		</div>
+    	</div>   
+    </header>
 
-    <!-- Page Content -->
-<div class="container">
-	<h2 id="service" align="center">JUMA服务内容</h2>
-	<hr />
-	<div >
-     <h3>JUMA SDK</h3>	    
-     <div class="row">
-
-		<div class="col-md-6 col-sm-6">
-			<p align="center"><img src="images/juma_sdk.png" width="480" height="320" class="img-thumbnail"></p>
-		 </div>
+	<!-- Page Content -->
+	    <div class="container">
+	
+	        <!-- First Featurette -->
+	        <div class="featurette" id="sdk">
+	            <img class="featurette-image img-circle img-responsive pull-right" src="images/sdk_pic.jpg">
+	            <h2 class="featurette-heading">JUMA SDK</h2>
+	            <p class="lead"><span class="text-muted">JUMA软件开发框架（SDK）是一套加速蓝牙物联开发的工具。</span></p>
+	            <p class="lead">目前发布的开发框架包含<a href="https://github.com/JUMA-IO/nRF51_Platform">nRF51平台</a>、<a href="https://github.com/JUMA-IO/STM32_Platform">STM32平台</a>和移动端平台（<a href="https://github.com/JUMA-IO/BLE_SDK_Android">Android</a> & <a href="https://github.com/JUMA-IO/BLE_SDK_iOS">iOS</a>）。支持Nordic的nRF51822低功耗蓝牙芯片和STM的BlueNRG低功耗蓝牙芯片。</p>
+	            <p class="lead"><span class="text-muted">详情：<a href="http://juma.io/sdk.html">juma.io/sdk.html</a></span></p>
+	        </div>
+	
+	        <!-- Second Featurette -->
+	        <div class="featurette" id="prototypes">
+	            <img class="featurette-image img-circle img-responsive pull-left" src="images/prototypes.jpg">
+	            <h2 class="featurette-heading">原型机开发服务</h2>
+	            <p class="lead"><span class="text-muted">根据客户产品需要，快速定制化开发产品选型，帮助客户验证方案可行性。</span></p>
+	            <p class="lead">丰富的可供授权的蓝牙&2.4G物联软硬件IP，为快速搭建物联智能应用提供基础技术。</p>
+	            <p class="lead"><span class="text-muted">客户可发送邮件至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>（请注明需求）。</span></p>
+	        </div>
 		
-		<div class="col-md-6 col-sm-6">
-             <p>JUMA软件开发框架（SDK）是一套加速蓝牙物联开发的工具。</p>
-             <p>工具中包含嵌入式端SDK和移动端SDK（Android & iOS）。嵌入式SDK支持Nordic的nRF51822低功耗蓝牙芯片和STM的BlueNRG低功耗蓝牙芯片。</p>
-             <p>JUMA软件开发框架将大量智能硬件所需的常用功能进行模块化封装，涵盖了例如串口、ADC、蜂鸣器、LED、G-Senser等外设，也支持一系列如iBeacon、计步器、心率计、云储存等应用场景。这些通过SDK只需短短几行代码即可实现，降低了蓝牙开发的门槛和成本。</p>
-             <p>JUMA软件开发框架的获取和使用说明见：</p>
-			 <p><a href="http://www.juma.io/doc/zh/introduction/index.html">http://www.juma.io/doc/zh/introduction/index.html</a></p>             
-         </div>	
-     </div>
- </div>
- 
-<br />
-<hr />
-
-<div class="row text-left">
-	<div class="col-md-6 col-sm-6">
-
-		<h3 id="contact">快速原型开发服务</h3>    
-		<br/>
-		<p>JUMA快速产品原型开发服务，是根据客户产品需要，快速定制化开发产品选型，帮助客户验证方案可行性。</p>
-		<p>基于高效的JUMA系列SDK和硬件开发平台，JUMA依据客户需要可以快速地实现产品原型。目的就是以最高的效率、最低的成本帮助客户验证方案的可行性和优缺点。后续，客户在原型的基础上逐步改进和优化产品的用户体验。</p>
-		<p>客户可发送邮件至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>，说明您想做的原型机思路以及预算，我们会第一时间和您联系。</p>
-    </div>
-
-	<div class="col-md-6 col-sm-6">
-		<p align="center"><img src="images/juma_prototype.jpg" width="480" height="320" class="img-thumbnail"></p>
-    </div>
-</div>
-
-<br />
-<hr />
-
-
- <div >
- 
-     <div class="row">
-
-		<div class="col-md-6 col-sm-6">
-			<p align="center"><img src="images/juma_tech_support.jpg" width="480" height="320" class="img-thumbnail"></p>
-		 </div>
-		
-		<div class="col-md-6 col-sm-6">
-		    <h3>蓝牙技术咨询和支持服务</h3>	   
-			<p>JUMA提供蓝牙在物联网应用中的专业技术支持服务，帮助客户找到并解决开发过程中遇到的蓝牙互联互通性问题。</p>
-			<p>JUMA基于多年在蓝牙领域的实践经验，可以解决各类蓝牙互联互通性问题。例如：项目中蓝牙芯片的选型问题、产品的功耗优化问题、蓝牙传输速率问题、蓝牙连接稳定性问题等。</p>
-			<p>客户可发送邮件至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>，说明您遇到的问题和现象，我们会第一时间和您联系。</p>
-       
-         </div>	
-     </div>
- </div>
- 
-<br />
-<hr />
-
-<div class="row text-left">
-	<div class="col-md-6 col-sm-6">
-		<h3 id="contact">JUMA物联开发者联盟</h3>    
-		<br/>
-		<p>JUMA物联网开发者联盟，是一个连接创业者和开发者的开放式物联网平台。借鉴共享经济模式，让普通创业者在JUMA平台上面也可以获得顶级专家的顾问、咨询、技术支持、甚至开发服务。</p>
-		
-		<p>JUMA物联网开发者联盟上面有来自各行各业的专家和开发者在为创业者的需求服务。目前，JUMA提供线上、线下双通道“连接”服务。</p>
-		<p>线上：用户可在JUMA平台（<a href="www.juma.io">www.juma.io</a>）上将需求发布出来，我们会根据您的要求，找到合适的开发者来帮助您实现您的需求。在此过程中，JUMA会以专业的技术支持和项目管理服务帮助您运作整个开发过程，直到产品交付。
-		
-		<p>线下：用户可直接发送邮件至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>，说明您的需求（需附件需求文档）和您的项目预算，我们会第一时间和您取得联系。</p>
-
-    </div>
-
-	<div class="col-md-6 col-sm-6">
-		<p align="center"><img src="images/juma_developer.jpg" width="320" class="img-thumbnail"></p>
-    </div>
-</div>
-
-<br />
-<hr />
+	        <!-- Third Featurette -->
+	        <div class="featurette" id="support">
+	            <img class="featurette-image img-circle img-responsive pull-right" src="images/support.jpg">
+	            <h2 class="featurette-heading">蓝牙技术咨询和支持</h2>
+	            <p class="lead"><span class="text-muted">基于多年实践积累，帮助客户找到并解决开发过程中遇到的蓝牙互联互通性问题。</span></p>
+	            <p class="lead">例如：项目中蓝牙芯片的选型问题、产品的功耗优化问题、蓝牙传输速率问题、蓝牙连接稳定性问题等。</p>
+	            <p class="lead"><span class="text-muted">客户可发送邮件至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>（请注明需求）。</span></p>
+	        </div>
+	        
+	        <!-- Four Featurette -->
+	        <div class="featurette" id="union">
+	            <img class="featurette-image img-circle img-responsive pull-left" src="images/union.jpg">
+	            <h2 class="featurette-heading">JUMA物联开发者联盟</h2>
+	            <p class="lead"><span class="text-muted">一个连接创业者和开发者的开放式物联网平台。</span></p>
+	            <p class="lead">借鉴共享经济模式，努力构建一个联盟，让优秀的开发者不在束缚于一个公司，让需求不在做无谓的探索，在这里也可以获得顶级专家的顾问、咨询、技术支持、以及开发服务。</p>
+	            <p class="lead"><span class="text-muted">优秀开发者可发申请至<a href="mailto:hello@jumacc.com">hello@jumacc.com</a>（请注明技能）</span></p>
+	        </div>
+	
+	        <hr class="featurette-divider">
 
    <!-- Footer -->
 	<footer>
