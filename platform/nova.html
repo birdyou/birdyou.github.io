@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://ironsummitmedia.github.io/startbootstrap-modern-business/ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="北京聚码科技有限公司">
+    <meta name="author" content="JUMA">
+
+    <title>NOVA | 北京聚码科技有限公司</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../page_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../page_files/modern-business.css" rel="stylesheet">
+    <link rel="icon" href="../images/toplogo.png" />  
+	<style>
+	.navbar-brand{
+	padding:0px;
+	width: 120px;
+	background-image: url("../images/JUMA-LOGO.png");
+	background-size: 60% 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+	.content-section-a {
+	padding: 20px 0;
+	background-color: #f8f8f8;
+	}
+	.well-font { font-size: 16px; }
+	</style>
+    <link href="../page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="../page_files/browser/html5shiv.js"></script>
+        <script src="../page_files/browser/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html"></a>
+							
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+					  <a href="../index.html">首页</a>
+					</li>
+					<li>
+					  <a href="../sdk.html">SDK</a>
+					</li>					
+					<li class="active">
+					  <a href="../platform.html">平台</a>
+					</li>
+					<li>
+					  <a href="../solutions.html">技术</a>
+					</li>
+					<li>
+					  <a href="../services.html">服务</a>
+					</li>					
+					<li>
+					  <a href="../about.html">关于</a>
+					</li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+	    <div class="row header">
+	    	<br />
+      		<div class="col-sm-10 col-sm-offset-1">
+		    <ol class="breadcrumb">
+		        <li><a href="../index.html">Home</a></li>
+		        <li><a href="../platform.html">平台</a></li>
+		        <li class="active"><a href="#">NOVA</a></li>
+		    </ol>
+		    </div>
+	    </div>
+	    
+	    
+	    <div class="row">
+      		<div class="col-sm-10 col-sm-offset-1">
+	            <div class="project">
+
+	                <!--<div class="col-md-7 screens">-->
+						<h2 align="center">
+						NOVA Platform
+						</h2>	    
+<!--						<hr />        
+						<div class="row"  align="center">
+						    <a class="button button-small" href="../spec/smp.pdf"><strong>规格下载</strong></a>
+						    <a class="button button-small" href="http://www.juma.io/doc/zh/boards/nordic/smp.html"><strong>开发指南</strong></a>	                        
+						    <a class="button button-small" href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w137644-12587108551.26.LQzV4E&id=520729293015"><strong>立即购买</strong></a>
+						</div>  -->                        						    
+						<hr />
+						
+	                    
+	                    <h4>设计思想</h4>
+	                    <p>随着低功耗蓝牙在智能手机上的普及，很多开发者希望用其作为通信方式，直接在手机上控制设备，取代传统的遥控器件。</p>
+	                    
+	                    <p>为了实现低功耗蓝牙的遥控方案，通常会在遥控设备的MCU上外连一个蓝牙模块作为通信接入手段，然而，这会遇到一些不便之处：</p>
+	                    <ul>
+	                    <li>MCU供电与蓝牙模块电平不匹配，需要额外的电平转换电路；</li>
+	                    <li>蓝牙模块的接口与MCU开发板或者洞洞板等不一致，需要专门设计接线板或者是各种飞线；</li>
+	                    <li>蓝牙模块没有任何的状态指示器件，开发者很难知道它是否工作或者是否成功收发数据；</li>
+	                    </ul>
+	                    <p>由于现在很多蓝牙芯片是SoC的形式，内部集成了ARM内核，所以也有开发者直接用蓝牙模块开发遥控设备的，这其中也存在不便之处：</p>
+						<ul>
+						<li>蓝牙模块驱动能力有限，比如要想控制一个大功率的LED，需要增加MOS管；</li>
+						<li>由于缺少电源管理、驱动器件、指示器件，仍然需要专门为蓝牙模块做一个PCB底板来承担这些任务；</li>						
+						</ul>	                    
+						
+	                    <p>NOVA平台试图解决以上困难，帮助开发者更方便、快捷的开发或DIY自己作品，适用于智能家居、遥控玩具、安防设备等领域。</p>
+	                    
+	                    <!--<br />-->
+	                    <hr />
+	                   
+						<h4>片上资源</h4>
+						<p align="center">
+						<img src="./nova_front.jpg" class="img-responsive" alt="smp" align="center"/>						
+						</p>
+						
+						<br />								
+						<ul>
+							<li>低功耗蓝牙SOC芯片：<a href="../spec/nRF51822_PS_v2.pdf">Nordic nRF51822 QFAA</a>；</li>
+							<li>SoC集成ARM Cortex-M0内核；</li>
+							<li>SoC集成256KB FLASH / 16KB RAM；</li>
+							<li>SoC集成高精度(+-0.1℃) 温度传感器；</li>
+							<li>状态指示LED；</li>
+							<li>12个GPIO扩展接口；</li>
+							<li>8个8/9/10bit可配置ADC；</li>
+							<li>可配置的I2C、SPI总线</li>
+							<li>LDO线性稳压器，供电范围：3-9V；</li>
+							<li>保险丝：有效保护内部的设备不受损害；</li>
+							<li>4个MOS管：为一些外设提供的强驱动能力；</li>
+						</ul>	
+						<hr />
+						
+						<h4>硬件特性</h4>
+						<ul>						
+							<li>嵌入式2.4GHz和BLE收发器；</li>
+							<li>峰值接受电流13mA；</li>
+							<li>峰值发射电流10.5mA(0dBm)；</li>
+							<li>发射功率范围: -20dBm~4dBm；</li>
+							<li>微安级别待机电流；</li>
+							<li>尺寸: 30mm x 20mm；</li>
+							<li>供电: 3-9V宽电压输入；</li>
+						</ul>
+
+						<!--<br />-->
+						<hr />
+						
+						<h4>软件特性</h4>
+						<ul>	
+							<li>JUMA SDK；</li>
+							<li>用户代码区：32KB FLASH / 4KB RAM；</li>
+							<li>低功耗任务调度机制，支持32个任务调度；</li>
+							<li>开放BLE API接口（嵌入式端/APP端）；</li>
+							<li>三轴传感器数据接口（嵌入式端/APP端）；</li>
+							<li>嵌入式软件空中升级（嵌入式端/APP端）；</li>
+						</ul>
+						<!--<br />-->
+						
+						<hr />							
+						<div class="row"  align="center">
+	                        <a class="button button-small" href="../spec/nova.pdf"><strong>规格下载</strong></a>
+	                        <a class="button button-small" href="http://www.juma.io/doc/zh/boards/nordic/nova.html"><strong>开发指南</strong></a>	                        
+							<a class="button button-small" href="https://github.com/JUMA-IO/nRF51_Platform"><strong>开源代码</strong></a>
+							<a class="button button-small" href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w137644-12587108551.39.DwSttK&id=520493573858"><strong>立即购买</strong></a>
+	                    </div>     
+	                    <hr />                     
+
+	            </div>
+	        </div>
+	    </div>
+
+	
+	
+	   <!-- Footer -->
+		<footer>
+		<div class="container">
+		<br />
+		<hr />
+		 	<div class="row">
+		      <div class="col-lg-12">
+				<ul class="list-inline">
+					<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+					<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+					<li><a href="../about.html#contact">联系我们</a></li>
+					<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+					<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+		
+					<li class="pull-right"><a href="#">English</a></li>				
+					<li class="pull-right">|</li>				
+					<li class="pull-right"><a href="#">中文</a></li>								
+		        </ul>
+		        <p>Copyright © 2015 JUMA INC</p>	
+		      </div>
+		    </div>
+		</footer>
+	</div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../page_files/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../page_files/bootstrap.min.js"></script>
+</body>
+</html>
