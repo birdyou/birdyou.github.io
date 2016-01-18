@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://ironsummitmedia.github.io/startbootstrap-modern-business/ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="北京聚码科技有限公司">
+    <meta name="author" content="JUMA">
+
+    <title>SMP | 北京聚码科技有限公司</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../page_files/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../page_files/modern-business.css" rel="stylesheet">
+    <link rel="icon" href="../images/toplogo.png" />  
+	<style>
+	.navbar-brand{
+	padding:0px;
+	width: 120px;
+	background-image: url("../images/JUMA-LOGO.png");
+	background-size: 60% 40%;
+	background-repeat: no-repeat;
+	background-position: center;
+	}
+	.content-section-a {
+	padding: 20px 0;
+	background-color: #f8f8f8;
+	}
+	.well-font { font-size: 16px; }
+	</style>
+    <link href="../page_files/Font-Awesome-master/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]>
+        <script src="../page_files/browser/html5shiv.js"></script>
+        <script src="../page_files/browser/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="../index.html"></a>
+							
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+					<li>
+					  <a href="../index.html">首页</a>
+					</li>
+					<li>
+					  <a href="../sdk.html">SDK</a>
+					</li>					
+					<li class="active">
+					  <a href="../platform.html">平台</a>
+					</li>
+					<li>
+					  <a href="../solutions.html">技术</a>
+					</li>
+					<li>
+					  <a href="../services.html">服务</a>
+					</li>					
+					<li>
+					  <a href="../about.html">关于</a>
+					</li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+	    <div class="row header">
+	    	<br />
+      		<div class="col-sm-10 col-sm-offset-1">
+		    <ol class="breadcrumb">
+		        <li><a href="../index.html">Home</a></li>
+		        <li><a href="../platform.html">平台</a></li>
+		        <li class="active"><a href="#">Smart Motion</a></li>
+		    </ol>
+		    </div>
+	    </div>
+	    
+	    
+	    <div class="row">
+      		<div class="col-sm-10 col-sm-offset-1">
+	            <div class="project">
+
+	                <!--<div class="col-md-7 screens">-->
+						<h2 align="center">
+						Smart Motion Platform (SMP)
+						</h2>	    
+<!--						<hr />        
+						<div class="row"  align="center">
+						    <a class="button button-small" href="../spec/smp.pdf"><strong>规格下载</strong></a>
+						    <a class="button button-small" href="http://www.juma.io/doc/zh/boards/nordic/smp.html"><strong>开发指南</strong></a>	                        
+						    <a class="button button-small" href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w137644-12587108551.26.LQzV4E&id=520729293015"><strong>立即购买</strong></a>
+						</div>  -->                        						    
+						<hr />
+						
+	                    
+	                    <h4>设计思想</h4>
+	                    <p>市面上的智能硬件开发板多以通用型或以入门型为目的设计的，它们有些PCB硕大，有些需要USB连续供电，都不太适宜可穿戴设备开发。
+	                    </p>
+	                    <p>为此，我们推出了一款针对可穿戴应用的开发平台，板载蓝牙SoC和一颗三轴运动传感器，体积小巧、CR2032纽扣电池供电、可随身携带，方便工程师开发或调试运动算法，如实现计步器、运动量统计、睡眠质量检测等相关领域。 
+	                    </p>
+	                    
+	                    <p>软件上，它使用了JUMA的BLE SDK，开发者利用开放的API接口可以迅速打通蓝牙底层通信；另一方面SDK的调度机制确保设备运行在功耗最优模式，即使是CR2032的纽扣电池也可以提供长时间的续航能力。</p>
+
+	                    <p>综上，Smart Motion Platform是可穿戴产品原型开发、运动算法研究的强大工具。</p>
+	                    <!--<br />-->
+	                    <hr />
+	                   
+						<h4>片上资源</h4>
+						<p align="center">
+						<img src="./smp_intro.jpg" class="img-responsive" alt="smp" align="center"/>									
+						</p>
+
+						<br />								
+						<ul>
+							<li>低功耗蓝牙SOC芯片：<a href="../spec/nRF51822_PS_v2.pdf">Nordic nRF51822 QFAA</a>；</li>
+							<li>SoC集成ARM Cortex-M0内核；</li>
+							<li>SoC集成256KB FLASH / 16KB RAM；</li>
+							<li>SoC集成高精度(+-0.1℃) 温度传感器；</li>
+							<li>超低功耗三轴加速度计(运动传感器)：<a href="../spec/DM00091513.pdf">ST LIS2DH12</a>；</li>
+							<li>RGB三色LED；</li>
+							<li>16MHz和32.768kHz时钟芯片；</li>
+							<li>5个GPIO扩展接口，可配置成I2C、SPI总线、ADC采样等；</li>
+							<li>CR2032纽扣电池供电；</li>
+						</ul>	
+						<hr />
+						
+						<h4>硬件特性</h4>
+						<ul>						
+							<li>嵌入式2.4GHz和BLE收发器；</li>
+							<li>峰值接受电流13mA；</li>
+							<li>峰值发射电流10.5mA(0dBm)；</li>
+							<li>发射功率范围: -20dBm~4dBm；</li>
+							<li>微安级别待机电流；</li>
+							<li>尺寸: 直径24mm x 厚度2.0mm；</li>
+							<li>续航: 220mAh的CR2032典型续航时间为1年；</li>
+						</ul>
+
+						<!--<br />-->
+						<hr />
+						
+						<h4>软件特性</h4>
+						<ul>	
+							<li>JUMA SDK；</li>
+							<li>用户代码区：32KB FLASH / 4KB RAM；</li>
+							<li>低功耗任务调度机制，支持32个任务调度；</li>
+							<li>开放BLE API接口（嵌入式端/APP端）；</li>
+							<li>三轴传感器数据接口（嵌入式端/APP端）；</li>
+							<li>嵌入式软件空中升级（嵌入式端/APP端）；</li>
+							<li>计步算法参考例程；</li>
+						</ul>
+						<!--<br />-->
+						
+						<hr />							
+						<div class="row"  align="center">
+	                        <a class="button button-small" href="../spec/smp.pdf"><strong>规格下载</strong></a>
+	                        <a class="button button-small" href="http://www.juma.io/doc/zh/boards/nordic/smp.html"><strong>开发指南</strong></a>	                        
+							<a class="button button-small" href="https://github.com/JUMA-IO/nRF51_Platform"><strong>开源代码</strong></a>
+	                        <a class="button button-small" href="https://item.taobao.com/item.htm?spm=a1z10.1-c.w137644-12587108551.26.LQzV4E&id=520729293015"><strong>立即购买</strong></a>
+	                    </div>     
+	                    <hr />                     
+
+	            </div>
+	        </div>
+	    </div>
+
+	
+	
+	   <!-- Footer -->
+		<footer>
+		<div class="container">
+		<br />
+		<hr />
+		 	<div class="row">
+		      <div class="col-lg-12">
+				<ul class="list-inline">
+					<li><a href="http://www.juma.io/sdk/introduction/index.html">SDK文档</a></li>              
+					<li><a href="https://github.com/JUMA-IO/">GitHub主页</a></li>              
+					<li><a href="../about.html#contact">联系我们</a></li>
+					<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/term_of_service.html">服务条款</a></li>
+					<li><a href="http://www.juma.io/sdk/introduction/sdk/legal/privacy_policy.html">隐私条款</a></li>																
+		
+					<li class="pull-right"><a href="#">English</a></li>				
+					<li class="pull-right">|</li>				
+					<li class="pull-right"><a href="#">中文</a></li>								
+		        </ul>
+		        <p>Copyright © 2015 JUMA INC</p>	
+		      </div>
+		    </div>
+		</footer>
+	</div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="../page_files/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../page_files/bootstrap.min.js"></script>
+</body>
+</html>
