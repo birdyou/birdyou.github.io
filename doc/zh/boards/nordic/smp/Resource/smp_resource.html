@@ -93,45 +93,64 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="smp的硬件资源介绍">SMP的硬件资源介绍</h1>
+<h1 id="smp介绍">SMP介绍</h1>
 <hr />
-<h2 id="smp的设计初衷">1. SMP的设计初衷</h2>
-<p>在一些运动或者是运动检测场合，需要的外设资源往往很单一，很多情况下都是只要一个三轴运动传感器就可以了，但是目前市面上三轴的模块不少，蓝牙的模块也不少，但是两者结合的模块却很少，甚至是没有，而在运动检测领域中，将数据实时的传输回来以供其他设备处理的需求却是实际存在的。为了解决这种问题，专门设计了在运动领域中的SMP模块。</p>
-<hr />
-<h2 id="smp的应用场景">2. SMP的应用场景</h2>
-<p>SMP主要在一些运动监测领域。</p>
-<p>SMP具有较小的体积，几乎可以放置于任何的设备中，比如钥匙扣，衣帽，书包，口袋中，基本上不会占据任何的地方。 然而其功能强大，可用于检测运动状态，实现计步器，运动量检测，睡眠质量等等的运动监测领域。</p>
-<hr />
-<h2 id="smp特色硬件资源">3. SMP特色硬件资源</h2>
-<ul>
-<li>SMP中搭载了Nordic公司n51822蓝牙芯片，用于实现数据传输。</li>
-<li>搭载了ST公司的LIS2DH12三轴加速度传感器，方便进行一些运动数据采集。</li>
-<li>搭载一个rgb三色LED，用于实现状态显示。</li>
-</ul>
+<h2 id="简介">简介</h2>
+<p>Smart Motion Platform(SMP)是针对可穿戴产品原型、运动算法研究等目的设计的强大开发平台。</p>
 <div class="figure">
-<img src="./SMP_Front.png" />
+<img src="smp_intro.jpg" />
 
 </div>
 <hr />
-<h1 id="硬件手册">4. 硬件手册</h1>
-<p>详情请参照对应板子的spec：<br /><a href="./SMP-Coin-2420.pdf">下载spec</a></p>
+<h2 id="硬件特性">硬件特性</h2>
+<ul>
+<li>低功耗蓝牙SoC芯片：Nordic nRF51822 QFAA；</li>
+<li>SoC集成ARM Cortex-M0内核；</li>
+<li>SoC集成256KB FLASH / 16KB RAM；</li>
+<li>SoC集成高精度(+-0.1℃) 温度传感器；</li>
+<li>超低功耗三轴加速度计(运动传感器)：ST LIS2DH12；</li>
+<li>峰值接受电流13mA；</li>
+<li>峰值发射电流10.5mA(0dBm)；</li>
+<li>发射功率范围: -20dBm~4dBm；</li>
+<li>微安级别待机电流；</li>
+<li>尺寸: 直径24mm x 厚度2.0mm；</li>
+<li>续航: 220mAh的CR2032典型续航时间为1年；</li>
+</ul>
+<hr />
+<h2 id="软件特性">软件特性</h2>
+<ul>
+<li>JUMA SDK；</li>
+<li>用户代码区：32KB FLASH / 4KB RAM；</li>
+<li>低功耗任务调度机制，支持32个任务调度；</li>
+<li>开放BLE API接口（嵌入式端/APP端）；</li>
+<li>三轴传感器数据接口（嵌入式端/APP端）；</li>
+<li>嵌入式软件空中升级（嵌入式端/APP端）；</li>
+<li>计步算法参考例程；</li>
+<li>To Be Continued...；</li>
+</ul>
+<hr />
+<h2 id="规格手册">规格手册</h2>
+<p>请下载：<a href="http://www.juma.io/spec/smp.pdf">SMP.pdf</a></p>
+<hr />
+<h2 id="更多资料">更多资料</h2>
+<p>请访问： <a href="http://www.juma.io/platform/smp.html" class="uri">http://www.juma.io/platform/smp.html</a></p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>Noridc nRF51822</Strong></h4>
+<h4><Strong>nRF51平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/nordic/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Resource/nova_resource.html">板子介绍</a></li>
@@ -142,7 +161,7 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Resource/smp_resource.html">板子介绍</a></li>
@@ -154,27 +173,29 @@ return{dd:dd}
 </ul>
 
 
-<h4><Strong>ST BlueNRG</Strong></h4>
+<h4><Strong>STM32平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/st/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">板子介绍</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例1：读取传感器</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例2：蓝牙点灯</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Faq/faq.html">常见问题FAQ</a></li>
 
 </ul>
 

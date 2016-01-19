@@ -93,54 +93,74 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="cannon开发板介绍">CANNON开发板介绍</h1>
+<h1 id="cannon介绍">Cannon介绍</h1>
 <hr />
 <h2 id="简介">简介</h2>
-<p>CANNON是基于ST BlueNRG设计的高性能开发板，它的板载资源丰富、处理能力强大，并能够远距离传输蓝牙信号。<br /><img src="cannon.png" /></p>
+<p>Cannon是基于STM32平台和BlueNRG蓝牙芯片设计的高性能开发板，它的板载资源丰富、处理能力强大，并能够远距离传输蓝牙信号。<br /><img src="cannon_intro.jpg" /></p>
 <hr />
-<h2 id="mcu">1. MCU</h2>
-<p>1）ARM 32位 Cortex-M4 CPU，最高可达84Mhz frequency。<br />2）512Kbytes Flash存储，96Kbytes SRAM。<br />3）1.7V<sub>3.6V供电电压，可外接4</sub>26Mhz外部晶振，CANON外接的为16Mhz晶振和为RTC校准提供的32.768k晶振。<br />4）3组I2C接口，CANON使用了I2C1，留出了I2C1与I2S2测试接口。<br />5）4组SPI接口，CANON使用了SPI2，留出了SPI3测试接口。<br />6）3组USART接口，CANON留出了UART1、UART2。<br />7）GPIO测试接口，CANON留出了GPIO_A0、GPIO_A1、GPIO_A8、GPIO_B0、GPIO_C13、GPIO_B8、GPIO_C5、GPIO_C7。<br />8）SDIO接口CANON安装了TF插槽。</p>
-<p>下载spec：<br /><a href="./DM00025644.pdf">DM00025644.pdf</a></p>
+<h2 id="硬件特性">硬件特性</h2>
+<h4 id="处理器stm32f401">1. 处理器：STM32F401</h4>
+<ul>
+<li>ARM Cortex-M4，最高可达84MHz frequency；</li>
+<li>512KB Flash / 96KB SRAM；</li>
+<li>1.7V-3.6V供电电压；</li>
+</ul>
+<h4 id="低功耗蓝牙芯片bluenrg">2. 低功耗蓝牙芯片：BlueNRG</h4>
+<ul>
+<li>发射功率最高可达+8dBm；</li>
+<li>发射峰值电流8.2mA @0dBm, 3V；</li>
+<li>待机电流1.7uA；</li>
+<li>支持蓝牙Master与Slave模式；</li>
+<li>支持蓝牙GAP、GATT、SM、L2CAP、LL、RF_PHY层；</li>
+<li>MCU接口：HCI(Host-Controller Interface) over SPI；</li>
+<li>附有巴伦天线匹配芯片；</li>
+</ul>
+<h4 id="传感器阵列">3. 传感器阵列</h4>
+<ul>
+<li>加速度计/陀螺仪：LSM6DS3</li>
+<li>磁力计：LSM303AGR</li>
+<li>温湿度计：HTS221</li>
+<li>气压计：LPS25H</li>
+</ul>
+<h4 id="其他">4. 其他</h4>
+<ul>
+<li>3组I2C、4组SPI、3组UART、USB、TF卡槽等、按键、LED等；</li>
+<li>可选择的Cable天线和陶瓷天线；</li>
+<li>可选择的USB供电、电池组供电；</li>
+</ul>
 <hr />
-<h2 id="蓝牙芯片bluenrg">2. 蓝牙芯片BlueNRG</h2>
-<p>1）支持Master与Slave单模<br />2）嵌入式标准蓝牙低功耗协议栈的GAP、GATT、SM、L2CAP、LL、RF_PHY层<br />3）profile层在MCU实现<br />4）发射功率最高可达+8dbm<br />5）MCU通过SPI控制BlueNRG<br />6）16Mhz与32.768khz外部晶振<br />7）应用：智能手表、智能健康设备、远程控制、家居与工业自动化、生活辅助、移动终端外设、PC外设</p>
-<p>下载spec：<br /><a href="./DM00092683.pdf">DM00092683.pdf</a></p>
+<h2 id="软件特性">软件特性</h2>
+<ul>
+<li>JUMA SDK；</li>
+<li>低功耗任务调度机制，支持32个任务调度；</li>
+<li>开放BLE API接口（嵌入式端/APP端）；</li>
+<li>传感器数据接口（嵌入式端/APP端）；</li>
+<li>嵌入式软件空中升级（嵌入式端/APP端）；</li>
+<li>To Be Continued...；</li>
+</ul>
 <hr />
-<h2 id="温湿度传感器hts221">3.温湿度传感器HTS221</h2>
-<p>1）0~100%的相对湿度范围<br />2）湿度精确度： ± 4.5% rH, 20 to +80% rH<br />3）温度精确度： ± 0.5 °C,15 to +40 °C<br />4）16位温湿度数据输出<br />5）SPI与I2C接口<br />6）应用：空气温度与流动性监测、空气湿度计、冰箱、可穿戴设备、智能家居自动化、工业自动化、呼吸设备、资产与物流追踪。</p>
-<p>下载spec：<br /><a href="./DM00026333.pdf">DM00026333.pdf</a></p>
+<h2 id="规格手册">规格手册</h2>
+<p>请下载：<a href="http://www.juma.io/spec/cannon.pdf">Cannon.pdf</a></p>
 <hr />
-<h2 id="气压计lps25h">4.气压计LPS25H</h2>
-<p>1）260~1260hpa的绝对压力范围<br />2）内嵌温度补偿功能<br />3）SPI与I2C接口<br />4）应用：便携式高度与气压测量计、GPS、气象站设备、运动手表</p>
-<p>下载spec：<br /><a href="./DM00066332.pdf">DM00066332.pdf</a></p>
-<hr />
-<h2 id="六轴传感器lsm6ds3">5.六轴传感器LSM6DS3</h2>
-<p>1）为外接磁力计提供Hard, soft ironing<br />2）CANON通过I2C外接磁力计<br />3）SPI与I2C接口<br />4）内嵌温度传感器<br />5）应用：计步器、重力感应、室内导航、单击与双击检测、物联网设备、震动检测与补偿、自由落体检测、6D方向检测</p>
-<p>下载spec：<br /><a href="./DM00026899.pdf">DM00026899.pdf</a></p>
-<hr />
-<h2 id="磁力计lsm303agr">6.磁力计LSM303AGR</h2>
-<p>1）3个磁力通道，3个加速度通道<br />2）±50 gauss磁力动态范围<br />3）16位数据输出<br />4）SPI和I2C接口<br />5）可编程的中断发生器、自由落体、运动检测、磁场检测<br />6）嵌入式的自检功能<br />7）嵌入式的温度传感器<br />8）通过I2C与六轴连接<br />9）应用：指南针、旋转检测、位置检测、移动感应、自由落体检测、单双击识别、计步</p>
-<p>下载spec：<br /><a href="./LSM303AGR.pdf">LSM303AGR.pdf</a></p>
-<hr />
-<h2 id="其他资源">7.其他资源</h2>
-<p>1）LED：D1，D2<br />2）按钮<br />3）TF接口</p>
+<h2 id="更多资料">更多资料</h2>
+<p>请访问： <a href="http://www.juma.io/platform/cannon.html" class="uri">http://www.juma.io/platform/cannon.html</a></p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>Noridc nRF51822</Strong></h4>
+<h4><Strong>nRF51平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/nordic/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Resource/nova_resource.html">板子介绍</a></li>
@@ -151,7 +171,7 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Resource/smp_resource.html">板子介绍</a></li>
@@ -163,27 +183,29 @@ return{dd:dd}
 </ul>
 
 
-<h4><Strong>ST BlueNRG</Strong></h4>
+<h4><Strong>STM32平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/st/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">板子介绍</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例1：读取传感器</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例2：蓝牙点灯</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Faq/faq.html">常见问题FAQ</a></li>
 
 </ul>
 

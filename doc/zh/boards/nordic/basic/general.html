@@ -93,16 +93,16 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="nordic-nrf51822进阶流程">Nordic nRF51822进阶流程</h1>
+<h1 id="nrf51平台进阶流程">nRF51平台进阶流程</h1>
 <hr />
 <h2 id="搭建开发环境">1. 搭建开发环境</h2>
-<p>搭建<a href="./dev_env_build.html">开发环境</a>，需安装和配置相关软件。</p>
+<p>搭建<a href="./dev_env_build.html">开发环境</a>，安装和配置相关的软件。</p>
 <h2 id="了解开发板硬件资源">2. 了解开发板硬件资源</h2>
-<p>基于Nordic nRF51822，我们提供了<a href="../nova.html">NOVA</a>、<a href="../smp.html">SMP</a>两款开发板。您可以查看手上的开发板，了解它能够做些什么。<br />注意，JUMA SDK可以运行在任何基于Nordic nRF51822开发的硬件上。</p>
+<p>基于Nordic nRF51822，我们提供了<a href="../nova.html">NOVA</a>、<a href="../smp.html">SMP</a>两款开发板。您可以查看开发板说明，了解它能够做些什么。<br />注意，JUMA SDK可以运行在任何基于Nordic nRF51822的硬件上。</p>
 <h2 id="掌握开发板烧入方式">3. 掌握开发板烧入方式</h2>
-<p>了解和掌握如何给开发板烧入固件。</p>
+<p>掌握如何给开发板烧入固件(嵌入式代码)。</p>
 <h2 id="学会使用入门例程">4. 学会使用入门例程</h2>
-<p>入门例程是一个工程模板。<br />通过学习入门例程，理解SDK的开发流程。</p>
+<p>每个入门例程都是一个工程模板。<br />通过学习例程，理解如何使用SDK。一旦学会，您会感受到惊人的便捷，而且，这很容易学习。</p>
 <h2 id="开始自己的创造之旅">5. 开始自己的创造之旅</h2>
 <p>之后，您就可以用SDK开始编写自己的程序了。</p>
 
@@ -110,18 +110,18 @@ return{dd:dd}
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>Noridc nRF51822</Strong></h4>
+<h4><Strong>nRF51平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/nordic/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Resource/nova_resource.html">板子介绍</a></li>
@@ -132,7 +132,7 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Resource/smp_resource.html">板子介绍</a></li>
@@ -144,27 +144,29 @@ return{dd:dd}
 </ul>
 
 
-<h4><Strong>ST BlueNRG</Strong></h4>
+<h4><Strong>STM32平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/st/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">板子介绍</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例1：读取传感器</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例2：蓝牙点灯</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Faq/faq.html">常见问题FAQ</a></li>
 
 </ul>
 
