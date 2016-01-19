@@ -93,57 +93,64 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="nova的硬件资源介绍">NOVA的硬件资源介绍</h1>
+<h1 id="nova介绍">NOVA介绍</h1>
 <hr />
-<h2 id="nova的设计初衷">1. NOVA的设计初衷</h2>
-<p>设计NOVA是为了应对各种常见的需要进行蓝牙控制的场合，可以将其理解为是为了应对常见控制场合而设计的一个万用型的解决方案。 非常的适合DIY与简单的蓝牙控制领域。</p>
-<hr />
-<h2 id="nova的应用场景">2. NOVA的应用场景</h2>
-<p>NOVA主要被设计用来解决日常中，常见的一些简单的控制领域的问题。</p>
-<p>现有的用蓝牙来作为控制的方案中经常会存在的问题是： 采用MCU+蓝牙模块的方案中：</p>
-<ul>
-<li>MCU供电系统与蓝牙模块电平不匹配，需要另外去设计电平转换部分的电路。</li>
-<li>蓝牙模块的接口与一般的洞洞板等不匹配，需要专门的设计电路板或者是各种飞线，非常的不利于开发。</li>
-<li>板上没有任何的状态指示器件，设备有没有工作无法得知，在DIY设备中会受到很大的制约。</li>
-</ul>
-<p>直接的片上系统（SOC)中：</p>
-<ul>
-<li>本来只是一个很简单的需求，比如控制一个大功率的LED但是却由于一些外部电路的问题（需要增加mos管等），平白的增加了使用上的困难度。</li>
-<li>本来只是想要在蓝牙控制的过程中有个能够只管的观察工作状态的LED却不得不为这个模块设计一个底板。</li>
-</ul>
-<hr />
-<h2 id="nova特色硬件资源">3. NOVA特色硬件资源</h2>
-<p>针对以上的问题，在NOVA中包含了以下的常用外设资源。</p>
+<h2 id="简介">简介</h2>
+<p>NOVA具有强大的驱动能力，可以连接多种外设，支持宽电压输入，具有标准2.54mm接口。它适用于智能家居、安防设备、远程遥控等领域，是开发者享受DIY乐趣的好工具。</p>
 <div class="figure">
-<img src="./NOVA_Front.png" />
+<img src="nova_intro.jpg" />
 
 </div>
+<hr />
+<h2 id="硬件特性">硬件特性</h2>
 <ul>
-<li>状态指示LED，不必再为设备是否在工作而抓瞎。</li>
-<li>一个LDO线性稳压器，使得系统可以直接使用3-9v的电源来为其供电，而不用再为了那个3.3的电平而头痛不已。</li>
-<li>一个保险丝，连接到高压区，使得系统和外部供电隔离，即使是外部供电超过范围也能很好的保护内部的设备不受损害。</li>
-<li>4个MOS管，在一些应用中通常需要用来控制一些大电流的器件，现在有了NOVA再不需要为了控制这些设备而额外的增加电路了。</li>
+<li>低功耗蓝牙SoC芯片：Nordic nRF51822 QFAA；</li>
+<li>SoC集成ARM Cortex-M0内核；</li>
+<li>SoC集成256KB FLASH / 16KB RAM；</li>
+<li>SoC集成高精度(+-0.1℃) 温度传感器；</li>
+<li>12个GPIO扩展接口；</li>
+<li>8个8/9/10bit可配置ADC；</li>
+<li>4个MOS管：为一些外设提供的强驱动能力；</li>
+<li>峰值接受电流13mA；</li>
+<li>峰值发射电流10.5mA(0dBm)；</li>
+<li>发射功率范围: -20dBm~4dBm；</li>
+<li>微安级别待机电流；</li>
+<li>尺寸: 30mm x 20mm；</li>
+<li>供电范围：3-9V；</li>
 </ul>
 <hr />
-<h2 id="硬件手册">4. 硬件手册</h2>
-<p>详情请参照对应板子的spec：<br /><a href="./Nova-Card-3020.pdf">下载spec</a></p>
+<h2 id="软件特性">软件特性</h2>
+<ul>
+<li>JUMA SDK；</li>
+<li>用户代码区：32KB FLASH / 4KB RAM；</li>
+<li>低功耗任务调度机制，支持32个任务调度；</li>
+<li>开放BLE API接口（嵌入式端/APP端）；</li>
+<li>嵌入式软件空中升级（嵌入式端/APP端）；</li>
+<li>To Be Continued...；</li>
+</ul>
+<hr />
+<h2 id="规格手册">规格手册</h2>
+<p>请下载：<a href="http://www.juma.io/spec/nova.pdf">NOVA.pdf</a></p>
+<hr />
+<h2 id="更多资料">更多资料</h2>
+<p>请访问： <a href="http://www.juma.io/platform/nova.html" class="uri">http://www.juma.io/platform/nova.html</a></p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
 <div class="list-group">
 
-<h4><Strong>Noridc nRF51822</Strong></h4>
+<h4><Strong>nRF51平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/nordic/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/nova.html">NOVA开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/nova/Resource/nova_resource.html">板子介绍</a></li>
@@ -154,7 +161,7 @@ return{dd:dd}
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/nordic/smp.html">SMP开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/nordic/smp/Resource/smp_resource.html">板子介绍</a></li>
@@ -166,27 +173,29 @@ return{dd:dd}
 </ul>
 
 
-<h4><Strong>ST BlueNRG</Strong></h4>
+<h4><Strong>STM32平台</Strong></h4>
 
 <a href="http://www.juma.io/doc/zh/boards/st/basic.html">基础知识</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">概述</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/basic/general.html">进阶流程</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/basic/dev_env_build.html">环境配置</a></li>
 
 </ul>
 
-<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发板指南</a>
+<a href="http://www.juma.io/doc/zh/boards/st/cannon.html">Cannon开发指南</a>
 <ul class="menu_wwwzzjsnet">
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">板子介绍</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例(蓝牙点灯)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例1：读取传感器</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例(读取传感器)</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例2：蓝牙点灯</a></li>
+
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Faq/faq.html">常见问题FAQ</a></li>
 
 </ul>
 

@@ -93,9 +93,9 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h2 id="向导">向导</h2>
+<h2 id="概述">概述</h2>
 <hr />
-<h3 id="概述">概述</h3>
+<h3 id="架构">架构</h3>
 <p>JUMA SDK编程框架将嵌入式程序分成三个层次：</p>
 <div class="figure">
 <img src="juma_sdk_archi.png" />
@@ -112,14 +112,14 @@ return{dd:dd}
 <p>嵌入式SDK支持SMP、NOVA和小钢炮(Cannon)等开发平台。</p>
 <p>从硬件实现角度来说：</p>
 <ul>
-<li>SMP、NOVA基于Nordic nRF51822的蓝牙SoC芯片。<br /></li>
-<li>Cannon基于ST BlueNRG蓝牙芯片和STM32F4的MCU。</li>
+<li>SMP、NOVA基于Nordic nRF51的蓝牙SoC芯片。<br /></li>
+<li>Cannon基于ST BlueNRG蓝牙芯片和STM32的MCU。</li>
 <li>请根据您所拥有的开发平台，查看相应的平台使用教程：<br /><a href="http://www.juma.io/doc/zh/boards.html" class="uri">http://www.juma.io/doc/zh/boards.html</a></li>
 </ul>
-<p>从软件实现角度来说：</p>
+<p>目前，从软件实现角度来说：</p>
 <ul>
-<li>SMP、NOVA支持以下除Jsensor以外的API。<br /> SDK: <a href="https://github.com/JUMA-IO/JUMA_SDK_Release" class="uri">https://github.com/JUMA-IO/JUMA_SDK_Release</a></li>
-<li>Cannon支持以下的BLE API和Jsensor API。<br />SDK：<a href="https://github.com/JUMA-IO/cannon" class="uri">https://github.com/JUMA-IO/cannon</a></li>
+<li><p>nRF51平台(SMP、NOVA)支持以下除Jsensor以外的API。<br /> SDK: <a href="https://github.com/JUMA-IO/nRF51_Platform/releases" class="uri">https://github.com/JUMA-IO/nRF51_Platform/releases</a></p></li>
+<li><p>STM32平台(Cannon)支持BLE API和Jsensor API。<br />SDK：<a href="https://github.com/JUMA-IO/STM32_Platform/releases" class="uri">https://github.com/JUMA-IO/STM32_Platform/releases</a></p></li>
 </ul>
 
 </div>
@@ -128,12 +128,12 @@ return{dd:dd}
 
 <h4><Strong>编程向导</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/embedded_sdk/guide/instruction.html">使用说明</a>
+<a href="http://www.juma.io/doc/zh/embedded_sdk/guide/introduction.html">概述</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/guide/ble.html">BLE API向导</a></li>
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/guide/ble.html">BLE API说明</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/embedded_sdk/guide/jsensor.html">JSENSOR API向导</a></li>
+<li><a href="http://www.juma.io/doc/zh/embedded_sdk/guide/jsensor.html">JSENSOR API说明</a></li>
 
 </ul>
 

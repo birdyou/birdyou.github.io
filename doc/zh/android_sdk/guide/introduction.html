@@ -93,143 +93,11 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="juma-android-sdk使用说明">JUMA Android SDK使用说明</h1>
+<h3 id="使用说明">使用说明</h3>
 <hr />
-<h2 id="一使用eclipse创建android工程">一、使用eclipse创建Android工程</h2>
-<h5 id="点击-file---new---android-application-project.">1、点击 File -&gt; New -&gt; Android Application Project.</h5>
-<div class="figure">
-<img src="1.png" />
-
-</div>
-<h5 id="输入application-name-project-name-package-name.">2、输入Application Name 、Project Name 、 Package Name.</h5>
-<h5 id="选择minimum-required-sdk-api-18-android-4.3.">3、选择Minimum Required SDK： API 18: Android 4.3.</h5>
-<h5 id="点击-next.">4、点击 Next.</h5>
-<div class="figure">
-<img src="2.png" />
-
-</div>
-<h5 id="点击next.">5、点击Next.</h5>
-<div class="figure">
-<img src="3.png" />
-
-</div>
-<h5 id="点击next.-1">6、点击Next.</h5>
-<div class="figure">
-<img src="4.png" />
-
-</div>
-<h5 id="点击next.-2">7、点击Next.</h5>
-<div class="figure">
-<img src="5.png" />
-
-</div>
-<h5 id="输入activity-namelayout-name.">8、输入Activity Name、Layout Name.</h5>
-<h5 id="点击-finish.">9、点击 Finish.</h5>
-<div class="figure">
-<img src="6.png" />
-
-</div>
-<hr />
-<h3 id="将juma-sdk-加入到工程中">将JUMA SDK 加入到工程中</h3>
-<h5 id="将juma-sdk.jar放入到已创建好的工程中的libs文件夹中">1、将juma-sdk.jar放入到已创建好的工程中的libs文件夹中</h5>
-<div class="figure">
-<img src="7.png" />
-
-</div>
-<h5 id="打开androidmanifest.xml文件">2、打开AndroidManifest.xml文件</h5>
-<h5 id="在androidmanifest.xml加入以下两条权限">3、在AndroidManifest.xml加入以下两条权限：</h5>
-<pre><code>&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.BLUETOOTH_ADMIN&quot;/&gt;</code></pre>
-<div class="figure">
-<img src="8.png" />
-
-</div>
-<h2 id="二在工程中使用juma-sdk">二、在工程中使用JUMA SDK</h2>
-<h5 id="scancallback">1、ScanCallback</h5>
-<pre><code>ScanHelper.ScanCallback scanCallback = new ScanCallback() {
-        
-        @Override
-        public void onScanStateChange(int newState) {
-            // TODO Auto-generated method stub
-            
-        }
-        
-        @Override
-        public void onDiscover(JumaDevice device, int rssi) {
-            // TODO Auto-generated method stub
-            
-        }
-    };</code></pre>
-<h5 id="scanhelper">2、ScanHelper</h5>
-<pre><code>ScanHelper scanHelper = new ScanHelper(getApplicationContext(), scanCallback);
-
-ScanHelper.getVersion();
-    
-scanHelper.enable();
-    
-scanHelper.disable();
-    
-scanHelper.isEnabled();
-    
-scanHelper.startScan(name);
-    
-scanHelper.stopScan();
-    
-scanHelper.isScanning();</code></pre>
-<h5 id="jumadevicecallback">3、JumaDeviceCallback</h5>
-<pre><code>    JumaDeviceCallback jumaDeviceCallback = new JumaDeviceCallback() {
-
-        @Override
-        public void onConnectionStateChange(int status, int newState) {
-            // TODO Auto-generated method stub
-            super.onConnectionStateChange(status, newState);
-        }
-
-        @Override
-        public void onReciver(byte type, byte[] message) {
-            // TODO Auto-generated method stub
-            super.onReciver(type, message);
-        }
-
-        @Override
-        public void onSend(int status) {
-            // TODO Auto-generated method stub
-            super.onSend(status);
-        }
-
-        @Override
-        public void onRemoteRssi(int status, int rssi) {
-            // TODO Auto-generated method stub
-            super.onRemoteRssi(status, rssi);
-        }
-
-        @Override
-        public void onUpdateFirmware(int status) {
-            // TODO Auto-generated method stub
-            super.onUpdateFirmware(status);
-        }
-        
-    };</code></pre>
-<h5 id="jumadevice">4、JumaDevice</h5>
-<pre><code>device.connect(jumaDeviceCallback)；
-
-device.getVersion();
-
-device.getName();
-
-device.getUuid();
-
-device.disconnect();
-
-device.isConnected();
-
-device.send(type, message);
-
-device.getRemoteRssi();
-
-device.updateFirmware(url);
-
-device.isFirmwareUpdating();</code></pre>
+<ul>
+<li><h4 id="在工程中使用sdk"><a href="./introduction/environment.html">在工程中使用SDK</a></h4></li>
+</ul>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
@@ -237,10 +105,10 @@ device.isFirmwareUpdating();</code></pre>
 
 <h4><Strong>编程向导</Strong></h4>
 
-<a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction.html">使用说明</a>
+<a href="http://www.juma.io/doc/zh/android_sdk/guide/introduction.html">使用说明</a>
 <ul class="menu_wwwzzjsnet">
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/guide/instruction/environment.html">在工程中使用SDK</a></li>
+<li><a href="http://www.juma.io/doc/zh/android_sdk/guide/introduction/environment.html">在工程中使用SDK</a></li>
 
 </ul>
 
@@ -311,7 +179,7 @@ device.isFirmwareUpdating();</code></pre>
 
 <li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onSend.html">发送数据事件</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onRecive.html">接受数据事件</a></li>
+<li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onReceive.html">接受数据事件</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/android_sdk/api/JumaDeviceCallback/onRemoteRssi.html">获取RSSI事件</a></li>
 
