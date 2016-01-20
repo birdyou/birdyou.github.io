@@ -93,37 +93,31 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="搭建st-bluenrg开发环境">搭建ST BlueNRG开发环境</h1>
+<h1 id="搭建stm32开发环境">搭建STM32开发环境</h1>
 <hr />
-<h2 id="一获取相关的软件资源">一、获取相关的软件资源</h2>
+<h3 id="一获取相关的软件资源">一、获取相关的软件资源</h3>
 <p>想要使用JUMA的嵌入式SDK首先需要如下这些软件资源：</p>
 <h4 id="keil的编译环境">1. KEIL的编译环境</h4>
-<p>ARM御用的编译器，可以从相应的KEIL官网进行相应的下载。<br />下载地址：<br /><a href="https://www.keil.com/demo/eval/arm.htm" class="uri">https://www.keil.com/demo/eval/arm.htm</a><br /><img src="http://i.imgur.com/s3ims4R.png" /></p>
+<p>ARM御用的编译器，可以从相应的KEIL官网进行相应的下载。<br />下载地址：<br /><a href="https://www.keil.com/demo/eval/arm.htm" class="uri">https://www.keil.com/demo/eval/arm.htm</a><br /><img src="./s3ims4R.png" /></p>
 <h4 id="烧录工具jlink或者stlink">2. 烧录工具JLink或者STLink</h4>
-<p><img src="http://i.imgur.com/2Igjd8B.png" /> <img src="http://i.imgur.com/dhwS32j.png" /></p>
-<h4 id="juma的sdk资源">3. JUMA的SDK资源</h4>
-<p>JUMA SDK发布在下述地址，请选择下载最新的集成包：<br /><a href="http://www.juma.io/index.html#/list_summary/event" class="uri">http://www.juma.io/index.html#/list_summary/event</a></p>
-<p>下载好后，进入ST_SDK文件夹： <img src="http://i.imgur.com/qSHMTJ3.png" /></p>
+<p><img src="./2Igjd8B.png" /> <img src="./dhwS32j.png" /></p>
 <hr />
-<h2 id="二开始安装">二、开始安装</h2>
-<h3 id="step1.-安装keil">Step1. 安装KEIL</h3>
-<p>1). 双击MDKxxx.exe开始安装过程。<br />2). 当出现如下图所示的界面后，安装过程正式开始了。<br /><img src="http://i.imgur.com/nntbc8k.png" /></p>
-<p>3). 直接点击上图中的next，进入下一步的安装，之后会出现如下图所示的界面：<br /><img src="http://i.imgur.com/dn7D1fk.png" /></p>
-<p>4). 选中图中红色框中的内容表示接受KEIL的协议，然后点击next进入下一步的安装，之后会出现如下的界面：<br /><img src="http://i.imgur.com/O2pZKhg.png" /></p>
-<p>5). 这一步需要选择的是安装的位置，以及包的位置，包就是各种芯片的配置和标准库文件等，这个位置要记住，等会的时候可能会用到。选择好后，点击next会进入到下一个界面：<br /><img src="http://i.imgur.com/wriW8Pz.png" /></p>
-<p>6). 这里需要的是填写相关的个人信息，不过经发现，这里可以随意的填写就可以了，感谢KEIL如此（人性化）的设计。当随意或者根据自己的情况填写好信息后点击next进入到下一个界面：<br /><img src="http://i.imgur.com/2VQpmfJ.png" /></p>
-<p>7). 在这个界面中需要稍作停留了，等待一段时间后，会进行一次询问，是否需要安装KEIL的一个串行下载工具：<br /><img src="http://i.imgur.com/yDZyxcI.png" /></p>
-<p>8). 出现上图的选择后，在juma的整个方案中，并不需要这个，所以可以选择不安装，没必要去浪费那点空间。之后经过一点点时间等等待后就会提示安装成功了。<br /><img src="http://i.imgur.com/7fSRWxp.png" /></p>
+<h3 id="二开始安装">二、开始安装</h3>
+<h4 id="step1.-安装keil">Step1. 安装KEIL</h4>
+<p>1). 双击MDKxxx.exe开始安装过程。<br />2). 当出现如下图所示的界面后，安装过程正式开始了。<br /><img src="./nntbc8k.png" /></p>
+<p>3). 直接点击上图中的next，进入下一步的安装，之后会出现如下图所示的界面：<br /><img src="./dn7D1fk.png" /></p>
+<p>4). 选中图中红色框中的内容表示接受KEIL的协议，然后点击next进入下一步的安装，之后会出现如下的界面：<br /><img src="./O2pZKhg.png" /></p>
+<p>5). 这一步需要选择的是安装的位置，以及包的位置，包就是各种芯片的配置和标准库文件等，这个位置要记住，等会的时候可能会用到。选择好后，点击next会进入到下一个界面：<br /><img src="./wriW8Pz.png" /></p>
+<p>6). 这里需要的是填写相关的个人信息，不过经发现，这里可以随意的填写就可以了，感谢KEIL如此（人性化）的设计。当随意或者根据自己的情况填写好信息后点击next进入到下一个界面：<br /><img src="./2VQpmfJ.png" /></p>
+<p>7). 在这个界面中需要稍作停留了，等待一段时间后，会进行一次询问，是否需要安装KEIL的一个串行下载工具：<br /><img src="./yDZyxcI.png" /></p>
+<p>8). 出现上图的选择后，在juma的整个方案中，并不需要这个，所以可以选择不安装，没必要去浪费那点空间。之后经过一点点时间等等待后就会提示安装成功了。<br /><img src="./7fSRWxp.png" /></p>
 <p>9).出现上图的界面后安装过程就完成了，但是在从KEIL5.10之后的版本开始内部集成了包管理机制，通过这个，可以方便的对各种mcu的库文件等进行管理。我们在接下来的教程里面详细的对包管理进行描述。</p>
-<h3 id="step2.-keil安装结束的更新提示">Step2. KEIL安装结束的更新提示</h3>
+<h4 id="step2.-keil安装结束的更新提示">Step2. KEIL安装结束的更新提示</h4>
 <p>安装完成Keil之后会有提示更新packs操作，如下：<br /><img src="./NKtq09v.png" /></p>
 <p>因为是在线下载所以受限于网络，下载更新往往会出现失败的情况，如下：<br /><img src="./lJdlZsZ.png" /></p>
 <p>因此，这里我们建议直接导入packs的方式，首先从KEIL官网下载对应的pack包，链接如下： 下载地址：http://www.keil.com/dd2/pack/ 下载对应版本的pack包，下载完成后双击.pack文件即可导入KEIL。<br /><img src="./7ncYEEn.png" /></p>
-<h3 id="step3.-以上就是keil的相关内容了接下来安装jlink与stlink">Step3. 以上就是KEIL的相关内容了，接下来安装JLINK与STLink</h3>
+<h4 id="step3.-以上就是keil的相关内容了接下来安装jlink与stlink">Step3. 以上就是KEIL的相关内容了，接下来安装JLINK与STLink</h4>
 <p>1). 下载到JLINK与STLink的安装包<br />2). 双击安装包文件直接我同意-&gt;NEXT-&gt;同意-&gt;Finish就完成了<br />3). 在设备管理中能看到相应的设备驱动，说明安装驱动成功<br /><img src="./dCQmtrw.png" /></p>
-<hr />
-<h2 id="三使用juma的sdk">三、使用JUMA的SDK</h2>
-<p>JUMA在ST方向上的SDK采用是开放源码的方式。只需将源码全部下载用KEIL打开即可。<br />目前，源码支持的DEMO有蓝牙电灯功能，可以用于验证是否SDK运行正常。</p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">

@@ -95,20 +95,22 @@ return{dd:dd}
 <div class="col-xs-12 col-sm-9">
 <h2 id="cannon烧入方法">Cannon烧入方法</h2>
 <hr />
-<h3 id="step1.-打开keil工程文件">Step1. 打开Keil工程文件</h3>
-<p>用git上提供的种子工程或者自己新建的keil工程：<br /><img src="http://i.imgur.com/JUor0aD.png" /></p>
+<h3 id="打开keil工程文件">1. 打开Keil工程文件</h3>
+<p>用git上提供的种子工程或者自己新建的keil工程：<br /><img src="./JUor0aD.png" /></p>
+<p>下载路径为：<br /><a href="https://github.com/JUMA-IO/STM32_Platform/releases" class="uri">https://github.com/JUMA-IO/STM32_Platform/releases</a><br />打开product目录下的任意工程便可。</p>
 <hr />
-<h3 id="step2.-进行工程配置">Step2. 进行工程配置</h3>
-<p>1.选择MCU型号<br /><img src="http://i.imgur.com/ImwcMuY.png" /></p>
-<p>2.进行宏定义，头文件路径包含<br /><img src="http://i.imgur.com/7wuAPFb.png" /></p>
-<p>3.调试器选择：Jlink或者STLink<br /><img src="http://i.imgur.com/tw3piky.png" /><br /><img src="http://i.imgur.com/BpKmQbA.png" /></p>
-<p>4.按如下图配置，出现图右侧的设备信息则表示设备正常连接，否则检查Jlink或者STLink连线。<br /><img src="http://i.imgur.com/ILYCi5I.png" /></p>
-<p>5.选择MCU Flash大小<br /><img src="http://i.imgur.com/ITuGbNW.png" /></p>
-<p>6.如果不适用种子工程，则需要添加相应的c文件<br /><img src="http://i.imgur.com/OZccvjL.png" /></p>
+<h3 id="进行工程配置">2. 进行工程配置</h3>
+<p>Step1. 选择MCU型号：<br /><img src="./ImwcMuY.png" /></p>
+<p>Step2. 进行宏定义，注意头文件路径包含的信息：<br /><img src="./7wuAPFb.png" /></p>
+<p>Step3. 调试器选择：JLink或者STLink<br /><img src="./tw3piky.png" /><br /><img src="./BpKmQbA.png" /></p>
+<p>这里以JLink为例，将Gnd、Data、Clk、Vcc四根引脚分别到Cannon上对应的接口： <img src="./jlink_cannon.png" /></p>
+<p>Step4. 按如下图配置，出现图右侧的设备信息则表示设备正常连接，否则检查JLink或者STLink连线：<br /><img src="./ILYCi5I.png" /></p>
+<p>Step5. 选择MCU Flash大小：<br /><img src="./ITuGbNW.png" /></p>
+<p>Step6.如果不适用种子工程，则需要添加相应的c文件：<br /><img src="./OZccvjL.png" /></p>
 <hr />
-<h3 id="step3.-编译运行或者直接下载">Step3. 编译运行或者直接下载</h3>
+<h3 id="编译运行或者直接下载">3. 编译运行或者直接下载</h3>
 <div class="figure">
-<img src="http://i.imgur.com/NGZQOvA.png" />
+<img src="./NGZQOvA.png" />
 
 </div>
 
