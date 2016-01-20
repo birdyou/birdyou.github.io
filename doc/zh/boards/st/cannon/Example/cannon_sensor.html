@@ -93,20 +93,20 @@ return{dd:dd}
 <div class="container">
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-12 col-sm-9">
-<h1 id="cannon读取传感器数据例程说明">Cannon读取传感器数据例程说明</h1>
+<h1 id="用cannon读取板载传感器数据">用Cannon读取板载传感器数据</h1>
 <hr />
-<h2 id="获取sdk集成包">1. 获取SDK集成包</h2>
-<p>下载最新的SDK集成包：<br /><a href="http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html" class="uri">http://www.juma.io/doc/zh/introduction/sdk/platform/downloads.html</a></p>
-<p>如：&quot;JUMA SDK 打包下载 2015.09.27&quot;<br /><img src="./sdk_all_in_one.png" /></p>
+<h2 id="一概述">一、概述</h2>
+<p>Cannon上板载了多个由意法半导体(ST)出品的传感器，包括加速度计/陀螺仪、磁力计、气压计、温湿度计。本例程讲述了如何通过SDK的JSensor API(传感器API接口)获取这些传感器的数据，以及如何通过BLE API(低功耗蓝牙API接口)将这些数据接收到手机。</p>
 <hr />
-<h2 id="手机安装st_sensor调试助手">2. 手机安装ST_SENSOR调试助手</h2>
-<p>如果使用Android手机，在SDK集成包里含有“STSensor.apk”，可以直接安装： <img src="./sensor_apk.jpg" /></p>
+<h2 id="二获取嵌入式sdk及例程">二、获取嵌入式SDK及例程</h2>
+<p>下载最新的嵌入式SDK(发布版)：<br /><a href="https://github.com/JUMA-IO/STM32_Platform/releases" class="uri">https://github.com/JUMA-IO/STM32_Platform/releases</a><br />如JUMA STM32 Platform SDK v1.0.0：<br /><img src="sdk_release.jpg" /></p>
+<pre><code>注意，如果您想获知最新的代码改动情况，请使用github的“watch”功能。</code></pre>
 <hr />
-<h2 id="和手机app通信">3. 和手机APP通信</h2>
+<h2 id="三编译和烧录嵌入式软件">三、编译和烧录嵌入式软件</h2>
 <h3 id="step1.-打开样本工程">Step1. 打开样本工程：</h3>
-<pre><code>x:/cannon/Product/Application/Sensor_Tag/MDK-ARM/CAF.uvproj</code></pre>
+<pre><code>x:/Cannon/product/application/sensor_tag/mdk-arm/CAF.uvproj</code></pre>
 <div class="figure">
-<img src="sensor_embedded.jpg" />
+<img src="sensor_tag_path.jpg" />
 
 </div>
 <h3 id="step2.-编译工程">Step2. 编译工程</h3>
@@ -114,15 +114,34 @@ return{dd:dd}
 <img src="./yiwI1p2.png" />
 
 </div>
-<h3 id="step3.-烧入固件">Step3. 烧入固件</h3>
+<h3 id="step3.-烧入软件">Step3. 烧入软件</h3>
 <div class="figure">
 <img src="./yatJwos.png" />
 
 </div>
-<h3 id="step4.使用安卓调试助手连接cannon板子">Step4.使用安卓调试助手连接CANNON板子</h3>
-<p>安装好ST_SENSOR调试助手后：<br /><img src="./sensor_app0.jpg" /></p>
-<p>点击“Select Device”连接设备，之后结果如下：<br /><img src="./sensor_app1.jpg" /></p>
-<p>可以看到，Cannon将板载的传感器采样得到的数据周期性地传送到了手机APP上。</p>
+<hr />
+<h2 id="四手机安装st_sensor-app">四、手机安装ST_SENSOR APP</h2>
+<p>有两种方式可以安装“ST_SENSOR”APP：<br />第一种方式：使用Android的APK文件，该文件位于SDK的tools目录下：</p>
+<pre><code>x:/Cannon/tools/STSensor.apk</code></pre>
+<p>将该文件传送到Android手机，直接安装便可。</p>
+<p>第二种方式：如果您熟悉Android开发环境，可以使用“ST_SENSOR APP”的源码来安装。“ST_SENSOR”APP的源码位于：<br /><a href="https://github.com/JUMA-IO/BLE_SensorTag_Android" class="uri">https://github.com/JUMA-IO/BLE_SensorTag_Android</a></p>
+<hr />
+<h2 id="五和手机app通信">五、和手机APP通信</h2>
+<h3 id="step1.-打开手机的蓝牙功能">Step1. 打开手机的蓝牙功能</h3>
+<div class="figure">
+<img src="./mobile_bluetooth.jpg" />
+
+</div>
+<h3 id="step2.-运行st_sensorapp">Step2. 运行“ST_SENSOR”APP</h3>
+<p>打开后的界面如下：<br /><img src="./sensor_app0.jpg" /></p>
+<h3 id="step3.-和cannon通信">Step3. 和Cannon通信</h3>
+<p>点击“Select Device”按钮，它会搜索周围的Cannon，点击设备进行连接，之后结果如下：<br /><img src="./sensor_app1.jpg" /></p>
+<p>可以看到，Cannon将板载的传感器采样得到的数据传送到了APP上。</p>
+<hr />
+<h2 id="六阅读代码">六、阅读代码</h2>
+<p>本例中的嵌入式代码位于：</p>
+<pre><code>x:/Cannon/product/application/sensor_tag/app.c</code></pre>
+<p>代码量很少，已配有注释，非常方便阅读。<br />如果您对其中的BLE APIs和JSensor APIs有所疑问，请查阅相应的API说明：<br /><a href="http://www.juma.io/doc/zh/embedded_sdk.html" class="uri">http://www.juma.io/doc/zh/embedded_sdk.html</a></p>
 
 </div>
 <div class="col-xs-6 col-sm-3" id="sidebar">
@@ -180,9 +199,9 @@ return{dd:dd}
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Download/cannon_download.html">烧入方法</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">入门案例1：读取传感器</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_sensor.html">案例1：读取传感器</a></li>
 
-<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">入门案例2：蓝牙点灯</a></li>
+<li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Example/cannon_led.html">案例2：蓝牙点灯</a></li>
 
 <li><a href="http://www.juma.io/doc/zh/boards/st/cannon/Faq/faq.html">常见问题FAQ</a></li>
 
