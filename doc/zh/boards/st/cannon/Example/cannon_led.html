@@ -95,32 +95,32 @@ return{dd:dd}
 <div class="col-xs-12 col-sm-9">
 <h1 id="cannon蓝牙遥控点灯">Cannon蓝牙遥控点灯</h1>
 <hr />
-<h2 id="一概述">一、概述</h2>
+<h3 id="一概述">一、概述</h3>
 <p>本例展示手机APP如何通过蓝牙遥控点亮Cannon开发板上的LED。通过本例您可以学习SDK中BLE APIs和调度APIs的用法。</p>
 <hr />
-<h2 id="二获取嵌入式sdk及例程">二、获取嵌入式SDK及例程</h2>
+<h3 id="二获取嵌入式sdk及例程">二、获取嵌入式SDK及例程</h3>
 <p>下载最新的嵌入式SDK(发布版)：<br /><a href="https://github.com/JUMA-IO/STM32_Platform/releases" class="uri">https://github.com/JUMA-IO/STM32_Platform/releases</a><br />如JUMA STM32 Platform SDK v1.0.0：<br /><img src="sdk_release.jpg" /></p>
 <pre><code>注意，如果您想获知最新的代码改动情况，请使用github的“watch”功能。</code></pre>
 <hr />
-<h2 id="三编译和烧录嵌入式软件">三、编译和烧录嵌入式软件</h2>
-<h3 id="step1.-打开样本工程">Step1. 打开样本工程：</h3>
+<h3 id="三编译和烧录嵌入式软件">三、编译和烧录嵌入式软件</h3>
+<h4 id="step1.-打开样本工程">Step1. 打开样本工程：</h4>
 <pre><code>x:/Cannon/product/application/remote_control/mdk-arm/CAF.uvproj</code></pre>
 <div class="figure">
 <img src="remote_control_path.jpg" />
 
 </div>
-<h3 id="step2.-编译工程">Step2. 编译工程</h3>
+<h4 id="step2.-编译工程">Step2. 编译工程</h4>
 <div class="figure">
 <img src="./yiwI1p2.png" />
 
 </div>
-<h3 id="step3.-烧入软件">Step3. 烧入软件</h3>
+<h4 id="step3.-烧入软件">Step3. 烧入软件</h4>
 <div class="figure">
 <img src="./yatJwos.png" />
 
 </div>
 <hr />
-<h2 id="四手机安装ble调试助手app">四、手机安装“BLE调试助手”APP</h2>
+<h3 id="四手机安装ble调试助手app">四、手机安装“BLE调试助手”APP</h3>
 <p>不像先前的SensorTag，我们没有为遥控点灯专门制作一个APP，不过您可以通过“BLE调试助手”来实现遥控点灯。就像它的命名一样，“BLE调试助手”是一个调试APP，可以发送或接收手机和设备之间的原始蓝牙数据。本例中，我们使用“BLE调试助手”给Cannon发送一个数据，Cannon接收到该数据后，就点亮LED。</p>
 <h4 id="android手机用户">1. Android手机用户</h4>
 <p>如果您使用Anddroid手机，有三种方式安装“BLE调试助手”：<br />第一种方式：使用Android的APK文件，该文件位于SDK的tools目录下：</p>
@@ -132,18 +132,18 @@ return{dd:dd}
 <p>如果您使用iPhone手机，有两种方式安装“BLE调试助手”：<br />第一种方式：您可以从AppStore搜索、下载和安装“JUMA BLE调试助手”。<br /><a href="https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596" class="uri">https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596</a></p>
 <p>第二种方式：如果您熟悉iPhone开发环境，可以使用“BLE调试助手”的源码来安装。iOS版本的“BLE调试助手”APP的源码位于：<br /><a href="https://github.com/JUMA-IO/BLE_Debugger_iOS" class="uri">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></p>
 <hr />
-<h2 id="五和手机app通信">五、和手机APP通信</h2>
-<h3 id="step1.-打开手机的蓝牙功能">Step1. 打开手机的蓝牙功能</h3>
+<h3 id="五和手机app通信">五、和手机APP通信</h3>
+<h4 id="step1.-打开手机的蓝牙功能">Step1. 打开手机的蓝牙功能</h4>
 <div class="figure">
 <img src="./mobile_bluetooth.jpg" />
 
 </div>
-<h3 id="step2.-运行ble调试助手app">Step2. 运行“BLE调试助手”APP</h3>
+<h4 id="step2.-运行ble调试助手app">Step2. 运行“BLE调试助手”APP</h4>
 <p>打开后的界面如下：<br /><img src="./ndCv2Ee.png" /></p>
-<h3 id="step3.-扫描和连接设备">Step3. 扫描和连接设备</h3>
+<h4 id="step3.-扫描和连接设备">Step3. 扫描和连接设备</h4>
 <p>点击Scan进行设备扫描，之后会看到如下的扫描结果：<br /><img src="./OIezg9Y.png" /></p>
 <p>选择“BlueNRG_LED”或者“Cannon”起始的设备名，再点击Start/Connect按钮进行连接。</p>
-<h3 id="step4.-app发送数据遥控点灯">Step4. APP发送数据遥控点灯</h3>
+<h4 id="step4.-app发送数据遥控点灯">Step4. APP发送数据遥控点灯</h4>
 <p>之后APP可以发送数据给Cannon，Cannon接受到特定的数据后，会点亮LED。具体做法为：</p>
 <ul>
 <li>长按按钮“1”，在编辑框中输入“01”(十六进制的数值)表示点灯。</li>
@@ -155,7 +155,7 @@ return{dd:dd}
 熄灭时数据位内容为：0x00，实际发送0x010100。
 其中数据格式为：第1个字节为数据类型，第2个字节为数据长度，第三个字节为数据内容。    </code></pre>
 <hr />
-<h2 id="六阅读代码">六、阅读代码</h2>
+<h3 id="六阅读代码">六、阅读代码</h3>
 <p>本例中的嵌入式代码位于：</p>
 <pre><code>x:/Cannon/product/application/remote_control/app.c</code></pre>
 <p>代码量很少，已配有注释，非常方便阅读。<br />如果您对其中的BLE APIs和调度APIs有所疑问，请查阅相应的API说明：<br /><a href="http://www.juma.io/doc/zh/embedded_sdk.html" class="uri">http://www.juma.io/doc/zh/embedded_sdk.html</a></p>
