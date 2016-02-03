@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/timer/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>定时器</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../task/">系统和任务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble/">BLE从设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../jsensor/">JSensor</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gpio/">GPIO</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">定时器</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">初始化</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">开始计时</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">停止计时</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">定时器中断事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gfx/">图形库</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>定时器</h1>
+
+<p>本API用于描述定时器(Timer)的操作方法。</p>
+<p>JUMA SDK为应用程序预留了一个定时器，用户可以通过这个定时器实现一些需要精确控制时间的应用。</p>
+<blockquote>
+<p>如无特殊说明，本系列API同时兼容nRF51平台和STM32平台。</p>
+</blockquote>
+<hr />
+<h2 id="_1">初始化<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>void timer_init(uint8_t prescalar, uint8_t timer_type);
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>初始化定时器，为定时器配置参数。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>prescalar</em></td>
+<td>uint8_t</td>
+<td>定时器的分频系数</td>
+</tr>
+<tr>
+<td align="left"><em>timer_type</em></td>
+<td>uint8_t</td>
+<td>定时器类型</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="prescalar">关于 <em>prescalar</em> 的描述<a class="headerlink" href="#prescalar" title="Permanent link">&para;</a></h4>
+<p>prescalar代表的是定时器的分频系数，一般来说系统会采用16MHz的晶振，有如下规则:</p>
+<table>
+<thead>
+<tr>
+<th align="center">presaclar取值</th>
+<th align="left">分频后的频率(Hz)</th>
+<th align="left">每周期的时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="left">16M/(2^0) = 16M</td>
+<td align="left">0.625um</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="left">16M/(2^1) = 8M</td>
+<td align="left">0.125um</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="left">16M/(2^2) = 4M</td>
+<td align="left">0.25um</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="left">16M/(2^3) = 2M</td>
+<td align="left">0.5um</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="left">16M/(2^4) = 1M</td>
+<td align="left">1um</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="left">16M/(2^5) = 500K</td>
+<td align="left">2um</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="left">16M/(2^6) = 250K</td>
+<td align="left">4um</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="left">16M/(2^7) = 125K</td>
+<td align="left">8um</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="left">16M/(2^8) = 62.5K</td>
+<td align="left">16um</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="left">16M/(2^9) = 31.25K</td>
+<td align="left">32um</td>
+</tr>
+</tbody>
+</table>
+<h4 id="timer_type">关于 <em>timer_type</em> 的描述<a class="headerlink" href="#timer_type" title="Permanent link">&para;</a></h4>
+<p>timer_type代表的是定时器的工作类型。有两种工作类型：一种是周期性定时器中断事件，即计时一次计时结束后重新开始计时；另外的一种是一次性的定时器中断事件，即一次计时结束后变截止。</p>
+<pre><code>    //Timer TYPE
+    enum{
+        TIMER_ONECE,
+        TIMER_PERIODIC,
+    };
+</code></pre>
+
+<hr />
+<h2 id="_2">开始计时<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>void timer_start(uint16_t value);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>定时器开始计时。</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>value</em></td>
+<td>uint8_t</td>
+<td>触发定时器中断事件经过的周期数</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">停止计时<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void timer_stop(void);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>定时器结束计时。</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<p>无。</p>
+<hr />
+<h2 id="_4">定时器中断事件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>void timer_on_fired(void);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>定时器计时完成后由系统自动触发的中断事件。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p>无。</p>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>    //定时器时间到后的处理函数
+    void timer_on_fired()
+    {
+        ...     
+        ...     
+        tiemr_stop();       //定时器结束
+    }
+
+    void foo()
+    {
+        ...
+        //调用本函数来设定定时器的分频系数，这里设置为4也就是说每个计时周期为1um
+        timer_init(4, TIMER_ONECE);
+
+        //调用定时器开始函数
+        timer_start(1000);  //也就是计时1ms
+        ...
+    }
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

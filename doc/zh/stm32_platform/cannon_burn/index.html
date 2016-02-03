@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/cannon_burn/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>Cannon的烧录</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_resource/">Cannon的介绍</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">Cannon的烧录</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">烧录步骤</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1-keil">1. 打开Keil工程文件</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 进行工程配置</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 编译运行或者直接下载</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_sensor/">Cannon的例程: SensorTag</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_led/">Cannon的例程: 蓝牙LED</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>Cannon的烧录</h1>
+
+<h2 id="_1">烧录步骤<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-keil">1. 打开Keil工程文件<a class="headerlink" href="#1-keil" title="Permanent link">&para;</a></h3>
+<p>用git上提供的种子工程或者自己新建的keil工程：<br />
+<img alt="" src="../images/JUor0aD.png" /></p>
+<p>下载路径为：<br />
+<a href="https://github.com/JUMA-IO/STM32_Platform/releases">https://github.com/JUMA-IO/STM32_Platform/releases</a>  </p>
+<blockquote>
+<p>打开product目录下的任意工程即可。</p>
+</blockquote>
+<h3 id="2">2. 进行工程配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>Step1. 选择MCU型号：<br />
+<img alt="" src="../images/ImwcMuY.png" />  </p>
+<p>Step2. 进行宏定义，注意头文件路径包含的信息：<br />
+<img alt="" src="../images/7wuAPFb.png" />  </p>
+<p>Step3. 调试器选择：JLink或者STLink<br />
+<img alt="" src="../images/tw3piky.png" /><br />
+<img alt="" src="../images/BpKmQbA.png" />  </p>
+<p>这里以JLink为例，将Gnd、Data、Clk、Vcc四根引脚分别到Cannon上对应的接口：
+<img alt="" src="../images/jlink_cannon.png" />  </p>
+<p>Step4. 按如下图配置，出现图右侧的设备信息则表示设备正常连接，否则检查JLink或者STLink连线：<br />
+<img alt="" src="../images/ILYCi5I.png" />  </p>
+<p>Step5. 选择MCU Flash大小：<br />
+<img alt="" src="../images/ITuGbNW.png" />  </p>
+<p>Step6.如果不适用种子工程，则需要添加相应的c文件：<br />
+<img alt="" src="../images/OZccvjL.png" />    </p>
+<h3 id="3">3. 编译运行或者直接下载<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../images/NGZQOvA.png" />  </p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

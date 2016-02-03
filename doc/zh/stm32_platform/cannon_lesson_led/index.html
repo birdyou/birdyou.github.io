@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/cannon_lesson_led/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>Cannon的例程: 蓝牙LED</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_resource/">Cannon的介绍</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_burn/">Cannon的烧录</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_sensor/">Cannon的例程: SensorTag</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">Cannon的例程: 蓝牙LED</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">概述</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#sdk">获取嵌入式SDK及例程</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_2">编译和烧录嵌入式软件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step1">Step1. 打开样本工程：</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step2">Step2. 编译工程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step3">Step3. 烧入软件</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#bleapp">安装“BLE调试助手”APP</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1.应用市场安装</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2android-apk">2.Android APK安装</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3.自行编译源码安装</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#app">和手机APP通信</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step1_1">Step1. 打开手机的蓝牙功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step2-bleapp">Step2. 运行“BLE调试助手”APP</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step3_1">Step3. 扫描和连接设备</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#step4-app">Step4. APP发送数据遥控点灯</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">阅读代码</a></li>
+<!--                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>Cannon的例程: 蓝牙LED</h1>
+
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本例展示手机APP如何通过蓝牙遥控点亮Cannon开发板上的LED。通过本例您可以学习SDK中BLE APIs和调度APIs的用法。</p>
+<hr />
+<h2 id="sdk">获取嵌入式SDK及例程<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
+<p>下载最新的嵌入式SDK(发布版)：<br />
+<a href="https://github.com/JUMA-IO/STM32_Platform/releases">https://github.com/JUMA-IO/STM32_Platform/releases</a><br />
+如JUMA STM32 Platform SDK v1.0.0： <br />
+<img alt="" src="../images/sdk_release.jpg" /></p>
+<blockquote>
+<p>如果您想获知最新的代码改动情况，请使用github的“watch”功能。</p>
+</blockquote>
+<hr />
+<h2 id="_2">编译和烧录嵌入式软件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h4 id="step1">Step1. 打开样本工程：<a class="headerlink" href="#step1" title="Permanent link">&para;</a></h4>
+<pre><code>x:/Cannon/product/application/remote_control/mdk-arm/CAF.uvproj
+</code></pre>
+
+<p><img alt="" src="../images/remote_control_path.jpg" /></p>
+<h4 id="step2">Step2. 编译工程<a class="headerlink" href="#step2" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../images/yiwI1p2.png" /></p>
+<h4 id="step3">Step3. 烧入软件<a class="headerlink" href="#step3" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../images/yatJwos.png" /></p>
+<hr />
+<h2 id="bleapp">安装“BLE调试助手”APP<a class="headerlink" href="#bleapp" title="Permanent link">&para;</a></h2>
+<p>不像先前的SensorTag，我们没有为遥控点灯专门制作一个APP，不过您可以通过“BLE调试助手”来实现遥控点灯。就像它的命名一样，“BLE调试助手”是一个调试APP，可以发送或接收手机和设备之间的原始蓝牙数据。本例中，我们使用“BLE调试助手”给Cannon发送一个数据，Cannon接收到该数据后，就点亮LED。  </p>
+<h4 id="1">1.应用市场安装<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p>您可以从AppStore和应用宝，下载和安装“JUMA BLE调试助手”:</p>
+<ul>
+<li>iOS版本: <a href="https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596?l=en&amp;mt=8">BLE调试助手_AppStore</a></li>
+<li>Android版本: <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.juma.helper">BLE调试助手_应用宝</a></li>
+</ul>
+<h4 id="2android-apk">2.Android APK安装<a class="headerlink" href="#2android-apk" title="Permanent link">&para;</a></h4>
+<p>如果使用Android手机，在SDK集成包里含有“JUMA BLE调试助手”，可以直接安装：</p>
+<p><img alt="" src="../images/jumaBleHelper.png" />  </p>
+<h4 id="3">3.自行编译源码安装<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>iOS版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">BLE调试助手_iOS_Github</a></li>
+<li>Android版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_Android">BLE调试助手_Android_Github</a></li>
+</ul>
+<hr />
+<h2 id="app">和手机APP通信<a class="headerlink" href="#app" title="Permanent link">&para;</a></h2>
+<h4 id="step1_1">Step1. 打开手机的蓝牙功能<a class="headerlink" href="#step1_1" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../images/mobile_bluetooth.jpg" /></p>
+<h4 id="step2-bleapp">Step2. 运行“BLE调试助手”APP<a class="headerlink" href="#step2-bleapp" title="Permanent link">&para;</a></h4>
+<p>打开后的界面如下：<br />
+<img alt="" src="../images/ndCv2Ee.png" /></p>
+<h4 id="step3_1">Step3. 扫描和连接设备<a class="headerlink" href="#step3_1" title="Permanent link">&para;</a></h4>
+<p>点击Scan进行设备扫描，之后会看到如下的扫描结果： <br />
+<img alt="" src="../images/OIezg9Y.png" /></p>
+<p>选择“BlueNRG_LED”或者“Cannon”起始的设备名，再点击Start/Connect按钮进行连接。  </p>
+<h4 id="step4-app">Step4. APP发送数据遥控点灯<a class="headerlink" href="#step4-app" title="Permanent link">&para;</a></h4>
+<p>之后APP可以发送数据给Cannon，Cannon接受到特定的数据后，会点亮LED。具体做法为：  </p>
+<ul>
+<li>长按按钮“1”，在编辑框中输入“01”(十六进制的数值)表示点灯。</li>
+<li>长按按钮“2”，在编辑框中输入“00”(十六进制的数值)表示熄灭。</li>
+</ul>
+<p>然后点击按钮1或者按钮2，APP就会给Cannon发0x01和0x02了。</p>
+<pre><code>注意，调试助手会封装数据，比如：
+点亮LED时数据内容为：0x01，实际发送0x010101；
+熄灭时数据位内容为：0x00，实际发送0x010100。
+其中数据格式为：第1个字节为数据类型，第2个字节为数据长度，第三个字节为数据内容。    
+</code></pre>
+
+<hr />
+<h2 id="_3">阅读代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>本例中的嵌入式代码位于：  </p>
+<pre><code>x:/Cannon/product/application/remote_control/app.c
+</code></pre>
+
+<p>代码量很少，已配有注释，非常方便阅读。<br />
+如果您对其中的BLE APIs和调度APIs有所疑问，请查阅相应的API说明：<br />
+<a href="http://www.juma.io/doc/zh/embedded_sdk.html">http://www.juma.io/doc/zh/embedded_sdk.html</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/ios_api/device/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>设备类</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../manager/">管理类</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">设备类</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">发送蓝牙数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">发送蓝牙数据事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">接收蓝牙数据事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">读取设备信号强度</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">读取设备信号强度事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#ota">设置设备固件更新(OTA)模式</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">更新设备固件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_6">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_6">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_6">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">更新设备固件事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_7">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_7">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_7">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_3">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>设备类</h1>
+
+<p>SDK中将对iOS BLE设备的操作封装成设备类(Device)，包括发送数据、接收数据、固件升级等操作。</p>
+<p>SDK为开源项目，本文涉及的代码参见：</p>
+<ul>
+<li><code>BLE_SDK_iOS</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">github</a></li>
+</ul>
+<hr />
+<h2 id="_1">发送蓝牙数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)writeData:(NSData *)data type:(const unsigned char)typeCode;
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>向以连接的蓝牙设备发送数据.<br />
+如果蓝牙设备会返回数据, 结果会通过 JumaDeviceDelegate 中的 device:didUpdateData:error: 给出.</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>data</em></td>
+<td>NSData *</td>
+<td>要写入的数据</td>
+</tr>
+<tr>
+<td align="left"><em>typeCode</em></td>
+<td>const unsigned char</td>
+<td>要写入的数据的类型</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="data">关于 <em>data</em> 参数<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
+<p><em>data</em> 不能为 nil，data 的长度必须小于 199。</p>
+<h4 id="typecode">关于 <em>typeCode</em> 参数<a class="headerlink" href="#typecode" title="Permanent link">&para;</a></h4>
+<p><em>typeCode</em> 必须小于 128</p>
+<hr />
+<h2 id="_2">发送蓝牙数据事件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didWriteData:(NSError *)error;
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>向蓝牙设备发送数据后, 这个方法会被调用, 以此表示数据发送是否成功.</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>错误描述</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didWriteData:(NSError *)error {    
+    if (error) {      
+        NSLog(@&quot;did fail to send data to %@, error : %@&quot;, device.name, error); 
+    }
+    else {        
+        NSLog(@&quot;did send data to %@&quot;, device.name);
+    }    
+}
+</code></pre>
+
+<hr />
+<h2 id="_3">接收蓝牙数据事件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didUpdateData:(NSData *)data type:(const char)typeCode error:(NSError *)error;
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>接收到蓝牙设备的数据时, 这个方法会被调用, 并给出相应的结果.</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>data</em></td>
+<td>NSData *</td>
+<td>从蓝牙设备接收到的数据</td>
+</tr>
+<tr>
+<td align="left"><em>typeCode</em></td>
+<td>const char</td>
+<td>从蓝牙设备接收到的数据的类型</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>错误描述</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="data_1">关于 <em>data</em> 参数<a class="headerlink" href="#data_1" title="Permanent link">&para;</a></h4>
+<p>如果接收数据时发生错误，<em>data</em> 为 nil。</p>
+<h4 id="typecode_1">关于 <em>typeCode</em> 参数<a class="headerlink" href="#typecode_1" title="Permanent link">&para;</a></h4>
+<p>如果接收数据时发生错误，<em>typeCode</em> 为 -1。</p>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didUpdateData:(NSData *)data type:(const char)typeCode error:(NSError *)error {
+    if (!error) {
+        NSLog(@&quot;did receive data %@ from %@, type code: %d&quot;, data, accessory.name, typeCode);
+    }
+    else {
+        NSLog(@&quot;did fail to  receive data from %@, error: %@&quot;, accessory.name, error);
+    }
+}
+</code></pre>
+
+<hr />
+<h2 id="_4">读取设备信号强度<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>typedef void (^JumaReadRssiBlock)(NSNumber *RSSI, NSError *error);
+- (void)readRSSI;
+- (void)readRSSI:(JumaReadRssiBlock)handler;
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>在 JumaDevice 已经和 JumaManager 连接的情况下, 读取连接的信号强度.   </p>
+<p>调用 readRSSI  读取信号强度时, 结果会通过 JumaDeviceDelegate 的 device:didReadRSSI:error: 给出.<br />
+调用 readRSSI: 读取信号强度时, 如果 handler 参数不为 nil, 结果会通过 hander 给出, 否则会通过 JumaDeviceDelegate 的 device:didReadRSSI:error: 给出.</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>handler</em></td>
+<td>JumaReadRssiBlock</td>
+<td>读取结束时被调用的 block</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">读取设备信号强度事件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didReadRSSI:(NSNumber *)RSSI error:(NSError *)error;
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>读取信号强度操作结束时, 这个方法会被调用, 并给出相应结果.</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>RSSI</em></td>
+<td>NSNumber *</td>
+<td>读到的信号强度</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>错误描述</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didReadRSSI:(NSNumber *)RSSI error:(NSError *)error {    
+    if (error) {      
+        NSLog(@&quot;can not read RSSI, error : %@&quot;, error); 
+    }
+    else {        
+        NSLog(@&quot;RSSI = %@&quot;, RSSI);
+    }    
+}
+</code></pre>
+
+<hr />
+<h2 id="ota">设置设备固件更新(OTA)模式<a class="headerlink" href="#ota" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)setOtaMode;
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>向蓝牙设备发送某些特定的数据, 使蓝牙设备在升级模式下工作.
+在升级模式下, 可以通过无线传输的方式升级蓝牙设备的固件.</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">更新设备固件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 函数声明<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<pre><code>typedef void (^JumaUpdateFirmwareBlock)(NSError *error);
+- (void)updateFirmware:(NSData *)firmwareData;
+- (void)updateFirmware:(NSData *)firmwareData completionHandler:(JumaUpdateFirmwareBlock)handler;
+</code></pre>
+
+<h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>更新蓝牙设备的固件.  </p>
+<p>调用 updateFirmware: 进行更新操作时, 结果会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出<br />
+调用 updateFirmware:completionHandler: 进行更新操作时, 如果 handler 参数不为 nil, 结果会通过 handler 给出, 否则会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出</p>
+<h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>firmwareData</em></td>
+<td>NSData *</td>
+<td>要升级的固件数据</td>
+</tr>
+<tr>
+<td align="left"><em>handler</em></td>
+<td>JumaUpdateFirmwareBlock</td>
+<td>升级操作结束时被调用的 block</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="firmwaredata">关于 <em>firmwareData</em> 参数<a class="headerlink" href="#firmwaredata" title="Permanent link">&para;</a></h4>
+<p><em>firmwareData</em> 不能为 nil</p>
+<hr />
+<h2 id="_7">更新设备固件事件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didUpdateFirmware:(NSError *)error;
+</code></pre>
+
+<h3 id="2_7">2. 函数功能<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>更新蓝牙设备的固件结束后, 这个方法会被调用, 并给出相应结果.</p>
+<h3 id="3_7">3. 函数参数<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>错误描述</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="error">关于 <em>error</em> 参数<a class="headerlink" href="#error" title="Permanent link">&para;</a></h4>
+<p>error 为 nil 说明升级成功，否则升级失败</p>
+<h3 id="4_3">4. 函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)device:(JumaDevice *)device didUpdateFirmware:(NSError *)error {
+    if (!error) {
+        NSLog(@&quot;did update the firmware of %@&quot;, device.name);
+    }
+    else {
+        NSLog(@&quot;did fail to update the firmware, error: %@&quot;, error);
+    }
+}
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/gpio/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>GPIO</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../task/">系统和任务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble/">BLE从设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../jsensor/">JSensor</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">GPIO</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#gpio">GPIO配置</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#gpio_1">读取GPIO</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#gpio_2">写入GPIO</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#gpio_3">GPIO状态监视</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#change_direction">关于 change_direction 的描述</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#gpio_4">解除GPIO状态监视</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#gipo">GIPO状态变化事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_3">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../timer/">定时器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gfx/">图形库</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>GPIO</h1>
+
+<p>本说明用于描述通用扩展口(GPIO)的操作方式。</p>
+<blockquote>
+<p>本系列API目前仅支持nRF51平台。</p>
+</blockquote>
+<p>对于nRF51平台的用户，使用时请引用相应的头文件：</p>
+<ul>
+<li>API头文件：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_api.h">juma_sdk_api.h</a></li>
+<li>数据类型或宏定义参见：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_types.h">juma_sdk_types.h</a></li>
+</ul>
+<hr />
+<h2 id="gpio">GPIO配置<a class="headerlink" href="#gpio" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>void gpio_setup (uint8_t pin, uint8_t mode);
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>用于对一个 GPIO 引脚的工作模式进行配置。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pin</em></td>
+<td>uint8_t</td>
+<td>引脚号</td>
+</tr>
+<tr>
+<td align="left"><em>mode</em></td>
+<td>uint8_t</td>
+<td>引脚的工作模式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mode">关于 <em>mode</em> 参数<a class="headerlink" href="#mode" title="Permanent link">&para;</a></h4>
+<p><code>mode</code>参数可以接受的数值范围：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><em>mode</em> 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GPIO_OUTPUT</td>
+<td>将GPIO配置成输出模式</td>
+</tr>
+<tr>
+<td align="left">GPIO_INPUT_NOPULL</td>
+<td>将GPIO配置为输入悬空模式</td>
+</tr>
+<tr>
+<td align="left">GPIO_INPUT_PULLUP</td>
+<td>将GPIO配置为输入上拉模式</td>
+</tr>
+<tr>
+<td align="left">GPIO_INPUT_PULLDOWN</td>
+<td>将GPIO配置为输入下拉模式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo( void )
+    {
+        ...
+        /*将偏移量为18的引脚，配置成GPIO_OUTPUT的工作模式*/
+        gpio_setup(18, GPIO_OUTPUT);
+        ...
+    }
+
+</code></pre>
+
+<hr />
+<h2 id="gpio_1">读取GPIO<a class="headerlink" href="#gpio_1" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>uint8_t gpio_read (uint8_t pin);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>读取指定GPIO引脚上的状态。</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pin</em></td>
+<td>uint8_t</td>
+<td>引脚号</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>uint8_t</td>
+<td>当前引脚上的状态</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1">关于 <em>返回值</em><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left"><em>返回值</em> 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">非0</td>
+<td>该GPIO引脚为高电平</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td>该GPIO引脚为低电平</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo( void )
+    {
+        ...
+
+        uint8_t statue;
+
+        /*将偏移量为18的引脚配置成高电平*/
+        statue = gpio_setup(18);
+
+        //这里的statue就是新的状态
+
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="gpio_2">写入GPIO<a class="headerlink" href="#gpio_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void gpio_write (uint8_t pin, uint8_t state);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>设置GPIO引脚上的状态，将其设置为高电平或者低电平。</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pin</em></td>
+<td>uint8_t</td>
+<td>引脚号</td>
+</tr>
+<tr>
+<td align="left"><em>state</em></td>
+<td>uint8_t</td>
+<td>引脚的状态</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="state">关于 <em>state</em> 参数<a class="headerlink" href="#state" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left"><em>state</em> 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">非0</td>
+<td>GPIO输出高电平</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td>GPIO输出低电平</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo( void )
+    {
+        ...
+
+        /*将偏移量为18的引脚配置成高电平*/
+        gpio_setup(18, 1);
+
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="gpio_3">GPIO状态监视<a class="headerlink" href="#gpio_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>void gpio_watch (uint8_t pin, uint8_t change_direction);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>向系统注册一个 GPIO 事件，当引脚状态变化满足指定条件时，系统会调用事件，即<code>gpio_on_change</code>的回调函数。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pin</em></td>
+<td>uint8_t</td>
+<td>引脚号</td>
+</tr>
+<tr>
+<td align="left"><em>change_direction</em></td>
+<td>uint8_t</td>
+<td>引脚的状态变化</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="change_direction">关于 <em>change_direction</em> 的描述<a class="headerlink" href="#change_direction" title="Permanent link">&para;</a></h3>
+<p><code>change_direction</code>的取值如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">change_direction 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GPIO_WATCH_LEVEL_LOW</td>
+<td>低电平</td>
+</tr>
+<tr>
+<td align="left">GPIO_WATCH_LEVEL_HIGHT</td>
+<td>高电平</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gpio_4">解除GPIO状态监视<a class="headerlink" href="#gpio_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>void gpio_unwatch(uint8_t pin);
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>解除已经注册的GPIO状态变化监视事件。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pin</em></td>
+<td>uint8_t</td>
+<td>引脚号</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="gipo">GIPO状态变化事件<a class="headerlink" href="#gipo" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>void gpio_on_change(uint32_t pins_state);
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>在GPIO的引脚状态被改变后由系统触发该事件。  <br />
+该函数内部用于处理 GIPO 状态变化后的任务。  </p>
+<blockquote>
+<p>目前，仅支持一个GPIO状态变化事件，若同时使用两个及以上可能导致全部失效</p>
+</blockquote>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>pins_state</em></td>
+<td>uint8_t</td>
+<td>当前引脚的状态</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_3">4. 函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<pre><code>    //回调函数
+    void gpio_on_change(uint32_t pins_state);
+    {
+        ...
+
+        if(new_state == 0)
+        {
+            red_led_blink();    //伪指令
+        }
+        else
+        {
+            green_led_blink();  //伪指令
+        }
+
+        ...
+    }
+
+    //当前函数
+    void foo()
+    {
+        ...
+
+        //设置要检测的引脚，当指定的状态到达后会自动调用上面的回调函数
+        //当18脚变为低电平时，上述的回调函数会被调用
+        gpio_watch(18, GPIO_WATCH_LEVEL_LOW);       
+        ...
+    }
+
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

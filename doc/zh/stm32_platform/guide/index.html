@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/guide/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="./">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>使用说明</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">使用说明</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#stm32">STM32平台进阶流程</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 搭建开发环境</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 了解开发板硬件资源</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 掌握开发板烧入方式</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 学会使用入门例程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#5">5. 开始自己的创造之旅</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_resource/">Cannon的介绍</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_burn/">Cannon的烧录</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_sensor/">Cannon的例程: SensorTag</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_led/">Cannon的例程: 蓝牙LED</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>使用说明</h1>
+
+<h2 id="stm32">STM32平台进阶流程<a class="headerlink" href="#stm32" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 搭建开发环境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>搭建<a href="../dev_env.html">开发环境</a>，安装和配置相关软件。</p>
+<h3 id="2">2. 了解开发板硬件资源<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>基于STM32和BlueNRG蓝牙芯片，我们提供了<a href="../../cannon_resource.html">Cannon</a>开发板。您可以查看开发板介绍，了解它能够做些什么。<br />
+JUMA SDK可以运行在任何基于STM32和BlueNRG的硬件上。  </p>
+<h3 id="3">3. 掌握开发板烧入方式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>了解和掌握如何给开发板烧入固件(嵌入式程序)。</p>
+<h3 id="4">4. 学会使用入门例程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>每个入门例程都是一个工程模板。<br />
+每个入门例程都是一个工程模板。通过学习例程，掌握如何使用SDK。一旦学会，您会感受到使用SDK开发BLE程序是如此惊人的便捷，而且，这一切很容易学习。</p>
+<h3 id="5">5. 开始自己的创造之旅<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>之后，您就可以用SDK开始编写自己的程序了。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

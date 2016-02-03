@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/task/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>系统和任务</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">系统和任务</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">任务的定义</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">系统就绪事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">获取当前时间</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">预定时间运行</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">延迟运行</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">空闲时运行</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_3">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble/">BLE从设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../jsensor/">JSensor</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gpio/">GPIO</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../timer/">定时器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gfx/">图形库</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>系统和任务</h1>
+
+<p>本API用于描述系统和任务(Task)的操作方法。</p>
+<p>嵌入式系统中经常需要对一个任务进行调度，如延迟100ms后点亮一盏灯，或是每隔2秒钟读取一次传感器，或是一个任务在系统空闲时运行。SDK对这些任务调度的操作进行了封装。</p>
+<blockquote>
+<p>如无特殊说明，本系列API同时兼容nRF51平台和STM32平台。</p>
+</blockquote>
+<hr />
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">任务的定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>任务(Task)定义为一个函数的函数指针：</p>
+<pre><code>    typedef void (*function_t)(void* args);
+</code></pre>
+
+<hr />
+<h2 id="_3">系统就绪事件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>void on_ready(void);
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>当系统就绪后触发该事件。<br />
+用户在该函数内部开始构建自己的应用程序。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>    ...
+    void on_ready()
+    {
+        BSP_LED_On(LED0); //点亮LED0
+    }
+    ...
+</code></pre>
+
+<hr />
+<h2 id="_4">获取当前时间<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>uint32_t current_time(void);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>获取当前时间。</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>uint32_t</td>
+<td>当前的时间值，单位为毫秒(ms)。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">预定时间运行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void run_at_time(function_t func, void* args, uint32_t time);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>向系统注册一个在指定的时间点上运行的函数。</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>func</em></td>
+<td>function_t</td>
+<td>要执行的<a href="#_1">函数</a>(函数指针)</td>
+</tr>
+<tr>
+<td align="left"><em>args</em></td>
+<td>void *</td>
+<td>执行函数时传入的参数(只能是一个指针)</td>
+</tr>
+<tr>
+<td align="left"><em>time</em></td>
+<td>uint32_t</td>
+<td>函数执行的时间点</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>    void led_on_task(void* args)
+    {
+        ...
+    }
+
+    //当前函数
+    void foo()
+    {
+        ...
+        //调用本函数向系统注册一个在指定时间点上会被执行的任务
+        run_at_time(led_on_task, NULL, current_time() + 100)；//100ms后运行。
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_6">延迟运行<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>void run_after_delay(func, args, delay);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>向系统注册一个在一段时间后运行的函数。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>func</em></td>
+<td>function_t</td>
+<td>要执行的<a href="#_1">函数</a>(函数指针)</td>
+</tr>
+<tr>
+<td align="left"><em>args</em></td>
+<td>void *</td>
+<td>执行函数时传入的参数(只能是一个指针)</td>
+</tr>
+<tr>
+<td align="left"><em>delay</em></td>
+<td>uint32_t</td>
+<td>函数执行的延迟时间</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<pre><code>    //写一个需要运行的函数
+    void led_on_task(void* args)
+    {
+        ...
+    }
+
+    //当前函数
+    void foo()
+    {
+        ...
+        //调用本函数向系统注册一个在系统空闲时会被执行的任务
+        run_after_delay(led_on_task, NULL, 250)；//250ms后运行。
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_7">空闲时运行<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>void run_when_idle(function_t func, void* args);
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>向系统注册一个在系统空闲的时候运行的函数。<br />
+通常，这种被执行的函数对时间要求不高。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>func</em></td>
+<td>function_t</td>
+<td>要执行的<a href="#_1">函数</a>(函数指针)</td>
+</tr>
+<tr>
+<td align="left"><em>args</em></td>
+<td>void *</td>
+<td>执行函数时传入的参数(只能是一个指针)</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_3">4. 函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<pre><code>    void led_on_task(void* args)
+    {
+        // Pull Up
+        gpio_write(LED_1, 1);
+        run_after_delay(led_off_task, NULL, 250);
+    }
+
+    //当前函数
+
+    void foo()
+    {
+        ...
+        //调用本函数向系统注册一个在系统空闲时会被执行的任务
+        run_when_idle(led_on_task, NULL);   
+        ...
+    }
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

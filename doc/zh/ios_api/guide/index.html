@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/ios_api/guide/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="./">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>使用说明</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">使用说明</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#android">Android环境搭建</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#xcode">一、新建一个 Xcode 工程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_1">二、修改这个工程的配置</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#juma-sdk">三、向工程添加 Juma SDK 的代码文件</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">开源代码和例程</a></li>
+<!--                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../manager/">管理类</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../device/">设备类</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>使用说明</h1>
+
+<p>本文介绍JUMA的iOS SDK的环境搭建及其使用。</p>
+<p>iOS SDK配合嵌入式SDK共同实现设备-手机的蓝牙通信功能。相对于iOS原生BLE SDK，它能确保更为稳定的蓝牙联通操作，而且使用起来更为简单，开发者不再需要了解BLE特有的如service、characteristic、notification等概念。此外，该SDK还增加了例如设备端固件空中升级(OTA)的功能。</p>
+<p>以下所有内容全部基于 Xcode 6 完成. 如果没有 Xcode 的使用经验, 请严格按照下面所说的进行操作, 并在需要输入的地方输入相同的内容  </p>
+<h2 id="android">Android环境搭建<a class="headerlink" href="#android" title="Permanent link">&para;</a></h2>
+<h3 id="xcode">一、新建一个 Xcode 工程<a class="headerlink" href="#xcode" title="Permanent link">&para;</a></h3>
+<h4 id="1-xcode">1.打开 Xcode<a class="headerlink" href="#1-xcode" title="Permanent link">&para;</a></h4>
+<p>启动 Xcode 之后会如下的 Welcome 窗口, 窗口的右侧列出了曾经打开过的工程. 如果没有出现窗口, 请点击 dock 栏上的 Xcode 图标.<br />
+<img alt="" src="../images/stepByStep1.jpg" />  </p>
+<h4 id="2">2.开始创建工程<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p>Welcome 窗口的左下角列出了 3 个可供选择的选项, 点击第 2 个 "Create a new Xcode project", 会出现一个助手窗口. 在助手窗口中, 按照红色箭头的指向, 依次点击红色方框中的内容, 以便创建一个只有单个空白页面的新工程.  <br />
+<img alt="" src="../images/stepByStep2.jpg" />  </p>
+<h4 id="3-app">3.完善 app 的信息<a class="headerlink" href="#3-app" title="Permanent link">&para;</a></h4>
+<p>完成第 2 步之后, 会出现一个如下的新窗口, 在这个窗口中, 为这个新的工程完善信息.<br />
+从上往下<br />
+第 1 项: Product Name, 即产品名称, 也可以理解为 app 的名字<br />
+第 2 项: Organization Name, 即组织名称, 也就是公司名称或者团队名称<br />
+第 3 项: Organization Identifier, 即组织标识符, 一般格式为: com.公司名<br />
+第 4 项: Bundle Identifier, 即包标识符, 由第 3 项和第 1 项共同组成.
+第 5 项: Language, 即用来编写这个 app 的编程语言, 可选值有 Objective-C 和 swift, 在本使用说明使用 Objective-C.
+第 6 项: Devices, 即目标设备的种类, 也就是你的 app 准备运行在哪个种类的 iOS 设备上, 可选值有 iPhone, iPad, Universal(通用), 在本使用说明使用 iPhone.<br />
+第 7 项: Use Core Data, 即是否在项目中创建 CoreData 文件以便存储数据. 如果不清楚是否要创建 CoreData 文件, 请不要选中此项.<br />
+<img alt="" src="../images/stepByStep3.jpg" />  </p>
+<p>app 信息示例: (在完善了所有信息之后, 请请点击如下图所示的红色方框中的按钮)<br />
+<img alt="" src="../images/stepByStep4.jpg" />  </p>
+<h4 id="4">4.选择工程文件的存放位置<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>完成第 3 步后, 会弹出如下窗口以便选择工程文件的存放位置. 选好位置以后, 请点击图中红色方框中的按钮.<br />
+注: 如果不明白红色圆形包围的选项的含义和作用, 请不要选中它.<br />
+<img alt="" src="../images/stepByStep5.jpg" />  </p>
+<h3 id="_1">二、修改这个工程的配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h4 id="1app">1.app 的基本配置<a class="headerlink" href="#1app" title="Permanent link">&para;</a></h4>
+<p>在创建一个 Xcode 工程之后, 会出现如下所示的窗口. 在这个窗口中, 可以修改 app 的一些配置, 红色方框中的是 2 个常用配置:
+第 1 个: Deployment Target, 是这个 app 可以兼容的, 最低的 iOS 版本. 点击右侧向下的箭头, Xcode 会列出所有可供选择的 iOS 版本号. (Juma SDK 支持的最低的 iOS 版本是 iOS 7.0)<br />
+第 2 个: Devices, 是这个 app 可以运行的 iOS 设备的种类, 点击右侧向下的箭头, Xcode 会列出可选值.  <br />
+<img alt="" src="../images/stepByStep6.jpg" />  </p>
+<h4 id="2-corebluetooth">2.为工程添加 CoreBLuetooth 框架.<a class="headerlink" href="#2-corebluetooth" title="Permanent link">&para;</a></h4>
+<p>为了在工程中使用 Juma Bluetooth SDK, 需要为这个工程添加 CoreBluetooth 框架. 请参照红色箭头的顺序, 依次点击红色方框中的内容.<br />
+<img alt="" src="../images/stepByStep7.jpg" /><br />
+随后, 会出现如下的窗口<br />
+<img alt="" src="../images/stepByStep8.jpg" /><br />
+在搜索框中输入 CoreBluetooth, 按照红色箭头的顺序, 依次点击红色方框中的内容.<br />
+<img alt="" src="../images/stepByStep9.jpg" /><br />
+出现下图的两个红色方框中的内容时, 说明框架添加完成. <br />
+<img alt="" src="../images/stepByStep10.jpg" />  </p>
+<h4 id="3">3.为工程添加链接参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
+<p>为了在工程中使用 Juma Bluetooth SDK, 需要为这个工程添加一个链接参数. 请参照红色箭头的顺序, 依次点击红色方框中的内容, 在最后一个红色方框内的搜索框中输入 Other Linker Flags.<br />
+<img alt="" src="../images/stepByStep11.jpg" /><br />
+在下图的长方形红色方框的末尾双击, 会出现一个编辑窗口, 用来添加/删除参数. 编辑窗口出现后, 点击正方形红色方框中的 + 号.  <br />
+<img alt="" src="../images/stepByStep12.jpg" /><br />
+点击 + 号以后, 会出现下图红色方框所示的输入框, 在输入框中输入 -ObjC.<br />
+<img alt="" src="../images/stepByStep13.jpg" /><br />
+输入完成后, 点击编辑窗口以外的空白区域, 出现下图红色方框中的内容时, 就说明参数添加成功.<br />
+<img alt="" src="../images/stepByStep14.jpg" />  </p>
+<h4 id="4-app">4.让 app 能够在后台运行<a class="headerlink" href="#4-app" title="Permanent link">&para;</a></h4>
+<p>iOS 系统支持有限的几种允许 app 在后台运行的模式, 蓝牙形式的后台模式就是其中之一. 为了让 app 能够在后台完成蓝牙任务, 请参照下图红色箭头的顺序点击并完成红色方框中的内容.<br />
+<img alt="" src="../images/stepByStep15.jpg" />  </p>
+<h3 id="juma-sdk">三、向工程添加 Juma SDK 的代码文件<a class="headerlink" href="#juma-sdk" title="Permanent link">&para;</a></h3>
+<p>找到以黄色的文件夹图标开头, 并和工程同名的那一行, 如下图所示<br />
+<img alt="" src="../images/stepByStep16.jpg" /><br />
+在这一行上右键, 点击右键菜单中的 Add Files to 选项<br />
+<img alt="" src="../images/stepByStep17.jpg" /><br />
+随后会出现一个如下的窗口用来查找 Juma SDK 的代码文件的位置, 找到文件后, 从上到下, 依次完成红色方框中的内容.<br />
+<img alt="" src="../images/stepByStep18.jpg" /><br />
+完成上一步以后, 出现类似如下图所示内容, 就表示 Juma SDK 代码文件添加成功.<br />
+<img alt="" src="../images/stepByStep19.jpg" />  </p>
+<p>至此, 创建工程, 修改工程的配置, 添加 Juma Bluetooth SDK 文件就全部完成了.  </p>
+<hr />
+<h2 id="_2">开源代码和例程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>SDK现在已经全部开源，您可以从以下地址获取： </p>
+<ul>
+<li>SDK代码仓库：<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">https://github.com/JUMA-IO/BLE_SDK_iOS</a></li>
+</ul>
+<p>此外，我们还提供了一些使用SDK的例程，包括：</p>
+<ul>
+<li>BLE调试助手：<a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></li>
+</ul></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

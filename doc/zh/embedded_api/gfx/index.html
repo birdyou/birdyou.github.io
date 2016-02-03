@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/gfx/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>图形库</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../task/">系统和任务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble/">BLE从设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../jsensor/">JSensor</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gpio/">GPIO</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../timer/">定时器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">图形库</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">初始化显示区域</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">清空显示区域</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">设定字体</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#font">关于 font 的描述</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">绘制字符</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_3">4.函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">绘制像素点</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">绘制一条线</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_5">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">绘制圆框</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_6">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_6">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_6">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_6">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_8">绘制矩形框</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_7">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_7">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_7">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_7">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_9">填充圆框</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_8">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_8">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_8">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_8">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_10">填充矩形框</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_9">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_9">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_9">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_9">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_11">绘制指定图片</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_10">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_10">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_10">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#image">关于 image 的描述</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_10">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>图形库</h1>
+
+<p>显示系统由两部分组件构成，一个是显示屏驱动组件，将需要显示的内容发送的显示屏；另一个是绘图组件，用来向显示屏的内存空间中绘制图像。</p>
+<p>本图形库(Gui Lib)属于绘图组件，它提供了绘制，点、线、面、文字等常用的绘图功能。当一幅图形绘制好之后，系统调用显示屏驱动，将其发送到显示屏。</p>
+<blockquote>
+<p>本系列API目前仅支持nRF51平台。</p>
+</blockquote>
+<p>对于nRF51平台的用户，使用时请引用相应的头文件：</p>
+<ul>
+<li>API头文件：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_api.h">juma_sdk_api.h</a></li>
+<li>数据类型或宏定义参见：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_types.h">juma_sdk_types.h</a></li>
+</ul>
+<hr />
+<h2 id="_1">初始化显示区域<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_init_screen(uint8_t* buffer, uint16_t width, uint16_t height, uint8_t flags);
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>图形库的初始化，具体操作是为图形库提供一段内存，并指明显示屏的尺寸。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>buffer</em></td>
+<td>uint8_t *</td>
+<td>显示内容的内存地址</td>
+</tr>
+<tr>
+<td align="left"><em>width</em></td>
+<td>uint16_t</td>
+<td>显示屏的宽（像素点）</td>
+</tr>
+<tr>
+<td align="left"><em>height</em></td>
+<td>uint16_t</td>
+<td>显示屏的高（像素点）</td>
+</tr>
+<tr>
+<td align="left"><em>flags</em></td>
+<td>uint8_t</td>
+<td>对显示器的一些配置</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="flags">关于 <em>flags</em> 的描述<a class="headerlink" href="#flags" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th align="left">位</th>
+<th align="left">7</th>
+<th align="left">6</th>
+<th align="left">5</th>
+<th align="left">4</th>
+<th align="left">3</th>
+<th align="left">2</th>
+<th align="left">1</th>
+<th align="left">0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">功能</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">X</td>
+<td align="left">A</td>
+</tr>
+</tbody>
+</table>
+<p><code>A</code>为屏幕上的像素点内容：</p>
+<ul>
+<li><code>1</code>：表明置1的时候为点亮像素</li>
+<li><code>0</code>：表明置0的时候为点亮像素</li>
+</ul>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>    //当前函数
+    void foo()
+    {
+        ...
+        //调用本函数将初始化图形库
+        /* 显示内存区域的起始地址为buff，其宽度为128像素点，其高度为64像素点 */
+        gfx_init_screen(buff, 128, 64, 0);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_2">清空显示区域<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_clear(void);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>清空显示区域的内容，将像素值设置为<a href="#_1"><code>A</code></a>。</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>
+    //当前函数
+    void foo()
+    {
+        ...
+
+        /*现有一个与之关联的显示区域，
+        buff = {
+            0x55, 0xaa, 0x11...
+        };*/
+
+        //调用本函数将显示区域中的数据清空
+        gfx_clear();
+
+        /*显示区域的数据根据在gfx_init_screen中配置的flags来对清空操作
+        如果flags中的A位（关于flags中的位定义请参看gfx_init_screen中的描述）
+
+        情况1：如果在flags中配置写1为点亮，那么这里会被清除为 
+        buff = {
+            0x00, 0x00, 0x00....
+        }；
+
+        情况2：如果在flags中配置为写0为点亮，那么这里会被清除为
+        buff = {
+            0xff, 0xff, 0xff ...
+        };
+
+        */
+
+        ...
+    }
+
+</code></pre>
+
+<hr />
+<h2 id="_3">设定字体<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_set_font(const gfx_font_t* font);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>设定显示的文字字体。</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>font</em></td>
+<td>const gfx_font_t *</td>
+<td>字体类型</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="font">关于 <em>font</em> 的描述<a class="headerlink" href="#font" title="Permanent link">&para;</a></h3>
+<p>该参数所代表的含义是字体的类型，字体的实现参见库文件[TBD]，其一般形式为:</p>
+<pre><code>    const gfx_font_t Arial_9 = {
+        Arial_9_Table, 3,
+        12, 12,
+        33, 127,
+    };
+
+</code></pre>
+
+<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //设定绘图库中字体类型
+        gfx_set_font(&amp;Arial_9);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_4">绘制字符<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>uint16_t gfx_draw_char(uint16_t x, uint16_t y, char c, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制字符。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>要绘制字符的起始左上角坐标的x位置</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>要绘制字符的起始左上角坐标的x位置</td>
+</tr>
+<tr>
+<td align="left"><em>c</em></td>
+<td>char</td>
+<td>要显示的字符本身</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>uint16_t</td>
+<td>当前的字符在显示区域中所占据的宽度</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_3">4.函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ...
+        //在显示共享区中根据ppo的取值绘制一个起始左上角坐标为(x,y)字符为'c'的字符
+        gfx_draw_char(x, y, c, ppo);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_5">绘制像素点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_draw_pixel(uint16_t x, uint16_t y, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制一个像素点。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>显示位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>显示位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_1">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_1" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_4">4. 函数举例<a class="headerlink" href="#4_4" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //对显示共享区中显示坐标为(1,1)的点进行操作
+        gfx_draw_pixel(1,1,0)；  //清除操作
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_6">绘制一条线<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_draw_line(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制一条线。</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x0</em></td>
+<td>uint16_t</td>
+<td>线的起始位置坐标x</td>
+</tr>
+<tr>
+<td align="left"><em>y0</em></td>
+<td>uint16_t</td>
+<td>线的起始位置坐标y</td>
+</tr>
+<tr>
+<td align="left"><em>x1</em></td>
+<td>uint16_t</td>
+<td>线的结束位置坐标x</td>
+</tr>
+<tr>
+<td align="left"><em>y1</em></td>
+<td>uint16_t</td>
+<td>线的结束位置坐标y</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_2">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_2" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_5">4. 函数举例<a class="headerlink" href="#4_5" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //对显示共享区中起始坐标为(1,1)，终止坐标为(10,10)上的点进行操作
+        gfx_draw_line(1,1,10,10, 0)；    //清除操作
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_7">绘制圆框<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 函数声明<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制一个圆框。</p>
+<h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>显示的圆的圆心位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>显示的圆的圆心位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>r</em></td>
+<td>uint16_t</td>
+<td>圆的半径</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_3">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_3" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_6">4. 函数举例<a class="headerlink" href="#4_6" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //在显示共享区中对一个圆心坐标为(x,y)半径为r的框根据ppo的取值对其进行操作.
+        gfx_draw_circle(x, y, r, ppo);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_8">绘制矩形框<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_draw_rect(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_7">2. 函数功能<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制一个矩形框。</p>
+<h3 id="3_7">3. 函数参数<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>显示位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>显示位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>w</em></td>
+<td>uint16_t</td>
+<td>矩形框的宽</td>
+</tr>
+<tr>
+<td align="left"><em>h</em></td>
+<td>uint16_t</td>
+<td>矩形框的高</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_4">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_4" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_7">4. 函数举例<a class="headerlink" href="#4_7" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //在显示共享区中对一个坐标为(x,y)宽度为w，高度为h的矩形框形状的区域根据ppo的取值来进行操作
+        gfx_draw_rect(x, y, w, h, ppo);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_9">填充圆框<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_8">1. 函数声明<a class="headerlink" href="#1_8" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_fill_circle(uint16_t x, uint16_t y, uint16_t r, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_8">2. 函数功能<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
+<p>在显示区域填充一个圆框。</p>
+<h3 id="3_8">3. 函数参数<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>显示的圆的圆心位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>显示的圆的圆心位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>r</em></td>
+<td>uint16_t</td>
+<td>圆的半径</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_5">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_5" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_8">4. 函数举例<a class="headerlink" href="#4_8" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //在显示共享区中对一个圆心坐标为(x,y)半径为r的圆形区域根据ppo的取值对其进行操作.
+        gfx_fill_circle(x, y, r, ppo);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_10">填充矩形框<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1_9">1. 函数声明<a class="headerlink" href="#1_9" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_fill_rect(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_9">2. 函数功能<a class="headerlink" href="#2_9" title="Permanent link">&para;</a></h3>
+<p>在显示区域填充一个矩形框。</p>
+<h3 id="3_9">3. 函数参数<a class="headerlink" href="#3_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>显示位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>显示位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>w</em></td>
+<td>uint16_t</td>
+<td>矩形框的宽</td>
+</tr>
+<tr>
+<td align="left"><em>h</em></td>
+<td>uint16_t</td>
+<td>矩形框的高</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ppo_6">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_6" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_9">4. 函数举例<a class="headerlink" href="#4_9" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //在显示共享区中对一个坐标为(x,y)宽度为w，高度为h的矩形区域形状的区域根据ppo的取值来进行操作
+        gfx_fill_rect(x, y, w, h, ppo);
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_11">绘制指定图片<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1_10">1. 函数声明<a class="headerlink" href="#1_10" title="Permanent link">&para;</a></h3>
+<pre><code>void gfx_draw_image(uint16_t x, uint16_t y, const uint8_t* image, uint16_t width, uint16_t height, uint8_t ppo);
+</code></pre>
+
+<h3 id="2_10">2. 函数功能<a class="headerlink" href="#2_10" title="Permanent link">&para;</a></h3>
+<p>在显示区域绘制指定图片。</p>
+<h3 id="3_10">3. 函数参数<a class="headerlink" href="#3_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>x</em></td>
+<td>uint16_t</td>
+<td>图片显示位置的x坐标</td>
+</tr>
+<tr>
+<td align="left"><em>y</em></td>
+<td>uint16_t</td>
+<td>图片显示位置的y坐标</td>
+</tr>
+<tr>
+<td align="left"><em>image</em></td>
+<td>const uint8_t *</td>
+<td>图片本身的存储地址</td>
+</tr>
+<tr>
+<td align="left"><em>width</em></td>
+<td>uint16_t</td>
+<td>图片的宽</td>
+</tr>
+<tr>
+<td align="left"><em>height</em></td>
+<td>uint16_t</td>
+<td>图片的高</td>
+</tr>
+<tr>
+<td align="left"><em>ppo</em></td>
+<td>uint8_t</td>
+<td>对显示区域中的位的操作方式</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="image">关于 <em>image</em> 的描述<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<p><code>image</code>代表着图片本身，图片的存储方式为：<br>
+按位横向展开，byte之间采取小段字节序，bit之间采取msb方式。只有满足这种格式存储的图片才能使用这里的绘图函数显示。如果存储好的图片显示出来排版有偏差，请修改存储格式，或者检查width和height的设置。</p>
+<h4 id="ppo_7">关于 <em>ppo</em> 的描述<a class="headerlink" href="#ppo_7" title="Permanent link">&para;</a></h4>
+<p><code>ppo</code>的取值范围为：<br>
+<code>0</code>: 清空操作<br>
+<code>1</code>: 写操作<br>
+<code>2</code>: 取反操作 <br>  </p>
+<h3 id="4_10">4. 函数举例<a class="headerlink" href="#4_10" title="Permanent link">&para;</a></h3>
+<pre><code>    void foo()
+    {
+        ... 
+        //在显示共享区中在坐标为(x,y)按照ppo的要求，显示一个宽为weight高为height的已经准备好的图片。
+        gfx_draw_image(x, y, image, w, h, ppo);
+        ...
+    }
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

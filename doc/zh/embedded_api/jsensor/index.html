@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/jsensor/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>JSensor</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../task/">系统和任务</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble/">BLE从设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">JSensor</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 传感器编号</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数返回值</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 传感器数据结构</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">传感器设置入口函数</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">设置传感器</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">读取传感器数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gpio/">GPIO</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../timer/">定时器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gfx/">图形库</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>JSensor</h1>
+
+<p>JSensor是JUMA为整合传感器开发的一系列简明API，目前，它支持<a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">Cannon开发板</a>上的所有传感器，如温湿度计、气压计、六轴陀螺仪、磁力计等。</p>
+<pre><code>// Application API/callback
+void jsensor_app_setSensors(void);
+void jsensor_app_setSensor(uint16_t sid);
+JSensor_Status jsensor_app_read_sensor(uint16_t sid, void *data);
+</code></pre>
+
+<p>其中，jsensor_app_setSensors是传感器设置/初始化入口，jsensor_app_setSensor是设置/初始化某一传感器，jsensor_app_read_sensor是读取传感器数据。传感器通过<em>sid</em>编号来指定。</p>
+<p>使用时，请引用SDK中的<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/juma_sensor.h"><code>juma_sensor.h</code></a>的头文件。</p>
+<p>SDK中的<a href="https://github.com/JUMA-IO/STM32_Platform/tree/master/product/application/sensor_tag">SensorTag</a>例程揭示了本API的典型使用方法。</p>
+<blockquote>
+<p>本API只适用于STM32平台。</p>
+</blockquote>
+<hr />
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 传感器编号<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>#define JSENSOR_TYPE_HUMITY_TEMP        0x01
+#define JSENSOR_TYPE_MOTION_6AXIS       0x02
+#define JSENSOR_TYPE_PRESSURE           0x03
+#define JSENSOR_TYPE_MAGNET             0x04
+</code></pre>
+
+<h3 id="2">2. 函数返回值<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<pre><code>enum _JSensor_Status {
+    JSENSOR_OK = 0,
+    JSENSOR_FAIL = 1,
+};
+</code></pre>
+
+<h3 id="3">3. 传感器数据结构<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<pre><code>//温湿度传感器
+struct _JSensor_HUM_TEMP_data {
+    int16_t *humidity;
+    int16_t *temperature;
+};
+
+//气压传感器
+struct _JSensor_Press_data {
+    int32_t *pressure;
+};
+
+//六轴加速度/陀螺仪传感器
+struct _JSensor_AXIS_data {
+    int8_t *ACC;
+    int8_t *GRO;
+};
+
+//磁力计传感器
+struct _JSensor_MAG_data{
+    int8_t *MAG;
+};
+
+</code></pre>
+
+<hr />
+<h2 id="_2">传感器设置入口函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>void jsensor_app_setSensors(void);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>在函数内部通过调用 <code>jsensor_app_setSensor</code> 来设置/初始化每个单独的传感器。<br />
+该函数会在初始化阶段被系统自动调用。 </p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<p>无。</p>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>void jsensor_app_setSensors(void)
+{
+    jsensor_app_setSensor(JSENSOR_TYPE_HUMITY_TEMP);
+    jsensor_app_setSensor(JSENSOR_TYPE_PRESSURE);
+    jsensor_app_setSensor(JSENSOR_TYPE_MOTION_6AXIS);
+    jsensor_app_setSensor(JSENSOR_TYPE_MAGNET);
+}
+</code></pre>
+
+<hr />
+<h2 id="_3">设置传感器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void jsensor_app_setSensor(uint16_t sid);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>通过该函数设置/初始化单个传感器，不同传感器通过sid(编号)来区分。<br />
+应在<code>jsensor_app_setSensors</code> 中使用该函数。</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>sid</em></td>
+<td>uint16_t</td>
+<td><a href="#_1">传感器编号</a></td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>传感器的芯片手册请参见<a href="http://www.juma.io/doc/zh/boards/st/cannon/Resource/cannon_resource.html">这里</a>。</p>
+</blockquote>
+<hr />
+<h2 id="_4">读取传感器数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>JSensor_Status jsensor_app_read_sensor(uint16_t sid, void *data);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>该函数用于读取传感器采集到的数据，通过 <code>sid</code> 指定传感器，通过 <code>data</code> 存放数据。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>sid</em></td>
+<td>uint16_t</td>
+<td>传感器<a href="#_1">编号</a></td>
+</tr>
+<tr>
+<td align="left"><em>data</em></td>
+<td>void *</td>
+<td>存放传感器采集到的<a href="#_1">数据</a></td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>JSensor_Status</td>
+<td>指示函数调用<a href="#_1">状态</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>    // sensor read temperature &amp; humidity
+    {
+        int16_t humidity;
+        int16_t temperature;
+        JSensor_HUM_TEMP_Typedef tdef;
+
+        tdef.humidity = &amp;humidity;
+        tdef.temperature = &amp;temperature;
+
+        if (JSENSOR_OK == jsensor_app_read_sensor(JSENSOR_TYPE_HUMITY_TEMP, (void *)&amp;tdef)) {
+            ble_device_send(0x00, 2, (uint8_t *)&amp;temperature);
+            ble_device_send(0x01, 2, (uint8_t *)&amp;humidity);
+        }
+    }
+    // sensor read pressure
+    {
+        JSensor_Press_Typedef tdef;
+        int32_t pressure;
+
+        tdef.pressure = &amp;pressure;
+
+        if (JSENSOR_OK == jsensor_app_read_sensor(JSENSOR_TYPE_PRESSURE, (void *)&amp;tdef)) {
+            ble_device_send(0x02, 3, (uint8_t *)&amp;pressure);
+        }
+    }
+    // sensor read magenetometer
+    {
+        JSensor_MAG_Typedef tdef;
+        int8_t  MAG[6];
+        tdef.MAG = MAG;
+
+        if(JSENSOR_OK == jsensor_app_read_sensor(JSENSOR_TYPE_MAGNET, (void *)&amp;tdef)) {
+            ble_device_send(0x03, 6, (uint8_t*)MAG);
+            //printf(&quot;%x,%x,%x,%x,%x,%x\n\r&quot;, MAG[0],MAG[1],MAG[2],MAG[3],MAG[4],MAG[5]);
+        }
+    }
+    // sensor read motion 6 AXIS
+    {
+        JSensor_AXIS_Typedef tdef;
+        int8_t ACC[6], GRO[6];
+        tdef.ACC = ACC;
+        tdef.GRO = GRO;
+
+        if (JSENSOR_OK == jsensor_app_read_sensor(JSENSOR_TYPE_MOTION_6AXIS, (void *)&amp;tdef)) {
+            ble_device_send(0x04, 6, (uint8_t*)ACC);
+            ble_device_send(0x05, 6, (uint8_t*)GRO);
+        }
+    }
+
+</code></pre></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>
