@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/ble/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>BLE从设备</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../task/">系统和任务</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">BLE从设备</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#api">API调用状态</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">设置发射功率</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">设置广播名称</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">设置广播间隔</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">设置广播地址</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">开始广播</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">停止广播</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_8">建立连接事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_6">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_6">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_6">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_9">断开连接事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_7">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_7">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_7">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_10">断开连接</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_8">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_8">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_8">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_11">查询连接状态</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_9">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_9">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_9">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_12">发送数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_10">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_10">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_10">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_13">接收数据事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_11">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_11">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_11">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_3">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_14">获取设备身份</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_12">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_12">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_12">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_master/">BLE主设备</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../jsensor/">JSensor</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gpio/">GPIO</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../spi/">SPI总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../timer/">定时器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../wdog/">看门狗</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../storage/">非易失性存储</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../usb/">USB</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../infrared/">红外发射</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../adc/">模数转换</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../gfx/">图形库</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>BLE从设备</h1>
+
+<p>本系列API用于描述低功耗蓝牙<strong>从设备</strong>(BLE Slave)的操作和事件。<br />
+低功耗蓝牙协议规定：从设备只能发送广播，不能主动发起连接，必须等待主设备来连接。
+一般蓝牙设备（如蓝牙智能手环）都是从设备，手机、电脑等是主设备。</p>
+<p>API声明和数据结构说明见头文件：</p>
+<ul>
+<li>nRF51平台：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_api.h">juma_sdk_api.h</a></li>
+<li>STM32平台：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/bluenrg_sdk_api.h">bluenrg_sdk_api.h</a></li>
+</ul>
+<blockquote>
+<p>如无特殊说明，本系列API同时兼容nRF51平台和STM32平台。</p>
+</blockquote>
+<hr />
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="api">API调用状态<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<p><code>tBleStatus</code>表明了API的调用状态，它是一个<code>unit8</code>类型，在<code>ble_status.h</code>头文件中通过宏定义预置了一些状态，摘取部分如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">宏定义</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BLE_STATUS_SUCCESS</td>
+<td>0x00</td>
+<td>API调用成功</td>
+</tr>
+<tr>
+<td align="left">BLE_STATUS_FAILED</td>
+<td>0x41</td>
+<td>API调用失败</td>
+</tr>
+<tr>
+<td align="left">BLE_STATUS_BUSY</td>
+<td>0x43</td>
+<td>API状态繁忙</td>
+</tr>
+<tr>
+<td align="left">BLE_STATUS_TIMEOUT</td>
+<td>0xFF</td>
+<td>API调用超时</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ol>
+<li>其他宏定义请参阅：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/drivers/bluenrg/inc/ble_status.h">ble_status.h</a>。  </li>
+<li>本宏定义只适用于STM32平台。</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="_2">设置发射功率<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<pre><code>void ble_device_set_tx_power(int8_t tx_power);
+</code></pre>
+
+<p><strong>STM32平台</strong></p>
+<pre><code>tBleStatus ble_device_set_tx_power(uint8_t level)；
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>设置BLE设备的发射功率或者发射等级。</p>
+<blockquote>
+<p>请在<code>ble_device_start_advertising()</code>之前调用。  </p>
+</blockquote>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>tx_power</em></td>
+<td>int8_t</td>
+<td>-40, -30, -20, -16, -12, -8, -4, 0, 4，数值的单位为dBm。缺省值为0。</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>level</em></td>
+<td>uint8_t</td>
+<td>数值范围为0~7，对应8个等级的发射功率。缺省值为7，表示设置为最大发射功率(8dBm)。</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>tBleStatus</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_3">设置广播名称<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_set_name(const char* device_name);
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>设置当前BLE设备的广播名称。  </p>
+<blockquote>
+<p>请在<code>ble_device_start_advertising()</code>之前调用。  </p>
+</blockquote>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device_name</em></td>
+<td>const char *</td>
+<td>设备名称</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">设置广播间隔<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_set_advertising_interval(uint16_t interval);
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>设置BLE的广播间隔。 </p>
+<blockquote>
+<p>请在<code>ble_device_start_advertising()</code>之前调用。  </p>
+</blockquote>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>interval</em></td>
+<td>uint16_t</td>
+<td>广播包的发送间隔，单位为ms。</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">设置广播地址<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<pre><code>void ble_device_select_address(uint8_t index);
+</code></pre>
+
+<p><strong>STM32平台</strong></p>
+<pre><code>tBleStatus ble_address(uint8_t* advaddress);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>设置BLE设备的广播地址。</p>
+<blockquote>
+<p>请在<code>ble_device_start_advertising()</code>之前调用。  </p>
+</blockquote>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>index</em></td>
+<td>uint8_t</td>
+<td>index代表的时内置的地址选择的索引，其范围为 0-255。JUMA SDK的模块其内部都已经内置了256个地址，通过该函数可以选择设备要使用的地址。</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>advaddress</em></td>
+<td>uint8_t *</td>
+<td>广播地址数组，长度为6个字节</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>tBleStatus</td>
+<td>设置是否成功</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">开始广播<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<pre><code>void ble_device_start_advertising(void);
+</code></pre>
+
+<p><strong>STM32平台</strong></p>
+<pre><code>tBleStatus ble_device_start_advertising(void);
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>BLE设备开始广播。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>tBleStatus</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">停止广播<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<pre><code>void ble_device_stop_advertising(void);
+</code></pre>
+
+<p><strong>STM32平台</strong></p>
+<pre><code>tBleStatus ble_device_stop_advertising(void);
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>BLE设备停止广播。</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>tBleStatus</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">建立连接事件<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 函数声明<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_on_connect(void);
+</code></pre>
+
+<h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>当有BLE设备(主设备)连接本设备后，系统会触发该事件。<br />
+该函数内部用于处理BLE设备连接后需要执行的任务。 </p>
+<h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>    //当前函数
+    void ble_device_on_connect()
+    {
+        ...
+        red_led_blink();    //伪指令，点亮一盏LED灯
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_9">断开连接事件<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_on_disconnect(uint8_t  reason);
+</code></pre>
+
+<h3 id="2_7">2. 函数功能<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>当原来连接的BLE设备断开后，系统会触发该事件。<br />
+该函数内部用于处理BLE设备断开后需要执行的任务。 </p>
+<h3 id="3_7">3. 函数参数<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>reason</em></td>
+<td>uint8_t</td>
+<td>断开的原因(TBD)</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>    //当前函数
+    void ble_device_on_disconnect(uint8_t reason)
+    {
+        ...
+
+        switch(reason)
+        {
+            case 0: ...break;
+            case 1: ...break;
+            case 2: ...break;
+
+            default: ... break;
+        }
+
+        ...
+    }
+
+</code></pre>
+
+<hr />
+<h2 id="_10">断开连接<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1_8">1. 函数声明<a class="headerlink" href="#1_8" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<pre><code>void ble_device_disconnect(void);
+</code></pre>
+
+<p><strong>STM32平台</strong></p>
+<pre><code>tBleStatus ble_user_disconnect_device(void);
+</code></pre>
+
+<h3 id="2_8">2. 函数功能<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
+<p>断开与之连接的BLE设备。</p>
+<h3 id="3_8">3. 函数参数<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h3>
+<p><strong>nRF51平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STM32平台</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>tBleStatus</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">查询连接状态<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1_9">1. 函数声明<a class="headerlink" href="#1_9" title="Permanent link">&para;</a></h3>
+<pre><code>uint8_t ble_device_is_connected(void);
+</code></pre>
+
+<blockquote>
+<p>本API只适用于nRF51平台。</p>
+</blockquote>
+<h3 id="2_9">2. 函数功能<a class="headerlink" href="#2_9" title="Permanent link">&para;</a></h3>
+<p>查询当前是否有BLE设备与之连接。  </p>
+<h3 id="3_9">3. 函数参数<a class="headerlink" href="#3_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>uint8_t</td>
+<td>连接状态，0表示没有连接设备，非0表示有连接设备。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_12">发送数据<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="1_10">1. 函数声明<a class="headerlink" href="#1_10" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_send(uint8_t type, uint32_t length, uint8_t* value);
+</code></pre>
+
+<h3 id="2_10">2. 函数功能<a class="headerlink" href="#2_10" title="Permanent link">&para;</a></h3>
+<p>向与之相连的BLE设备发送数据。</p>
+<h3 id="3_10">3. 函数参数<a class="headerlink" href="#3_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>type</em></td>
+<td>uint8_t</td>
+<td>数据类型，数值范围（0x00~0x7F）</td>
+</tr>
+<tr>
+<td align="left"><em>length</em></td>
+<td>uint32_t</td>
+<td>数据长度</td>
+</tr>
+<tr>
+<td align="left"><em>value</em></td>
+<td>uint8_t *</td>
+<td>数据内容</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="type">关于 <em>type</em> 参数<a class="headerlink" href="#type" title="Permanent link">&para;</a></h4>
+<p>JUMA SDK对<code>type</code>参数有如下定义：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><em>type</em> 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0x00~0x7F</td>
+<td>用户自定义，用于区分自己的数据类型</td>
+</tr>
+<tr>
+<td align="left">0x80~0xFF</td>
+<td>JUMA SDK定义的数据类型</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
+<pre><code>    #define TYPE 0x01
+
+    void foo()
+    {
+        ...
+        //向与之相连的BLE设备发送数据
+        ble_device_send( TYPE, strlen(&quot;JUMA_BLE&quot;），&quot;JUMA_BLE&quot;);
+        ...
+    }
+
+</code></pre>
+
+<hr />
+<h2 id="_13">接收数据事件<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="1_11">1. 函数声明<a class="headerlink" href="#1_11" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_on_message(uint8_t type, uint16_t length, uint8_t* value);
+</code></pre>
+
+<h3 id="2_11">2. 函数功能<a class="headerlink" href="#2_11" title="Permanent link">&para;</a></h3>
+<p>当与之相连的BLE设备向本设备发送消息时，系统会触发该事件。<br />
+该函数内部用于处理其他BLE设备发过来的数据。  </p>
+<h3 id="3_11">3. 函数参数<a class="headerlink" href="#3_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>type</em></td>
+<td>uint8_t</td>
+<td>数据类型，数值范围（0x00~0x7F）</td>
+</tr>
+<tr>
+<td align="left"><em>length</em></td>
+<td>uint16_t</td>
+<td>数据长度</td>
+</tr>
+<tr>
+<td align="left"><em>value</em></td>
+<td>uint8_t *</td>
+<td>数据内容</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="type_1">关于 <em>type</em> 参数<a class="headerlink" href="#type_1" title="Permanent link">&para;</a></h4>
+<p>JUMA SDK对<code>type</code>参数有如下定义：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><em>type</em> 的数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0x00~0x7F</td>
+<td>用户自定义，用于区分自己的数据类型</td>
+</tr>
+<tr>
+<td align="left">0x80~0xFF</td>
+<td>JUMA SDK定义的数据类型</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4_3">4. 函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
+<pre><code>    void ble_device_on_message(uint8_t type, uint16_t length, uint8_t* value)
+    {
+        ...     
+        ble_device_send( type, length, value );//将收到的数据发送回去
+        ...
+    }
+</code></pre>
+
+<hr />
+<h2 id="_14">获取设备身份<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
+<h3 id="1_12">1. 函数声明<a class="headerlink" href="#1_12" title="Permanent link">&para;</a></h3>
+<pre><code>void ble_device_get_id(uint8_t* id, uint8_t len);
+</code></pre>
+
+<blockquote>
+<p>本API只适用于nRF51平台。</p>
+</blockquote>
+<h3 id="2_12">2. 函数功能<a class="headerlink" href="#2_12" title="Permanent link">&para;</a></h3>
+<p>获取用来设备的唯一身份编号。<br />
+ID是由BLE设备的MAC地址，经过特殊的计算方式得出的一个能够唯一表示当前设备的字节序列。 </p>
+<h3 id="3_12">3. 函数参数<a class="headerlink" href="#3_12" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>id</em></td>
+<td>uint8_t *</td>
+<td>用来存放设备ID的数组地址</td>
+</tr>
+<tr>
+<td align="left"><em>len</em></td>
+<td>uint8_t</td>
+<td>用来指定要获取的标示序列长度（最大为16字节）</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

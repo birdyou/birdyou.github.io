@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/android_api/scan/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>扫描类</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">扫描类</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#_2">蓝牙设备的表示</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">启用蓝牙</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">禁用蓝牙</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">获取蓝牙状态</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">获取版本号</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">开始扫描</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_8">停止扫描</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_9">获取扫描状态</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_6">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_6">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_6">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_10">扫描到蓝牙设备</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_7">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_7">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_7">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_11">扫描到蓝牙设备</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_8">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_8">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_8">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../device/">设备类</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>扫描类</h1>
+
+<p>本文用以说明SDK中BLE扫描(Scan)API的操作方式。</p>
+<p>SDK为开源项目，本文涉及的代码参见：</p>
+<ul>
+<li><code>ScanHelper</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_Android/blob/master/src/com/juma/sdk/ScanHelper.java">ScanHelper.java</a></li>
+<li><code>JumaDevice</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_Android/blob/master/src/com/juma/sdk/JumaDevice.java">JumaDevice.java</a></li>
+</ul>
+<p>BLE扫描(Scan)通过ScanHelper类来实现，用户可以在自己的应用程序中对其实例化，并调用相关的如<code>startScan</code>、<code>stopScan</code>等API进行蓝牙扫描。蓝牙扫描的结果以<code>ScanCallback</code>回调接口通知应用程序。</p>
+<blockquote>
+<p>以下API属于<code>ScanHelper</code>类成员。</p>
+</blockquote>
+<hr />
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">蓝牙设备的表示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>SDK中通过<code>JumaDevice</code>的类来表示一个蓝牙设备，其中包含了该设备的蓝牙地址、服务、特征值等，详情可以查看<a href="https://github.com/JUMA-IO/BLE_SDK_Android/blob/master/src/com/juma/sdk/JumaDevice.java">源码</a>。</p>
+<p>如果SDK扫描到一个蓝牙设备，便会构建一个<code>JumaDevice</code>的对象，返回给应用程序。</p>
+<hr />
+<h2 id="_3">启用蓝牙<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>public boolen enable();
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>开启手机的蓝牙功能。<br />
+只有在开启手机蓝牙后，SDK才能进行有效的蓝牙操作。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">返回值</td>
+<td>boolean</td>
+<td><code>true</code> - 启用蓝牙成功；<code>false</code> - 启用蓝牙失败</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">禁用蓝牙<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>public boolen disable();
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>禁用手机蓝牙。</p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">返回值</td>
+<td>boolean</td>
+<td><code>true</code> - 禁用蓝牙成功；<code>false</code> - 禁用蓝牙失败</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">获取蓝牙状态<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>public boolen isEnabled(); 
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>获取蓝牙启用状态。 </p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">返回值</td>
+<td>boolean</td>
+<td><code>true</code> - 蓝牙已启用；<code>false</code> - 蓝牙已禁用</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">获取版本号<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>public boolen getVersion();
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>获取SDK的版本号。  </p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">返回值</td>
+<td>String</td>
+<td>SDK版本号[TBD]</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_7">开始扫描<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>public void startScan(String name);  
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>手机开始蓝牙扫描。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">name</td>
+<td>String</td>
+<td>设备名称，可为null</td>
+</tr>
+<tr>
+<td align="left">返回值</td>
+<td>boolean</td>
+<td><code>true</code> - 开启扫描成功；<code>false</code> - 开始扫描失败</td>
+</tr>
+</tbody>
+</table>
+<h4 id="name">关于 <em>name</em> 的描述<a class="headerlink" href="#name" title="Permanent link">&para;</a></h4>
+<p><code>name</code> 用来指定需要扫描的设备，如果传入了名字，将只扫描该名字的设备。如果传入的是空值，则扫描附近所有的设备。</p>
+<hr />
+<h2 id="_8">停止扫描<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>public void stopScan();      
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>手机停止蓝牙扫描。 </p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<p>无。</p>
+<hr />
+<h2 id="_9">获取扫描状态<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 函数声明<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<pre><code>public boolen isScanning();
+</code></pre>
+
+<h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>查询当前是否正在蓝牙扫描。</p>
+<h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">返回值</td>
+<td>boolean</td>
+<td><code>true</code> - 正在扫描；<code>false</code> - 没有在扫描</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">扫描到蓝牙设备<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>本API属于<code>ScanCallback</code>。</p>
+<h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<pre><code>public void onDiscover(JumaDevice device, int rssi);
+</code></pre>
+
+<h3 id="2_7">2. 函数功能<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>当扫描到蓝牙设备时，会触发此回调。  </p>
+<h3 id="3_7">3. 函数参数<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">device</td>
+<td>JumaDevice</td>
+<td>扫描到的<a href="#_1">蓝牙设备</a></td>
+</tr>
+<tr>
+<td align="left">rssi</td>
+<td>int</td>
+<td>扫描到的蓝牙设备的信号强度</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">扫描到蓝牙设备<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>本API属于<code>ScanCallback</code>。</p>
+<h3 id="1_8">1. 函数声明<a class="headerlink" href="#1_8" title="Permanent link">&para;</a></h3>
+<pre><code>public void onConnectionStateChange(int status, int newState);
+</code></pre>
+
+<h3 id="2_8">2. 函数功能<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
+<p>扫描状态（开启扫描/停止扫描）发生改变时，会触发此回调。    </p>
+<h3 id="3_8">3. 函数参数<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">newState</td>
+<td>int</td>
+<td>返回新的扫描状态，<code>STATE_START_SCAN</code> 或 <code>STATE_STOP_SCAN</code></td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

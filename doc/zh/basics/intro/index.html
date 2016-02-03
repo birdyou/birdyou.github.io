@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/basics/intro/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left active">
+                
+                <a href="../">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../">文档</a></li>
+    <li>SDK概述</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../">文档首页</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">SDK概述</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">引言</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#sdk">嵌入式SDK</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#sdk_1">移动端SDK</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_2">云端支持</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#sdk_2">获取SDK</a></li>
+<!--                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../support/">技术支持</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../aboutus/">关于我们</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../legal/">法律条款</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_first/">技术话题: BLE入门教程</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../embedded_iot/">技术话题: IoT嵌入式编程</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>SDK概述</h1>
+
+<h2 id="_1">引言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>随着低功耗蓝牙技术（Bluetooth Low Energy, BLE）的兴起，越来越多的智能硬件产品使用该技术作为近距离无线通信的首选方案。</p>
+<p>实际开发过程中，一些不确定的因素会使得开发周期和成本变得难以估计和没有保障。我们发现开发人员往往花费太多的时间来学习低功耗蓝牙技术本身，譬如，阅读一颗新的蓝牙芯片的芯片手册，或是熟悉Android或iOS的蓝牙API文档。然而，对于如何延长蓝牙产品的续航能力、建立高可靠性的蓝牙连接、移动终端的蓝牙兼容性等关键技术上，也是每一个开发者经常会面临的问题。</p>
+<p>为此，JUMA SDK规划的初衷就是解决这些问题，力图打造最简单易用的BLE应用开发框架，将开发者从蓝牙中解放出来。JUMA为开发者做好蓝牙，开发者做好产品本身。</p>
+<p>JUMA SDK分为了嵌入式SDK和移动端SDK：  <br />
+<img alt="" src="../images/overview1.jpg" /></p>
+<hr />
+<h2 id="sdk">嵌入式SDK<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
+<p>目前，嵌入式SDK支持Nordic的nRF51822低功耗蓝牙芯片和STM的BlueNRG芯片。</p>
+<p>嵌入式SDK将大量智能硬件所需的常用功能进行“模块化”封装，涵盖了例如串口、ADC、蜂鸣器、LED、OLED、G-Sensor等外设，也支持一系列场景的定制化应用，如iBeacon、计步器、血压计等。开发者可以快速地完成方案验证或是产品原型，灵活地定制应用需求，用最低成本、最短时间将产品推到市场。</p>
+<p>除了外设驱动和应用配置方面的支持，我们的嵌入式SDK还具备了一些如：实现了更适应于物联网的嵌入式任务调度、低功耗管理、云端消息转发、算法聚合等功能和特性，这样进一步降低了蓝牙开发的门槛和成本。</p>
+<p>嵌入式SDK的内部实现架构为：<br />
+<img alt="" src="../images/overview2.jpg" /></p>
+<hr />
+<h2 id="sdk_1">移动端SDK<a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h2>
+<p>移动端SDK具有Android和iOS的API接口，和上述嵌入式SDK配合使用。相对于Android或iOS的原生BLE接口，它能确保更为稳定有效的蓝牙互联互通性操作，并且使用起来更为简单，开发者不再需要考虑BLE特有的如service、characteristic、notification等概念。</p>
+<p>此外，移动端SDK的Javascript的API接口正在实现，未来可供HTML5移动应用直接调用，这是一种跨平台的BLE编码方式。我们也会陆续支持APICloud、Cordova、CrossAPP等plug-in，以提供更为丰富的跨平台开发支持。</p>
+<p>移动端SDK的内部实现架构为：<br />
+<img alt="" src="../images/overview3.jpg" /></p>
+<hr />
+<h2 id="_2">云端支持<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>JUMA云是一个专门为物联网和智能硬件打造的云服务，主要负责设备的数据储存、安全认证、OTA升级、事件统计等功能，成为智能硬件应用的一个后台服务和管理框架。</p>
+<p>JUMA云简化了服务器端开发工作，让开发者不必搭建服务器，只需要少量、甚至不用服务器编码，就可以实现智能硬件所需的各种云服务的接口。</p>
+<hr />
+<h2 id="sdk_2">获取SDK<a class="headerlink" href="#sdk_2" title="Permanent link">&para;</a></h2>
+<p>JUMA的嵌入式SDK和移动端SDK现已完全开源，在遵守开源协议的条件下，您可以自由使用。</p>
+<p><img alt="" src="../images/juma_sdk_none.jpg" /></p>
+<p>获取和查阅SDK具体内容，请参阅各部分文档或者点击SDK官方主页：<br />
+<a href="http://www.juma.io/sdk.html">http://www.juma.io/sdk.html</a></p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

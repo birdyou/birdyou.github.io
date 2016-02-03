@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/basics/embedded_iot/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left active">
+                
+                <a href="../">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../">文档</a></li>
+    <li>技术话题: IoT嵌入式编程</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../">文档首页</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../intro/">SDK概述</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../support/">技术支持</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../aboutus/">关于我们</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../legal/">法律条款</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../ble_first/">技术话题: BLE入门教程</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">技术话题: IoT嵌入式编程</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">背景知识</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_2">现有编程模型</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 循环加中断</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 操作系统实现多线程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 单线程异步编程</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_9">最适合物联网的编程模型</a></li>
+<!--                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>技术话题: IoT嵌入式编程</h1>
+
+<h2 id="_1">背景知识<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>在IT技术高速发展到今天，在为我们的生活带来了翻天覆地的变化的同时。如何更有效的利用计算机资源为我们更好的服务的思考，一直是各大厂商与技术大牛们为之孜孜不倦奋斗的方向。虽然硬件性能在被不断的提升，然而需求的增长速度还是远远的超过了硬件性能的增长速率，因此人们不断的提出各种编程模型想要以此来用软件的方式来弥补硬件性能上的不足。</p>
+<p>尤其是物联网行业，其产品对功耗敏感，对成本也敏感，然而却又要求能够有较高的并发性，同时还要要求能较多的完成规定的任务。因此对编程模型的选择开始变的复杂了起来。时至今日，在IT行业中普遍采用的编程模型有以下这么几种。  </p>
+<hr />
+<h2 id="_2">现有编程模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>编程模型也就是为了解决某一类的具体问题，然后经过长时间的经验积累总结的适用于解决某种问题的编程套路。现在最常见的有在嵌入式编程中普遍采用的循环加中断的方式，与在实时系统中采用的基于操作系统的多线程编程等。</p>
+<h3 id="1">1. 循环加中断<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>循环加中断的编程模型在单片机等嵌入式设备中被普遍采用，其编程模型可以概括为下图形所示的样子。<br />
+<img alt="" src="../images/async1.png" /></p>
+<p>在这种编程模型中，往往有明确的函数执行入口main，系统在执行完必备的初始化操作后，就将控制权完全的交给main函数，然后其他的一切操作都是从main函数开始， main函数中会对需要使用到的外设进行必要的初始化等工作，然后系统会进入到一种循环等待的状态，俗称死循环。直到中断到达后会暂停当前的死循环，然后转去执行别的操作，执行完毕后继续退回到死循环中。如果没有中断到来的话，那么就一直执行死循环中的代码。在本模型中以中断的方式替代了以轮询的方式去检查是否有任务需要去处理，在编写代码上无疑简单了很多，在实时性上也要比采用轮询的方式要好很多。而且现代的处理器一般都支持多个中断源，并且中断源中还设有不同的优先级，这样在中断中也可以实现嵌套，来保证高优先级事件一定能实时完成。然而其存在的问题也是很明显的，虽然从main函数开始所有的任务都由用户来完成，获取了最大的自由度，但是这样一来，用户需要编写的代码量在一些对功耗或者是其他要求比较高的场合将会变的奇大无比。</p>
+<h4 id="_3">优点：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>控制过程直观</li>
+<li>可以控制底层寄存器</li>
+<li>性能较强（看编程人员能力）</li>
+</ul>
+<h4 id="_4">缺点：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>编程复杂度较高。</li>
+<li>需要完成大量的非业务逻辑上的工作。</li>
+<li>在对系统功耗等的控制上复杂度高。</li>
+</ul>
+<h3 id="2">2. 操作系统实现多线程<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>在多线程的编程模型中，能够采用这种编程模型的处理器一般都是处理性能相对较强的处理器，如桌面电脑，服务器，手机等设备中。在这种编程模型中，首先由操作系统虚拟出很多个程序运行空间，然后各个线程在调度器的调度之下按照时间片的方式运行，每个线程的运行执行都可以被认为是一个单独的程序，其自身完全的占用系统资源，一般用在对实时性和并发性的要求很高的情况下。其编程模型可用如下图所示的样子来进行概括。<br />
+<img alt="" src="../images/async2.png" /></p>
+<p>在这种编程模型中，所有的线程在调度器的统一指挥下单独运行，每个线程都可以被调度器暂停或者恢复运行，而对于线程本身来说，其并不关心自己在何时被运行，在何时被中断，它唯一关心的是其自身是否能在规定的时间内正确的被执行完毕。 </p>
+<h4 id="_5">优点：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>实时性强。</li>
+<li>并发度高。</li>
+<li>编程复杂度相对较低。</li>
+</ul>
+<h4 id="_6">缺点：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>需要操作系统</li>
+<li>对处理器的要求高</li>
+<li>功耗相对较高</li>
+<li>需要较多的系统资源（RAM等）。</li>
+</ul>
+<h3 id="3">3. 单线程异步编程<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>单线程的异步编程模型在浏览器中（Javascript）和图形化程序设计中采用的比较多。在这种编程模型中，所有的任务在一个轻量级的系统调控器的作用下，被安排成线性的方式去执行，当有事件发生的时候，相应的事件处理函数会被系统调控器自动的调用，当没有任何事件到达的时候，系统将由调控器接管。<br />
+<img alt="" src="../images/async4.png" /></p>
+<p>因此，在采用单线程异步编程的时候，编程过程可以概括为以下2步：  </p>
+<ol>
+<li>注册需要处理的各种事件。  </li>
+<li>在相应的事件处理函数中编写事件到达后要完成的功能。</li>
+</ol>
+<p>就本模型的功能上，介于上述的两种模型之间，对比循环加中断的方式其多了运行在后台的一个任务调度器，但是这个调控器的实现非常的简短，当且仅当在其他的任务执行完毕后主动让出处理器后才会去接管系统的运行，而在任务的处理过程中则是由事件处理函数本身来完全的掌控处理器。</p>
+<p>采用这种编程模型来开发产品的时候，用户不需要关心，事件是如何被触发的，用户只需要使用正确的方式来在系统中注册相应的事件，然后编写好相应的事件处理过程就可以了。</p>
+<p>比如在上图中，On_ready这个事件是在系统上电，准备就绪后被调用的。如果在这里需要处理一些事情，那么就在on_ready的函数中将想要实现的功能写出来就好了，比如在这里可以向系统注册一个事件，当100ms后执行一个time_task事件。然后当前on_ready函数执行完毕退出，系统交由调控器来控制，直到100ms后，调控器会产生一个time_task的事件，如果用户有编写好相应的事件处理函数的话，那么相应的处理过程就会被调用。</p>
+<h4 id="_7">优点：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>编程复杂度低。</li>
+<li>用户可以专注业务逻辑部分。</li>
+<li>开发周期短。</li>
+</ul>
+<h4 id="_8">缺点：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ul>
+<li>一定的功能要受到框架的制约。</li>
+</ul>
+<hr />
+<h2 id="_9">最适合物联网的编程模型<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>通过对上面的几种编程模型的对比，可以得出以下结论。<br />
+<img alt="" src="../images/async5.png" /></p>
+<p>对于物联网产品来说，其一般来说要求体积较小，对功耗敏感，要求能进行并发处理，但是事件的处理次数不会太频繁，同时对成本敏感，因此在处理器的选择上也无法选择性能很高的产品。</p>
+<p>通过上述各种编程模型的对比，可以看出，基于对处理器的性能和功耗上的制约，采用操作系统实现的多线程方案，完全无法应用到物联网的产品中。而采用循环加中断的方式来实现物联网产品的设计的话，将要面临的难题是，在功耗等方面对程序员能力要求很高，代码的实现非常的复杂。最终得到的结果却是实时性能力一般，并发能力很低。而反观单线程异步编程，虽然其处理能力上确实不如基于操作系统实现的多线程方案，但是其表现能力则要比循环加中断的方式要优异很多。</p>
+<p>由于单线程异步编程的调控器完成的功能较少，因此对处理器的要求不高，在功耗上，在调控器上已经实现了整个系统的节能方案，因此应用层无需理会功耗上的问题即可实现低功耗的产品。</p>
+<p>同时，在物联网产品中，根据应用场合的不同，各个产品要完成的功能千差万别，且品种繁多，因此要求代码编写复杂度要尽可能的少。</p>
+<p>基于以上的分析，采用单线程异步编程的方式，是目前物联网领域中最为合适的一种解决方案。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>

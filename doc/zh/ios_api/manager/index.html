@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/ios_api/manager/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../stm32_platform/guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>管理类</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">管理类</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#jumamanageroptionrestoreidentifierkey">常量: JumaManagerOptionRestoreIdentifierKey</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#jumamanageroptionshowpoweralertkey">常量: JumaManagerOptionShowPowerAlertKey</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#jumamanagerscanoptionallowduplicateskey">常量: JumaManagerScanOptionAllowDuplicatesKey</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">初始化</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">开始扫描</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">停止扫描</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">检索扫描记录</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">发现蓝牙设备事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">停止扫描事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_8">建立连接</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_6">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_6">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_6">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_9">断开连接</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_7">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_7">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_7">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_10">连接成功事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_8">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_8">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_8">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_11">连接断开事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_9">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_9">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_9">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_12">连接失败事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_10">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_10">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_10">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_13">蓝牙状态更新事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_11">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_11">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_11">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../device/">设备类</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>管理类</h1>
+
+<p>SDK中将对iOS BLE的操作封装成管理类(Manager)，包括扫描、建立连接、断开连接等操作。</p>
+<p>SDK为开源项目，本文涉及的代码参见：</p>
+<ul>
+<li><code>BLE_SDK_iOS</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">github</a></li>
+</ul>
+<hr />
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="jumamanageroptionrestoreidentifierkey">常量: JumaManagerOptionRestoreIdentifierKey<a class="headerlink" href="#jumamanageroptionrestoreidentifierkey" title="Permanent link">&para;</a></h3>
+<pre><code>extern NSString * const JumaManagerOptionRestoreIdentifierKey NS_AVAILABLE(NA, 7_0);
+</code></pre>
+
+<p>在初始化 JumaManager 时的可选参数之一, 该参数对应的值的类型是 NSString *.<br />
+如果使用了该参数, 那么 app 就可以支持"蓝牙状态保存和恢复"功能, 即当 app 被系统杀死时, 系统会保存那一刻蓝牙的状态，如果蓝牙的状态发生了变化, 系统会在后台唤醒 app, 并为 app 恢复之前保存的状态.  </p>
+<p>该功能的实现, 需要先为 app 指定“Uses Bluetooth LE accessories”类型的后台模式.</p>
+<p>该功能有以下限制：<br />
+1.每次初始化 JumaManager 时, 该参数的值必须保持一致.<br />
+2.不支持用户在后台管理界面主动杀死 app 的情况.<br />
+3.不支持手机的蓝牙被关闭的情况.<br />
+4.在 app 被杀死的时候, 手机必须正在连接蓝牙设备, 或者已经连接蓝牙设备.</p>
+<h3 id="jumamanageroptionshowpoweralertkey">常量: JumaManagerOptionShowPowerAlertKey<a class="headerlink" href="#jumamanageroptionshowpoweralertkey" title="Permanent link">&para;</a></h3>
+<pre><code>extern NSString * const JumaManagerOptionShowPowerAlertKey NS_AVAILABLE(NA, 7_0);
+</code></pre>
+
+<p>在初始化 JumaManager 时的可选参数之一, 该参数对应的值的类型是 NSNumber * (Boolean).<br />
+如果为该参数指定的值为 @YES, 当手机上的蓝牙处于关闭状态时, 系统会向用户显示一个警告对话框.<br />
+如果为该参数指定的值为 @NO, 不论手机上的蓝牙是否处于关闭状态时, 系统都不会显示警告对话框.</p>
+<h3 id="jumamanagerscanoptionallowduplicateskey">常量: JumaManagerScanOptionAllowDuplicatesKey<a class="headerlink" href="#jumamanagerscanoptionallowduplicateskey" title="Permanent link">&para;</a></h3>
+<pre><code>extern NSString * const JumaManagerScanOptionAllowDuplicatesKey;  
+</code></pre>
+
+<p>该参数是启动扫描时的可选参数, 该参数对应的值的类型是 NSNumber * (Boolean).  </p>
+<p>蓝牙设备会持续的发出信号来显示自己的存在, 手机每收到一次信号, JumaManagerDelegate 中的 manager:didDiscoverDevice:RSSI: 就可能会被调用一次.  </p>
+<p>如果为该参数指定的值是 @YES, 那么在启动扫描之后, 手机每收到一次信号, manager:didDiscoverDevice:RSSI 就会被调用一次.<br />
+如果为该参数指定的值是 @NO, 不管手机收到多少次信号, manager:didDiscoverDevice:RSSI 都只会被调用一次.</p>
+<hr />
+<h2 id="_2">初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<pre><code>- (instancetype)initWithDelegate:(id&lt;JumaManagerDelegate&gt;)delegate queue:(dispatch_queue_t)queue options:(NSDictionary *)options  NS_AVAILABLE(NA, 7_0);
+</code></pre>
+
+<h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>初始化一个 JumaManager 类型的对象。<br />
+初始化成功之后，JumaManagerDelegate 中的 managerDidUpdateState: 会被调用，以此表明 JumaManager 的状态。</p>
+<h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>delegate</em></td>
+<td>id\<JumaManagerDelegate></td>
+<td>接收 JumaManager 的事件的对象</td>
+</tr>
+<tr>
+<td align="left"><em>queue</em></td>
+<td>dispatch_queue_t</td>
+<td>JumaManager 的事件将被发送到这个 queue 上</td>
+</tr>
+<tr>
+<td align="left"><em>options</em></td>
+<td>NSDictionary *</td>
+<td>初始化 JumaManager 对象的时候的可选参数</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>instancetype</td>
+<td>由这个方法生成的 JumaManager 类型的对象实例</td>
+</tr>
+</tbody>
+</table>
+<h4 id="queue">关于 <em>queue</em> 参数<a class="headerlink" href="#queue" title="Permanent link">&para;</a></h4>
+<p>如果 queue 为 nil, 则 JumaManager 会使用 main queue.</p>
+<h4 id="options">关于 <em>options</em> 参数<a class="headerlink" href="#options" title="Permanent link">&para;</a></h4>
+<p>可选参数，见 <code>JumaManagerOptionShowPowerAlertKey</code> 和 <code>JumaManagerOptionRestoreIdentifierKey</code>.</p>
+<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<pre><code>NSDictionary *options = @{ JumaManagerOptionShowPowerAlertKey    : @YES,
+                           JumaManagerOptionRestoreIdentifierKey : @&quot;io.juma.restoreID&quot; };
+JumaManager *manager = [[JumaManager alloc] initWithDelegate:self queue:nil options:options];
+</code></pre>
+
+<hr />
+<h2 id="_3">开始扫描<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)scanForDeviceWithOptions:(NSDictionary *)options;
+</code></pre>
+
+<h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p>扫描周围的蓝牙设备.  </p>
+<h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>options</em></td>
+<td>NSDictionary *</td>
+<td>启动扫描时的参数(可选)</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options_1">关于 <em>options</em> 参数<a class="headerlink" href="#options_1" title="Permanent link">&para;</a></h4>
+<p>可选参数，见 <a href="../JumaManagerScanOptionAllowDuplicatesKey.html">JumaManagerScanOptionAllowDuplicatesKey</a>。</p>
+<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<pre><code>NSDictionary *options = @{ JumaManagerScanOptionAllowDuplicatesKey : @NO };
+[[JumaManager new] scanForDeviceWithOptions:options];
+</code></pre>
+
+<hr />
+<h2 id="_4">停止扫描<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)stopScan;
+</code></pre>
+
+<h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>停止扫描.</p>
+<h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">检索扫描记录<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>- (JumaDevice *)retrieveDeviceWithUUID:(NSString *)UUID NS_AVAILABLE(NA, 7_0);
+</code></pre>
+
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>检查系统中是否保存有和 UUID 参数相关的蓝牙设备的信息. 如果有, 就返回相应的 JumaDevice 对象.</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>UUID</em></td>
+<td>NSString *</td>
+<td>蓝牙外设的 UUID</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>JumaDevice *</td>
+<td>JumaDevice 类型的对象。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">发现蓝牙设备事件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)manager:(JumaManager *)manager didDiscoverDevice:(JumaDevice *)device RSSI:(NSNumber *)RSSI;
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>在扫描过程中, 发现蓝牙设备时, 这个方法会被调用, 并且给出被发现的蓝牙设备的信息和当前信号强度.</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>manager</em></td>
+<td>JumaManager *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>被发现的蓝牙设备</td>
+</tr>
+<tr>
+<td align="left"><em>RSSI</em></td>
+<td>NSNumber *</td>
+<td>当前信号强度</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="rssi">关于 <em>RSSI</em> 参数<a class="headerlink" href="#rssi" title="Permanent link">&para;</a></h4>
+<p>如果 <em>RSSI</em> 的值为 127，则说明无法获取当前信号强度。</p>
+<hr />
+<h2 id="_7">停止扫描事件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)managerDidStopScan:(JumaManager *)manager;
+</code></pre>
+
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>通过 stopScan 停止扫描后, 这个方法会被调用</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>manager</em></td>
+<td>JumaManager *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_8">建立连接<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="1_6">1. 函数声明<a class="headerlink" href="#1_6" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)connectDevice:(JumaDevice *)device;
+</code></pre>
+
+<h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
+<p>连接蓝牙设备.</p>
+<h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>被连接的 JumaDevice 对象</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_9">断开连接<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)disconnectDevice:(JumaDevice *)device;
+</code></pre>
+
+<h3 id="2_7">2. 函数功能<a class="headerlink" href="#2_7" title="Permanent link">&para;</a></h3>
+<p>断开和蓝牙设备的连接, 或者取消一个等待结果的连接请求</p>
+<h3 id="3_7">3. 函数参数<a class="headerlink" href="#3_7" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>被断开链接的 JumaDevice 对象</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_10">连接成功事件<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="1_8">1. 函数声明<a class="headerlink" href="#1_8" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)manager:(JumaManager *)manager didConnectDevice:(JumaDevice *)device;
+</code></pre>
+
+<h3 id="2_8">2. 函数功能<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
+<p>通过 connectDevice: 方法成功连接到某个蓝牙设备时, 这个方法会被调用.</p>
+<h3 id="3_8">3. 函数参数<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>manager</em></td>
+<td>JumaManager *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>已经连接的蓝牙设备</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_11">连接断开事件<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="1_9">1. 函数声明<a class="headerlink" href="#1_9" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)manager:(JumaManager *)manager didDisconnectDevice:(JumaDevice *)device error:(NSError *)error;
+</code></pre>
+
+<h3 id="2_9">2. 函数功能<a class="headerlink" href="#2_9" title="Permanent link">&para;</a></h3>
+<p>和蓝牙设备的连接断开时, 这个方法会被调用.  </p>
+<h3 id="3_9">3. 函数参数<a class="headerlink" href="#3_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>manager</em></td>
+<td>JumaManager *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>和手机的连接断开的那个蓝牙设备</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>断开原因</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nserror">关于 <em>NSError</em> 参数<a class="headerlink" href="#nserror" title="Permanent link">&para;</a></h4>
+<p>如果连接断开是由调用 disconnectDevice: 导致的, <em>error</em> 为 nil.</p>
+<hr />
+<h2 id="_12">连接失败事件<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="1_10">1. 函数声明<a class="headerlink" href="#1_10" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)manager:(JumaManager *)manager didFailToConnectDevice:(JumaDevice *)device error:(NSError *)error;
+</code></pre>
+
+<h3 id="2_10">2. 函数功能<a class="headerlink" href="#2_10" title="Permanent link">&para;</a></h3>
+<p>通过 connectDevice: 连接蓝牙设备失败时, 这个方法会被调用.</p>
+<h3 id="3_10">3. 函数参数<a class="headerlink" href="#3_10" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>manager</em></td>
+<td>JumaManager *</td>
+<td>给出这个信息的对象</td>
+</tr>
+<tr>
+<td align="left"><em>device</em></td>
+<td>JumaDevice *</td>
+<td>连接失败的那个蓝牙设备</td>
+</tr>
+<tr>
+<td align="left"><em>error</em></td>
+<td>NSError *</td>
+<td>连接失败的原因</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_13">蓝牙状态更新事件<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="1_11">1. 函数声明<a class="headerlink" href="#1_11" title="Permanent link">&para;</a></h3>
+<pre><code>- (void)managerDidUpdateState:(JumaManager *)manager;
+</code></pre>
+
+<h3 id="2_11">2. 函数功能<a class="headerlink" href="#2_11" title="Permanent link">&para;</a></h3>
+<p>当 JumaManager 的 state 属性值发生变化时, 这个方法会被调用, state 属性每改变一次, 这个方法就会被调用一次.<br />
+只有 state 属性的值是 JumaManagerStatePoweredOn 时, 才可以执行扫描和连接等方法.</p>
+<h3 id="3_11">3. 函数参数<a class="headerlink" href="#3_11" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>deviceManager</em></td>
+<td>JumaManager *</td>
+<td>状态发生变化的那个 JumaManager 对象</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>void</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<h4 id="manager">关于 <em>manager</em> 参数<a class="headerlink" href="#manager" title="Permanent link">&para;</a></h4>
+<p><em>manager</em> 的状态可以由 JumaManagerState state = manager.state 得到<br />
+在 <em>JumaBluetoothSDK/JumaManager.h</em> 文件中对 <em>JumaManagerState</em> 进行了定义：</p>
+<table>
+<thead>
+<tr>
+<th align="left">枚举值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">JumaManagerStateUnknown</td>
+<td>当前设备中蓝牙的状态未知</td>
+</tr>
+<tr>
+<td align="left">JumaManagerStateResetting</td>
+<td>当前设备中的蓝牙正在重置</td>
+</tr>
+<tr>
+<td align="left">JumaManagerStateUnsupported</td>
+<td>当前设备中蓝牙无法支持的状态</td>
+</tr>
+<tr>
+<td align="left">JumaManagerStateUnauthorized</td>
+<td>对蓝牙的使用没有获得用户授权</td>
+</tr>
+<tr>
+<td align="left">JumaManagerStatePoweredOff</td>
+<td>蓝牙已经关闭</td>
+</tr>
+<tr>
+<td align="left">JumaManagerStatePoweredOn</td>
+<td>蓝牙已经打开, 可以进行扫描和连接操作</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>
