@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/serial/">
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/imu_sensor/">
         <link rel="shortcut icon" href="../../img/jumafav.png">
 
         <title>JUMA 文档中心</title>
@@ -92,7 +92,7 @@
             <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../../basics/">文档</a></li>
-    <li>串口总线</li>
+    <li>惯性传感器</li>
   </ol>
 
   
@@ -149,8 +149,109 @@
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../imu_sensor/">惯性传感器</a>
+              <li class="active">
+                <a class="itm-l1" href="./">惯性传感器</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#api">API调用状态</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#imu">初始化IMU传感器</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#imu_1">使能IMU传感器</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">设置采样率</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">开始产生数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">停止产生数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">数据回调事件</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
                 
               </li>
 
@@ -170,69 +271,8 @@
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">串口总线</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#_1">串口配置</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_2">串口发送</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_3">串口接收数据事件</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4_2">4. 函数举例</a></li>
-                      </ul>
-                    -->
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../serial/">串口总线</a>
                 
               </li>
 
@@ -333,25 +373,56 @@
 
             <div class="content-body" role="main">
 
-<h1>串口总线</h1>
+<h1>惯性传感器</h1>
 
-<p>本说明用于描述串口的配置和操作。</p>
+<p>本系列API用于支持以流模式获取9轴（6轴陀螺仪LSM303AGR+3轴磁力计LSM6DS3）的原始数据。
+应用于一些需要对运动数据变化监视或控制的场景，例如：四周飞行器，自平衡小车。</p>
+<p>API声明和数据结构说明见头文件：<br />
+STM32平台的 <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/imu_sensor.h">imu_sensor.h</a></p>
+<p>其中，IMU是Inertial measurement unit的简称，即惯性测量单元。</p>
+<p>IMU传感器API的使用例程请参见 ： <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/product/application/sensor_tag_fifo/app.c">sensor_tag_fifo</a></p>
 <blockquote>
-<p>本系列API目前仅支持nRF51平台。</p>
+<p>本系列API仅支持STM32平台。</p>
 </blockquote>
-<p>对于nRF51平台的用户，使用时请引用相应的头文件：</p>
-<ul>
-<li>API头文件：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_api.h">juma_sdk_api.h</a></li>
-<li>数据类型或宏定义参见：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_types.h">juma_sdk_types.h</a></li>
-</ul>
 <hr />
-<h2 id="_1">串口配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="api">API调用状态<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<p><code>imu_status_t</code>表明了API的调用状态，它是一个<code>unit8</code>类型，在<code>imu_sensor.h</code>头文件中通过枚举预置了一些状态，摘取部分如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">宏定义</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">imu_status_ok</td>
+<td>0x00</td>
+<td>API调用成功</td>
+</tr>
+<tr>
+<td align="left">imu_status_fail</td>
+<td>0x01</td>
+<td>API调用失败</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ol>
+<li>其他宏定义请参阅：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/imu_sensor.h">imu_sensor.h</a>。  </li>
+<li>本宏定义只适用于STM32平台。</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="imu">初始化IMU传感器<a class="headerlink" href="#imu" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<pre><code>serial_setup(uint8_t rx_pin, uint8_t tx_pin, uint32_t baudrate);
+<pre><code>imu_status_t imu_sensor_reset(void);
 </code></pre>
 
 <h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>配置用于串口收发的引脚  </p>
+<p>重新初始化传感器，包括LSM303AGR和LSM6DS3。</p>
 <h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -363,67 +434,20 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><em>rx_pin</em></td>
-<td>uint8_t</td>
-<td>接收数据的引脚</td>
-</tr>
-<tr>
-<td align="left"><em>tx_pin</em></td>
-<td>uint8_t</td>
-<td>发送数据的引脚</td>
-</tr>
-<tr>
-<td align="left"><em>baudrate</em></td>
-<td>uint32_t</td>
-<td>波特率设置</td>
-</tr>
-<tr>
 <td align="left"><em>返回值</em></td>
-<td>void</td>
-<td>无</td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h4 id="baudrate">关于 <em>baudrate</em> 参数<a class="headerlink" href="#baudrate" title="Permanent link">&para;</a></h4>
-<p><code>baudrate</code>的取值范围如下：</p>
-<pre><code>#define UART_BAUDRATE_Baud1200    (0x0004F000UL) /*!&lt; 1200 baud. */
-#define UART_BAUDRATE_Baud2400    (0x0009D000UL) /*!&lt; 2400 baud. */
-#define UART_BAUDRATE_Baud4800    (0x0013B000UL) /*!&lt; 4800 baud. */
-#define UART_BAUDRATE_Baud9600    (0x00275000UL) /*!&lt; 9600 baud. */
-#define UART_BAUDRATE_Baud14400   (0x003B0000UL) /*!&lt; 14400 baud. */
-#define UART_BAUDRATE_Baud19200   (0x004EA000UL) /*!&lt; 19200 baud. */
-#define UART_BAUDRATE_Baud28800   (0x0075F000UL) /*!&lt; 28800 baud. */
-#define UART_BAUDRATE_Baud38400   (0x009D5000UL) /*!&lt; 38400 baud. */
-#define UART_BAUDRATE_Baud57600   (0x00EBF000UL) /*!&lt; 57600 baud. */
-#define UART_BAUDRATE_Baud76800   (0x013A9000UL) /*!&lt; 76800 baud. */
-#define UART_BAUDRATE_Baud115200  (0x01D7E000UL) /*!&lt; 115200 baud. */
-#define UART_BAUDRATE_Baud230400  (0x03AFB000UL) /*!&lt; 230400 baud. */
-#define UART_BAUDRATE_Baud250000  (0x04000000UL) /*!&lt; 250000 baud. */
-#define UART_BAUDRATE_Baud460800  (0x075F7000UL) /*!&lt; 460800 baud. */
-#define UART_BAUDRATE_Baud921600  (0x0EBED000UL) /*!&lt; 921600 baud. */
-#define UART_BAUDRATE_Baud1M      (0x10000000UL) /*!&lt; 1M baud. */
-
-</code></pre>
-
-<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<pre><code>    #define RX_PIN 24
-    #define TX_PIN 25
-
-    void foo( void )
-    {
-        //配置串口收发引脚
-        serial_setup( RX_PIN, TX_PIN, UART_BAUDRATE_Baud9600);  
-    }
-</code></pre>
-
 <hr />
-<h2 id="_2">串口发送<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="imu_1">使能IMU传感器<a class="headerlink" href="#imu_1" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<pre><code>void serial_send(uint8_t* data, uint32_t length);      
+<pre><code>imu_status_t imu_sensor_select_features(sensor_selsection_t features);
 </code></pre>
 
 <h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<p>向串口发送数据。</p>
+<p>可选择加速度计，陀螺仪，磁力计的单个或者组合使能。</p>
 <h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -435,41 +459,20 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><em>data</em></td>
-<td>uint8_t *</td>
-<td>数据的起始地址</td>
-</tr>
-<tr>
-<td align="left"><em>length</em></td>
-<td>uint32_t</td>
-<td>数据的长度</td>
-</tr>
-<tr>
 <td align="left"><em>返回值</em></td>
-<td>void</td>
-<td>无</td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
-<pre><code>    void foo( void )
-    {
-        uint8_t* data = &quot;test data&quot;;
-        /*在调用此函数前
-        需先调用serial_setup配置收发引脚*/
-        serial_send( data, strlen(data) );
-    }
-</code></pre>
-
 <hr />
-<h2 id="_3">串口接收数据事件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_2">设置采样率<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
-<pre><code>void serial_on_data(uint8_t data);      
+<pre><code>imu_status_t imu_sensor_set_data_rate(uint32_t* p_data_rate, uint8_t mode)；
 </code></pre>
 
 <h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p>当串口上收到数据时，系统会触发该事件。<br />
-每次接收一个字节的数据。</p>
+<p>设置加速度计，陀螺仪，磁力计的采样率。</p>
 <h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -481,36 +484,102 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><em>data</em></td>
+<td align="left"><em>p_data_rate</em></td>
+<td>uint32_t *</td>
+<td>FIFO采样率（0/10/25/50/100/200/400/800/1600Hz）,磁力计不采用FIFO mode采样率固定为100Hz。</td>
+</tr>
+<tr>
+<td align="left"><em>mode</em></td>
 <td>uint8_t</td>
-<td>串口收到的数据</td>
+<td>采集数据的模式(FIFO MODE/CONTINUOUS_THEN_FIFO/BYPASS_THEN_CONTINUOUSE/<br/>CONTINUOUS_OVERWRITE MODE)</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
-<td>void</td>
-<td>无</td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="4_2">4. 函数举例<a class="headerlink" href="#4_2" title="Permanent link">&para;</a></h3>
-<pre><code>    //回调函数
-    void serial_on_data( uint8_t data )
-    {
-        //对收到的数据进行处理
-    }
+<hr />
+<h2 id="_3">开始产生数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<pre><code>imu_status_t imu_sensor_start(void); 
+</code></pre>
 
-    //当前函数
-    void foo( void )
-    {
-        ...
+<h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
+<p>配置sensor的特定功能进行数据输出。</p>
+<h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_4">停止产生数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>imu_status_t imu_sensor_stop(void); 
+</code></pre>
 
-        /*配置收发引脚
-          假设收发引脚已宏定义*/
-        serial_setup( RX_PIN, TX_PIN );
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>配置sensor的特定功能停止数据输出。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">数据回调事件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>void on_imu_sensor_data(imu_sensor_data_t* data); 
+</code></pre>
 
-        ...
-    }
-</code></pre></div>
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>从9轴读取数据后提供给用户的callback。</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><em>data</em></td>
+<td>imu_sensor_data_t*</td>
+<td>9轴数据（加速度+陀螺仪+磁力计）</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>imu_status_t</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         

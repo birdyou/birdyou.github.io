@@ -224,9 +224,10 @@
 <h3 id="2-sdk">2. 将SDK加入到工程中<a class="headerlink" href="#2-sdk" title="Permanent link">&para;</a></h3>
 <p>Step 1. 将juma-sdk.jar放入到工程的libs文件夹中</p>
 <p><img alt="" src="../images/7.png" /></p>
-<p>Step 2. 打开AndroidManifest.xml文件
-Step 3. 在AndroidManifest.xml加入以下两条权限：</p>
-<pre><code>    &lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot;/&gt;
+<p>Step 2. 打开AndroidManifest.xml文件</p>
+<p>Step 3. 在AndroidManifest.xml加入以下三条权限：</p>
+<pre><code>    &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+    &lt;uses-permission android:name=&quot;android.permission.BLUETOOTH&quot;/&gt;
     &lt;uses-permission android:name=&quot;android.permission.BLUETOOTH_ADMIN&quot;/&gt;
 </code></pre>
 
@@ -236,7 +237,7 @@ Step 3. 在AndroidManifest.xml加入以下两条权限：</p>
 <p>SDK分成了三个类，需要在工程中分别对其实例化。</p>
 <h3 id="1-scanhelper">1. ScanHelper<a class="headerlink" href="#1-scanhelper" title="Permanent link">&para;</a></h3>
 <p>该类用于扫描BLE设备，如开始扫描、停止扫描等BLE操作。<br />
-其中ScanCallback是一个接口，用于获取BLE设备扫描的结果，它以Callback的形式通知应用程序：</p>
+其中ScanCallback是一个接口类，用于获取BLE设备扫描的结果，它以Callback的形式通知应用程序：</p>
 <pre><code>    ScanHelper scanHelper = new ScanHelper(getApplicationContext(), scanCallback);
 
     ScanHelper.getVersion();
@@ -293,6 +294,8 @@ Step 3. 在AndroidManifest.xml加入以下两条权限：</p>
         device.send(type, message);
 
         device.getRemoteRssi();
+
+        device.setOtaMode();
 
         device.updateFirmware(url);
 
