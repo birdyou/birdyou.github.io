@@ -296,6 +296,13 @@
           
 
               <li class="">
+                <a class="itm-l1" href="../imu_sensor/">惯性传感器</a>
+                
+              </li>
+
+          
+
+              <li class="">
                 <a class="itm-l1" href="../gpio/">GPIO</a>
                 
               </li>
@@ -418,7 +425,7 @@
 一般手机、电脑等是主设备或主从一体设备，蓝牙智能手环、蓝牙音箱等是从设备。</p>
 <p>API声明和数据结构说明见头文件：</p>
 <ul>
-<li>STM32平台：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/bluenrg_sdk_api.h">bluenrg_sdk_api.h</a></li>
+<li>STM32平台：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/bluenrg_sdk_host_api.h">bluenrg_sdk_host_api.h</a></li>
 </ul>
 <p>蓝牙主设备的API使用例程请参见：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/product/application/host/app.c">host</a>。</p>
 <blockquote>
@@ -496,7 +503,7 @@
 <tr>
 <td align="left"><em>scan_interval</em></td>
 <td>uint8_t</td>
-<td>主设备的扫描间隔，单位毫秒(ms)</td>
+<td>主设备的扫描间隔，单位毫秒(ms),实际扫描间隔值interval*0.625ms</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
@@ -588,13 +595,13 @@
 <h4 id="scan_device_found_info">关于<em>scan_device_found_info</em>参数<a class="headerlink" href="#scan_device_found_info" title="Permanent link">&para;</a></h4>
 <p><code>scan_device_found_info</code>数据类型的定义如下所示，它用于表示一个蓝牙设备的信息：</p>
 <pre><code>typedef struct scan_device_found {
-    uint8_t     bdaddr_type;    //设备地址类型
+    uint8_t      bdaddr_type;   //设备地址类型
     tBDAddr     bdaddr;         //设备地址
-    uint8_t     local_name_len;  //设备名称长度
-    uint8_t     local_name[VARIABLE_SIZE]; //设备名称
-    uint8_t     uuid_type;      //UUID类型
-    uint8_t     uuid[VARIABLE_SIZE]; //UUID
-    int8_t      RSSI;           //信号强度
+    uint8_t      local_name_len;  //设备名称长度
+    uint8_t        local_name[VARIABLE_SIZE]; //设备名称
+    uint8_t      uuid_type;         //UUID类型
+    uint8_t        uuid[VARIABLE_SIZE]; //UUID
+    int8_t       RSSI;          //信号强度
 } scan_device_found_info;
 </code></pre>
 
@@ -694,7 +701,7 @@
 <tr>
 <td align="left"><em>length</em></td>
 <td>uint32_t</td>
-<td>数据长度</td>
+<td>数据长度(目前支持单个数据包最长18Byte)</td>
 </tr>
 <tr>
 <td align="left"><em>value</em></td>

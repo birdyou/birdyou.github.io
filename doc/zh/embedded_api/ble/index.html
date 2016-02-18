@@ -372,6 +372,13 @@
           
 
               <li class="">
+                <a class="itm-l1" href="../imu_sensor/">惯性传感器</a>
+                
+              </li>
+
+          
+
+              <li class="">
                 <a class="itm-l1" href="../gpio/">GPIO</a>
                 
               </li>
@@ -549,7 +556,7 @@
 </code></pre>
 
 <p><strong>STM32平台</strong></p>
-<pre><code>tBleStatus ble_device_set_tx_power(uint8_t level)；
+<pre><code>tBleStatus ble_set_tx_power(uint8_t level)；
 </code></pre>
 
 <h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
@@ -593,7 +600,7 @@
 <tr>
 <td align="left"><em>level</em></td>
 <td>uint8_t</td>
-<td>数值范围为0~7，对应8个等级的发射功率。缺省值为7，表示设置为最大发射功率(8dBm)。</td>
+<td>数值范围为0~7，对应8个等级的发射功率: -15, -11.7, -8.4, -5.1, -2.1, 1.4, 4.7, 8.0。<br/>缺省值为7，表示设置为最大发射功率(8dBm)。</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
@@ -605,7 +612,7 @@
 <hr />
 <h2 id="_3">设置广播名称<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<pre><code>void ble_device_set_name(const char* device_name);
+<pre><code>void ble_device_set_name(const char* new_device_name);
 </code></pre>
 
 <h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
@@ -659,7 +666,7 @@
 <tr>
 <td align="left"><em>interval</em></td>
 <td>uint16_t</td>
-<td>广播包的发送间隔，单位为ms。</td>
+<td>广播包的发送间隔，单位为ms,广播间隔实际值为interval乘0.625ms间隔<br/>最小广播间隔大于 32*0.625ms。</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
@@ -924,7 +931,7 @@
 </code></pre>
 
 <h3 id="2_8">2. 函数功能<a class="headerlink" href="#2_8" title="Permanent link">&para;</a></h3>
-<p>断开与之连接的BLE设备。</p>
+<p>device端断开与之连接的host端设备。</p>
 <h3 id="3_8">3. 函数参数<a class="headerlink" href="#3_8" title="Permanent link">&para;</a></h3>
 <p><strong>nRF51平台</strong></p>
 <table>
@@ -1014,7 +1021,7 @@
 <tr>
 <td align="left"><em>length</em></td>
 <td>uint32_t</td>
-<td>数据长度</td>
+<td>数据长度（stm32平台单次数据长度不超过18Byte）</td>
 </tr>
 <tr>
 <td align="left"><em>value</em></td>
