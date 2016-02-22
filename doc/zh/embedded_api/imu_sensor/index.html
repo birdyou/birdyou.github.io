@@ -258,6 +258,13 @@
           
 
               <li class="">
+                <a class="itm-l1" href="../env_sensor/">环境传感器</a>
+                
+              </li>
+
+          
+
+              <li class="">
                 <a class="itm-l1" href="../gpio/">GPIO</a>
                 
               </li>
@@ -314,7 +321,7 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                <a class="itm-l1" href="../buzz/">蜂鸣器</a>
                 
               </li>
 
@@ -459,6 +466,11 @@ STM32平台的 <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/sy
 </thead>
 <tbody>
 <tr>
+<td align="left">features</td>
+<td>sensor_selsection_t</td>
+<td>可选择<code>ACC_ENABLE</code>/<code>GYRO_ENABLE</code>/<code>MAG_ENABLE</code>/<code>ACC_AND_GYRO_ENABLE</code><br/>/<code>ALL_ENABLE</code>。</td>
+</tr>
+<tr>
 <td align="left"><em>返回值</em></td>
 <td>imu_status_t</td>
 <td><a href="#_1">status</a></td>
@@ -491,7 +503,7 @@ STM32平台的 <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/sy
 <tr>
 <td align="left"><em>mode</em></td>
 <td>uint8_t</td>
-<td>采集数据的模式(FIFO MODE/CONTINUOUS_THEN_FIFO/BYPASS_THEN_CONTINUOUSE/<br/>CONTINUOUS_OVERWRITE MODE)</td>
+<td>采集数据的模式(<code>FIFO MODE</code>/<code>CONTINUOUS_THEN_FIFO</code>/<code>BYPASS_THEN_CONTINUOUSE</code>/<br/><code>CONTINUOUS_OVERWRITE MODE</code>)</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
@@ -507,7 +519,7 @@ STM32平台的 <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/sy
 </code></pre>
 
 <h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
-<p>配置sensor的特定功能进行数据输出。</p>
+<p>根据sensor的功能配置进行数据输出使能。</p>
 <h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>

@@ -156,6 +156,13 @@
 
           
 
+              <li class="">
+                <a class="itm-l1" href="../env_sensor/">环境传感器</a>
+                
+              </li>
+
+          
+
               <li class="active">
                 <a class="itm-l1" href="./">GPIO</a>
                 
@@ -327,7 +334,7 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../buzz/">蜂蜜器</a>
+                <a class="itm-l1" href="../buzz/">蜂鸣器</a>
                 
               </li>
 
@@ -697,7 +704,7 @@
 <p>在GPIO的引脚状态被改变后由系统触发该事件。  <br />
 该函数内部用于处理 GIPO 状态变化后的任务。  </p>
 <blockquote>
-<p>目前，仅支持一个GPIO状态变化事件，若同时使用两个及以上可能导致全部失效</p>
+<p>由于监视的是GPIO的电平状态，而非触发边缘，如果同时监视多个引脚，应在内部加入辅助判断，来获知引脚的真实状态。</p>
 </blockquote>
 <h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
 <table>

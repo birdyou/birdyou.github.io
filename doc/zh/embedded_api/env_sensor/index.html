@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/light/">
+        <link rel="canonical" href="http://www.juma.io/doc/zh/embedded_api/env_sensor/">
         <link rel="shortcut icon" href="../../img/jumafav.png">
 
         <title>JUMA 文档中心</title>
@@ -92,7 +92,7 @@
             <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../../basics/">文档</a></li>
-    <li>调光灯</li>
+    <li>环境传感器</li>
   </ol>
 
   
@@ -156,8 +156,109 @@
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../env_sensor/">环境传感器</a>
+              <li class="active">
+                <a class="itm-l1" href="./">环境传感器</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">数据结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#api">API调用状态</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">使能传感器功能</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_3">传感器开始工作</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_4">获取温度数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_5">获取湿度数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_6">同时获取温度与湿度数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_4">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_4">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_4">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_7">获取大气压数据</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1_5">1. 函数声明</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_5">2. 函数功能</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3_5">3. 函数参数</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
                 
               </li>
 
@@ -212,80 +313,8 @@
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">调光灯</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#_1">调光灯设置</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3">3. 函数参数</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4">4. 函数举例</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_2">打开调光灯</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1_1">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2_1">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3_1">3. 函数参数</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_3">关闭调光灯</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1_2">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2_2">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3_2">3. 函数参数</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_4">调节颜色</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1_3">1. 函数声明</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2_3">2. 函数功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3_3">3. 函数参数</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4_1">4. 函数举例</a></li>
-                      </ul>
-                    -->
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../light/">调光灯</a>
                 
               </li>
 
@@ -351,25 +380,54 @@
 
             <div class="content-body" role="main">
 
-<h1>调光灯</h1>
+<h1>环境传感器</h1>
 
-<p>本文档用于描述调光灯API的操作说明，API内部采用PWM信号来实现光的调节，支持RGB三种颜色。</p>
+<p>本系列API用于支持获取环境传感器的数值（温湿度计HTS221，气压计LPS25HB）。
+应用于一些需要环境数据的场合，例如：智能家居系统，智慧农场，户外运动设备等。</p>
+<p>API声明和数据结构说明见头文件：<br />
+STM32平台的 <a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/env_sensor.h">env_sensor.h</a></p>
 <blockquote>
-<p>本系列API目前仅支持nRF51平台。</p>
+<p>本系列API仅支持STM32平台。</p>
 </blockquote>
-<p>对于nRF51平台的用户，使用时请引用相应的头文件：</p>
-<ul>
-<li>API头文件：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_api.h">juma_sdk_api.h</a></li>
-<li>数据类型或宏定义参见：<a href="https://github.com/JUMA-IO/nRF51_Platform/blob/master/Interface/Include/juma_sdk_types.h">juma_sdk_types.h</a></li>
-</ul>
 <hr />
-<h2 id="_1">调光灯设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="api">API调用状态<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<p><code>env_status_t</code>表明了API的调用状态，它是一个<code>unit8</code>类型，在<code>env_sensor.h</code>头文件中通过枚举预置了一些状态，摘取部分如下：</p>
+<table>
+<thead>
+<tr>
+<th align="left">宏定义</th>
+<th>数值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">env_status_ok</td>
+<td>0x00</td>
+<td>API调用成功</td>
+</tr>
+<tr>
+<td align="left">env_status_error</td>
+<td>0x01</td>
+<td>API调用失败</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ol>
+<li>其他宏定义请参阅：<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/juma/inc/env_sensor.h">env_sensor.h</a>。  </li>
+<li>本宏定义只适用于STM32平台。</li>
+</ol>
+</blockquote>
+<hr />
+<h2 id="_2">使能传感器功能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1">1. 函数声明<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<pre><code>void light_setup(uint8_t* pins, uint8_t is_active_high);
+<pre><code>env_status_t env_sensor_select_features(env_sensor_selsection_t features);
 </code></pre>
 
 <h3 id="2">2. 函数功能<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>配置调光灯。</p>
+<p>可选择温湿度、气压功能的单个或者组合使能。</p>
 <h3 id="3">3. 函数参数<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -381,79 +439,25 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><em>pins</em></td>
-<td>uint8_t *</td>
-<td>用于控制调光灯的引脚</td>
-</tr>
-<tr>
-<td align="left"><em>is_active_high</em></td>
-<td>uint8_t</td>
-<td>驱动调光灯变亮的电平</td>
+<td align="left">features</td>
+<td>env_sensor_selsection_t</td>
+<td>可选择<code>TEMP_HUMI_ENABLE</code>/<code>AIR_PRESSURE_ENABLE</code><br/>/<code>ALL_ENABLE</code>。</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
-<td>无</td>
-<td>无</td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h4 id="pins">关于 <em>pins</em> 的描述<a class="headerlink" href="#pins" title="Permanent link">&para;</a></h4>
-<p>用于指定与调光灯相连的引脚，在<code>juma_sdk_types.h</code>中有如下定义：</p>
-<pre><code>    typedef struct _light_config_t {
-
-        uint8_t pins[4]; // pins for RGBW
-
-    } light_config_t;
-</code></pre>
-
-<h4 id="is_active_high">关于 <em>is_active_high</em> 的描述<a class="headerlink" href="#is_active_high" title="Permanent link">&para;</a></h4>
-<p>用于指定调光灯的电平，即，高电平有效亦或是低电平有效。</p>
-<table>
-<thead>
-<tr>
-<th align="left">is_active_high的值</th>
-<th>对应的应用场合</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><em>0</em></td>
-<td>低电平驱动调光灯</td>
-</tr>
-<tr>
-<td align="left"><em>非零</em></td>
-<td>高电平驱动调光灯</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<pre><code>    //当前函数
-    void foo()
-    {
-        ...
-
-        light_config_t light_init_config;
-
-        light_init_config.pins[0] = 21;     //R
-        light_init_config.pins[1] = 22;     //G
-        light_init_config.pins[2] = 23;     //B
-
-        //配置调光灯 其驱动引脚为21,22,23 其驱动电平为低有效
-        light_setup((uint8_t *)&amp;light_init_config, 0);
-
-        ...
-    }
-</code></pre>
-
 <hr />
-<h2 id="_2">打开调光灯<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">传感器开始工作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<pre><code>void light_on(void);
+<pre><code>env_status_t env_sensor_start(void); 
 </code></pre>
 
 <h3 id="2_1">2. 函数功能<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<p>在配置好调光灯之后，调光灯并不会直接打开，需要调用本函数，才会打开调光灯。<br />
-打开后默认为白色，即三种颜色全部点亮，建议在打开之前首先设置好要显示的颜色。</p>
+<p>根据功能配置让传感器开始工作。</p>
 <h3 id="3_1">3. 函数参数<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -466,19 +470,19 @@
 <tbody>
 <tr>
 <td align="left"><em>返回值</em></td>
-<td>无</td>
-<td>无</td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="_3">关闭调光灯<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">获取温度数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1_2">1. 函数声明<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
-<pre><code>void light_off(void);
+<pre><code>env_status_t env_sensor_get_temperature(float* temperature); 
 </code></pre>
 
 <h3 id="2_2">2. 函数功能<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p>关闭调光灯。</p>
+<p>获取环境温度。</p>
 <h3 id="3_2">3. 函数参数<a class="headerlink" href="#3_2" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -490,20 +494,25 @@
 </thead>
 <tbody>
 <tr>
+<td align="left">temperature</td>
+<td>float*</td>
+<td>单位为摄氏度，eg：26.66°C，温度范围-40-120°C。</td>
+</tr>
+<tr>
 <td align="left"><em>返回值</em></td>
-<td>无</td>
-<td>无</td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="_4">调节颜色<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">获取湿度数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="1_3">1. 函数声明<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
-<pre><code>void light_set_color(const uint8_t* rgb_values);
+<pre><code>env_status_t env_sensor_get_humidity(float* humidity);
 </code></pre>
 
 <h3 id="2_3">2. 函数功能<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
-<p>调节灯光颜色，有RGB三个通道的颜色可以设置。</p>
+<p>获取环境温度。</p>
 <h3 id="3_3">3. 函数参数<a class="headerlink" href="#3_3" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -515,68 +524,82 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><em>rgb_values</em></td>
-<td>const uint8_t *</td>
-<td>颜色值数组</td>
+<td align="left">humidity</td>
+<td>float*</td>
+<td>单位为相对湿度rH，eg：26.66%rH，湿度范围0-100%rH。</td>
 </tr>
 <tr>
 <td align="left"><em>返回值</em></td>
-<td>无</td>
-<td>无</td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h4 id="rgb_values">关于 <em>rgb_values</em> 的描述<a class="headerlink" href="#rgb_values" title="Permanent link">&para;</a></h4>
-<p>RGB的颜色设定，其通过一个数组一次性设定颜色值：</p>
+<hr />
+<h2 id="_6">同时获取温度与湿度数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="1_4">1. 函数声明<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h3>
+<pre><code>env_status_t env_sensor_get_temperature_humidity(float* temperature, float* humidity);
+</code></pre>
+
+<h3 id="2_4">2. 函数功能<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h3>
+<p>同时获取环境温度与湿度数据。</p>
+<h3 id="3_4">3. 函数参数<a class="headerlink" href="#3_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th align="left">数组编号</th>
-<th align="left">对应的颜色值</th>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">rgb_values[0]</td>
-<td align="left">红光数值，范围为[0~255]</td>
+<td align="left">temperature</td>
+<td>float*</td>
+<td>单位为摄氏度，eg：26.66°C，温度范围-40-120°C。</td>
 </tr>
 <tr>
-<td align="left">rgb_values[1]</td>
-<td align="left">绿光数值，范围为[0~255]</td>
+<td align="left">humidity</td>
+<td>float*</td>
+<td>单位为相对湿度rH，eg：26.66%rH，湿度范围0-100%rH。</td>
 </tr>
 <tr>
-<td align="left">rgb_values[2]</td>
-<td align="left">蓝光数值，范围为[0~255]</td>
+<td align="left"><em>返回值</em></td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
-<pre><code>    //当前函数
-    void foo()
-    {
-        ...
+<hr />
+<h2 id="_7">获取大气压数据<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="1_5">1. 函数声明<a class="headerlink" href="#1_5" title="Permanent link">&para;</a></h3>
+<pre><code>env_status_t env_sensor_get_air_pressure(float* air_pressure);
+</code></pre>
 
-        //配置调光灯 其驱动引脚为21,22,23 其驱动电平为低有效
-        light_setup((uint8_t *)&amp;light_init_config, 0);
-
-        ...
-
-        //打开调光灯
-        light_on();
-
-        ...
-        //调节灯光颜色        
-        uint8_t color[4] = {0, 100, 0, 0};
-        light_set_color(color);     
-
-        ...
-
-        //关闭调光灯
-        light_off();
-
-        ...
-    }
-</code></pre></div>
+<h3 id="2_5">2. 函数功能<a class="headerlink" href="#2_5" title="Permanent link">&para;</a></h3>
+<p>获取环境温度。</p>
+<h3 id="3_5">3. 函数参数<a class="headerlink" href="#3_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">air_pressure</td>
+<td>float*</td>
+<td>单位为绝对大气压hPa，eg：1000.00hPa，绝对大气压范围260-1260hPa。</td>
+</tr>
+<tr>
+<td align="left"><em>返回值</em></td>
+<td>env_status_t</td>
+<td><a href="#_1">status</a></td>
+</tr>
+</tbody>
+</table></div>
         </div>
 
         

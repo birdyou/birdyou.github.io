@@ -310,7 +310,7 @@
 <h1>设备类</h1>
 
 <p>SDK 中将对 iOS BLE 设备的操作封装成设备类(Device)，包括发送数据、接收数据、固件升级等操作。</p>
-<p>SDK为开源项目，本文涉及的代码参见：</p>
+<p>SDK 为开源项目，本文涉及的代码参见：</p>
 <ul>
 <li><code>BLE_SDK_iOS</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">github</a></li>
 </ul>
@@ -351,9 +351,9 @@
 </tbody>
 </table>
 <h4 id="data">关于 <em>data</em> 参数<a class="headerlink" href="#data" title="Permanent link">&para;</a></h4>
-<p><em>data</em> 不能为 nil，data 的长度必须小于 199。</p>
+<p><em>data</em> 不能为 nil，data 的长度必须小于 199.</p>
 <h4 id="typecode">关于 <em>typeCode</em> 参数<a class="headerlink" href="#typecode" title="Permanent link">&para;</a></h4>
-<p><em>typeCode</em> 必须小于 128</p>
+<p><em>typeCode</em> 必须小于 128.</p>
 <hr />
 <h2 id="_2">发送蓝牙数据事件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1. 函数声明<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
@@ -446,9 +446,9 @@
 </tbody>
 </table>
 <h4 id="data_1">关于 <em>data</em> 参数<a class="headerlink" href="#data_1" title="Permanent link">&para;</a></h4>
-<p>如果接收数据时发生错误，<em>data</em> 为 nil。</p>
+<p>如果接收数据时发生错误，<em>data</em> 为 nil.</p>
 <h4 id="typecode_1">关于 <em>typeCode</em> 参数<a class="headerlink" href="#typecode_1" title="Permanent link">&para;</a></h4>
-<p>如果接收数据时发生错误，<em>typeCode</em> 为 -1。</p>
+<p>如果接收数据时发生错误，<em>typeCode</em> 为 -1.</p>
 <h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <pre><code>- (void)device:(JumaDevice *)device didUpdateData:(NSData *)data type:(const char)typeCode error:(NSError *)error {
     if (!error) {
@@ -581,8 +581,8 @@
 
 <h3 id="2_6">2. 函数功能<a class="headerlink" href="#2_6" title="Permanent link">&para;</a></h3>
 <p>更新蓝牙设备的固件.  </p>
-<p>调用 updateFirmware: 进行更新操作时, 结果会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出<br />
-调用 updateFirmware:completionHandler: 进行更新操作时, 如果 handler 参数不为 nil, 结果会通过 handler 给出, 否则会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出</p>
+<p>调用 updateFirmware: 进行更新操作时, 结果会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出.<br />
+调用 updateFirmware:completionHandler: 进行更新操作时, 如果 handler 参数不为 nil, 结果会通过 handler 给出, 否则会通过 JumaDeviceDelegate 中的 device:didUpdateFirmware: 给出.</p>
 <h3 id="3_6">3. 函数参数<a class="headerlink" href="#3_6" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -612,7 +612,7 @@
 </table>
 <hr />
 <h4 id="firmwaredata">关于 <em>firmwareData</em> 参数<a class="headerlink" href="#firmwaredata" title="Permanent link">&para;</a></h4>
-<p><em>firmwareData</em> 不能为 nil</p>
+<p><em>firmwareData</em> 不能为 nil.</p>
 <hr />
 <h2 id="_7">更新设备固件事件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="1_7">1. 函数声明<a class="headerlink" href="#1_7" title="Permanent link">&para;</a></h3>
@@ -649,7 +649,7 @@
 </tbody>
 </table>
 <h4 id="error">关于 <em>error</em> 参数<a class="headerlink" href="#error" title="Permanent link">&para;</a></h4>
-<p>error 为 nil 说明升级成功，否则升级失败</p>
+<p>error 为 nil 说明升级成功，否则升级失败.</p>
 <h3 id="4_3">4. 函数举例<a class="headerlink" href="#4_3" title="Permanent link">&para;</a></h3>
 <pre><code>- (void)device:(JumaDevice *)device didUpdateFirmware:(NSError *)error {
     if (!error) {

@@ -377,14 +377,14 @@
 <h1>管理类</h1>
 
 <p>SDK 中将对 iOS BLE 的操作封装成管理类(Manager)，包括扫描、建立连接、断开连接等操作。</p>
-<p>SDK为开源项目，本文涉及的代码参见：</p>
+<p>SDK 为开源项目，本文涉及的代码参见：</p>
 <ul>
 <li><code>BLE_SDK_iOS</code>：<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">github</a></li>
 </ul>
 <hr />
 <h2 id="_1">数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="jumamanageroptionrestoreidentifierkey">常量: JumaManagerOptionRestoreIdentifierKey<a class="headerlink" href="#jumamanageroptionrestoreidentifierkey" title="Permanent link">&para;</a></h3>
-<pre><code>extern NSString * const JumaManagerOptionRestoreIdentifierKey NS_AVAILABLE(NA, 7_0);
+<pre><code>FOUNDATION_EXPORT NSString * const JumaManagerOptionRestoreIdentifierKey NS_AVAILABLE(NA, 7_0);
 </code></pre>
 
 <p>在初始化 JumaManager 时的可选参数之一, 该参数对应的值的类型是 NSString *.  </p>
@@ -399,13 +399,13 @@
 3.app 被系统杀死后, 手机不可关机或重启, 手机的蓝牙必须一直打开.<br />
 4.在 app 被杀死的时候, 手机必须正在连接蓝牙设备, 或者已经连接蓝牙设备.</p>
 <h3 id="jumamanageroptionshowpoweralertkey">常量: JumaManagerOptionShowPowerAlertKey<a class="headerlink" href="#jumamanageroptionshowpoweralertkey" title="Permanent link">&para;</a></h3>
-<pre><code>extern NSString * const JumaManagerOptionShowPowerAlertKey NS_AVAILABLE(NA, 7_0);
+<pre><code>FOUNDATION_EXPORT NSString * const JumaManagerOptionShowPowerAlertKey NS_AVAILABLE(NA, 7_0);
 </code></pre>
 
 <p>在初始化 JumaManager 时的可选参数之一, 该参数对应的值的类型是 NSNumber * (Boolean).<br />
 如果为该参数指定的值为 @YES, 在初始化 JumaManager 时, 如果手机上的蓝牙处于关闭状态, 系统会向用户显示一个警告对话框.  </p>
 <h3 id="jumamanagerscanoptionallowduplicateskey">常量: JumaManagerScanOptionAllowDuplicatesKey<a class="headerlink" href="#jumamanagerscanoptionallowduplicateskey" title="Permanent link">&para;</a></h3>
-<pre><code>extern NSString * const JumaManagerScanOptionAllowDuplicatesKey;  
+<pre><code>FOUNDATION_EXPORT NSString * const JumaManagerScanOptionAllowDuplicatesKey;  
 </code></pre>
 
 <p>该参数是启动扫描时的可选参数, 该参数对应的值的类型是 NSNumber * (Boolean).  </p>
@@ -433,7 +433,7 @@
 <tbody>
 <tr>
 <td align="left"><em>delegate</em></td>
-<td>id\<JumaManagerDelegate></td>
+<td>id<JumaManagerDelegate></td>
 <td>接收 JumaManager 的事件的对象</td>
 </tr>
 <tr>
@@ -460,7 +460,7 @@
 <h3 id="4">4. 函数举例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <pre><code>NSDictionary *options = @{ JumaManagerOptionShowPowerAlertKey    : @YES,
                            JumaManagerOptionRestoreIdentifierKey : @&quot;io.juma.restoreID&quot; };
-JumaManager *manager = [[JumaManager alloc] initWithDelegate:self queue:nil options:options];
+self.manager = [[JumaManager alloc] initWithDelegate:self queue:nil options:options];
 </code></pre>
 
 <hr />
@@ -494,10 +494,10 @@ JumaManager *manager = [[JumaManager alloc] initWithDelegate:self queue:nil opti
 </tbody>
 </table>
 <h4 id="options_1">关于 <em>options</em> 参数<a class="headerlink" href="#options_1" title="Permanent link">&para;</a></h4>
-<p>可选参数，见 <a href="../JumaManagerScanOptionAllowDuplicatesKey.html">JumaManagerScanOptionAllowDuplicatesKey</a>。</p>
+<p>可选参数，见 <code>JumaManagerScanOptionAllowDuplicatesKey</code>.</p>
 <h3 id="4_1">4. 函数举例<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
 <pre><code>NSDictionary *options = @{ JumaManagerScanOptionAllowDuplicatesKey : @NO };
-[[JumaManager new] scanForDeviceWithOptions:options];
+[self.manager scanForDeviceWithOptions:options];
 </code></pre>
 
 <hr />
@@ -762,7 +762,7 @@ JumaManager *manager = [[JumaManager alloc] initWithDelegate:self queue:nil opti
 </tr>
 </tbody>
 </table>
-<h4 id="nserror">关于 <em>NSError</em> 参数<a class="headerlink" href="#nserror" title="Permanent link">&para;</a></h4>
+<h4 id="error">关于 <em>error</em> 参数<a class="headerlink" href="#error" title="Permanent link">&para;</a></h4>
 <p>如果连接断开是由调用 disconnectDevice: 导致的, <em>error</em> 为 nil.</p>
 <hr />
 <h2 id="_12">连接失败事件<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
