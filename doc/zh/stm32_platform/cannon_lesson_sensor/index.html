@@ -142,13 +142,6 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
-                
-              </li>
-
-          
-
-              <li class="">
                 <a class="itm-l1" href="../cannon_resource/">Cannon的介绍</a>
                 
               </li>
@@ -156,7 +149,21 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../cannon_burn/">Cannon的烧录</a>
+                <a class="itm-l1" href="../cannon_first/">Cannon的第一次</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_env/">Cannon的开发环境</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_burn/">Cannon的编译下载</a>
                 
               </li>
 
@@ -173,7 +180,7 @@
                     <li class=""><a href="#sdk">获取嵌入式SDK及例程</a></li>
 <!--                    -->
                   
-                    <li class=""><a href="#_2">编译和烧录嵌入式软件</a></li>
+                    <li class=""><a href="#_2">编译和烧写嵌入式软件</a></li>
 <!--                    
                       <ul class="nav nav-l2">
                         <li><a class="itm-l2" href="#step1">Step1. 打开样本工程：</a></li>
@@ -184,7 +191,7 @@
                       </ul>
                     
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step3">Step3. 烧入软件</a></li>
+                        <li><a class="itm-l2" href="#step3">Step3. 烧写软件</a></li>
                       </ul>
                     -->
                   
@@ -255,7 +262,7 @@
 <p>如果您想获知最新的代码改动情况，请使用github的“watch”功能。</p>
 </blockquote>
 <hr />
-<h2 id="_2">编译和烧录嵌入式软件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">编译和烧写嵌入式软件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h4 id="step1">Step1. 打开样本工程：<a class="headerlink" href="#step1" title="Permanent link">&para;</a></h4>
 <pre><code>x:/Cannon/product/application/sensor_tag/mdk-arm/CAF.uvproj
 </code></pre>
@@ -263,7 +270,7 @@
 <p><img alt="" src="../images/sensor_tag_path.jpg" /></p>
 <h4 id="step2">Step2. 编译工程<a class="headerlink" href="#step2" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../images/yiwI1p2.png" /></p>
-<h4 id="step3">Step3. 烧入软件<a class="headerlink" href="#step3" title="Permanent link">&para;</a></h4>
+<h4 id="step3">Step3. 烧写软件<a class="headerlink" href="#step3" title="Permanent link">&para;</a></h4>
 <p><img alt="" src="../images/yatJwos.png" /></p>
 <hr />
 <h2 id="st_sensor-app">手机安装ST_SENSOR APP<a class="headerlink" href="#st_sensor-app" title="Permanent link">&para;</a></h2>
@@ -273,6 +280,9 @@
 </code></pre>
 
 <p>将该文件传送到Android手机，直接安装便可。</p>
+<blockquote>
+<p>如果您不知道如果将APK安装至手机，请参阅<a href="http://jingyan.baidu.com/article/eae07827eda2fa1fec548527.html">这篇文章</a>。</p>
+</blockquote>
 <p>第二种方式：如果您熟悉Android开发环境，可以使用“ST_SENSOR APP”的源码来安装。“ST_SENSOR”APP的源码位于：<br />
 <a href="https://github.com/JUMA-IO/BLE_SensorTag_Android">https://github.com/JUMA-IO/BLE_SensorTag_Android</a></p>
 <hr />
@@ -292,8 +302,8 @@
 <pre><code>x:/Cannon/product/application/sensor_tag/app.c
 </code></pre>
 
-<p>代码量很少，已配有注释，非常方便阅读。<br />
-如果您对其中的BLE APIs和JSensor APIs有所疑问，请查阅相应的API说明：<br />
+<p>代码量很少，已配有注释，非常方便阅读。  </p>
+<p>如果您对其中的BLE APIs和JSensor APIs有所疑问，请查阅相应的API说明：<br />
 <a href="http://www.juma.io/doc/zh/embedded_api/guide/">http://www.juma.io/doc/zh/embedded_api/guide/</a></p></div>
         </div>
 
