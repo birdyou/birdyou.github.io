@@ -14,7 +14,7 @@
     <link href="./css/modern-business.css" rel="stylesheet">
     <link rel="icon" href="images/toplogo.png" />
     
-		<style>
+	<style>
     .navbar-brand{
         padding:0px;
         width: 120px;
@@ -23,12 +23,48 @@
         background-repeat: no-repeat;
         background-position: center;	        
     }  
-		.content-section-a {
-		    padding: 20px 0;
-		    background-color: #f8f8f8;       
-		}
-		.well-font { font-size: 16px; }
-		</style>
+	.content-section-a {
+		padding: 20px 0;
+		background-color: #f8f8f8;       
+	}
+	.well-font { font-size: 16px; }
+	
+	.download-section {
+	    width: 100%;
+	    padding: 50px 0;
+	    display: block;
+	    
+	    color: #555555;
+	    background: url(./images/cannon/cannon_home.jpg) no-repeat center center scroll;
+	    background-color: #000;
+	    -webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    background-size: cover;
+	    -o-background-size: cover;
+	}
+
+#map {
+    width: 100%;
+    height: 200px;
+    margin-top: 100px;
+}
+
+@media(min-width:767px) {
+    .content-section {
+        /*padding-top: 250px;*/
+    }
+
+    .download-section {
+        padding: 100px 0;
+    }
+
+    #map {
+        height: 400px;
+        margin-top: 250px;
+    }
+}
+
+	</style>
 
     <!-- Custom Fonts -->
     <link href="./css/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -116,10 +152,10 @@
 		        <div class="row">
 			            <div class="col-md-4">
 			            </div>
-									<div class="col-md-4">
-									<a class="btn btn-danger  btn-block btn-lg" href="./sdk.html"><b>获取开源SDK</b></a>					
-									</div>		            
-									<div class="col-md-4">
+						<div class="col-md-4">
+						<a class="btn btn-danger   btn-lg" href="./sdk.html"><b>获取开源 SDK</b></a>					
+						</div>		            
+						<div class="col-md-4">
 						</div>					
 		        </div>           			        
 			    </div>
@@ -128,16 +164,48 @@
     </header>
 
 
+<!--<div class="featurette">
+	<img class="featurette-image  img-responsive" src="images/cannon/cannon_home.png"  width="4096" >
+	<!--<div class="fill" style="background-image:url(./images/b7_result.jpg);"></div>--*>
+</div>-->
+
+<section id="download" class="content-section text-center">
+    <div class="download-section">
+        <div class="container">
+            <div class="col-md-8 col-md-offset-2">
+                <br />
+                <h2><b>小钢炮 · 也许你是最棒的!</b></h2>
+                <!--<p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>-->
+                <br />
+                <!--<br />-->
+                <a href="./cannon.html" class="btn btn-success btn-lg">开启小钢炮之旅</a>
+
+<!--		        <div class="row">                
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+				<h2>Download Grayscale</h2>
+				<br />
+				<a class="btn btn-danger  btn-block btn-lg" href="./sdk.html"><b>获取开源SDK</b></a>					
+				</div>		            
+				<div class="col-md-4">
+				</div>
+				</div>	-->
+                
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Page Content -->
     <div class="container">
 
         <!-- Marketing Icons Section -->
-        <div class="row">
+        <!--<div class="row">
             <div class="col-lg-12">
               <br />
 <!--                <h2 align="center">
                     低功耗蓝牙 · 浪潮已起 远未及巅
-                </h2>-->
+                </h2>--*>
 
               <br />
          </div>
@@ -191,17 +259,17 @@
             </div>
             
 
-        </div>
+        </div>-->
         <!-- /.row -->
 
 
         <!-- /.row -->
-		<!--<br />-->
-		<hr>
+		<br />
+		<!--<hr>-->
         <!-- Features Section -->
 
         <div class="container">
-	         <br />
+<!--	         <br />
 	        <div class="row">
 				<div class="col-lg-12">
 				<div class="col-md-1">
@@ -235,7 +303,7 @@
 	        </div>
 	        
 	        <br />
-	        <hr>
+	        <hr>-->
 	        
 			<!-- Our Customers -->
 			<div class="row">
