@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/cannon_bluetooth/">
+        <link rel="shortcut icon" href="../../img/jumafav.png">
+
+        <title>JUMA 文档中心</title>
+
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify.css" rel="stylesheet">
+        <link href="../../css/main.css" rel="stylesheet">
+        <!--<link href="../../css/table.css" rel="stylesheet">        -->
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-upyun" role="navigation">
+    <div class="container clearfix">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.juma.io/">JUMA 文档中心</a>
+        </div>
+
+        <div class="navbar-collapse collapse pull-right">
+            <ul class="nav navbar-nav">
+            
+              <li class="pull-left">
+                
+                <a href="../../basics/">文档中心</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../embedded_api/guide/">嵌入式SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../android_api/guide/">Android SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../ios_api/guide/">iOS SDK</a>
+                
+              </li>
+            
+              <li class="pull-left">
+                
+                <a href="../../nrf51_platform/guide/">nRF51平台</a>
+                
+              </li>
+            
+              <li class="pull-left active">
+                
+                <a href="../guide/">STM32平台</a>
+                
+              </li>
+            
+<!--                <li>
+                    <a href="https://segmentfault.com/upyun" target="_blank">技术问答</a>
+                </li>
+                <li>
+                    <a href="https://blog.upyun.com/" target="_blank">BLOG</a>
+                </li>-->
+            </ul>
+
+<!--            <ul class="list-unstyled navbar-right clearfix">
+                <li class="login"><a href="https://console.upyun.com/#/login/">登录</a></li>
+                <li class="reg"><a href="https://console.upyun.com/#/register/">注册</a></li>
+            </ul>-->
+        </div>
+    </div>
+</div>
+
+
+        <div class="container" id="main-wrapper">
+            <div class="toolbar clearfix">
+  <ol class="breadcrumb pull-left">
+    <li><a href="../../basics/">文档</a></li>
+    <li>Cannon蓝牙入门</li>
+  </ol>
+
+  
+    
+      <a href="https://github.com/JUMA-IO/JUMA_Docs" class="github-edit pull-right"><i class="fa fa-github"></i> Edit on GitHub</a>
+    
+  
+
+</div>
+            <div class="bs-sidebar hidden-print toc"  data-spy="affix" data-offset-top="120" role="complementary">
+  <ul class="nav bs-sidenav">
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+      
+
+    
+      
+        
+          
+
+              <li class="">
+                <a class="itm-l1" href="../guide/">使用说明</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_resource/">Cannon介绍</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_first/">Cannon的第一次</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_env/">Cannon开发环境</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_burn/">Cannon编译下载</a>
+                
+              </li>
+
+          
+
+              <li class="active">
+                <a class="itm-l1" href="./">Cannon蓝牙入门</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">低功耗蓝牙</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_2">必备知识</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 物理信道</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 状态和角色</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 典型通信过程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 协议</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#bluenrg">BlueNRG芯片</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#api">嵌入式API</a></li>
+<!--                    -->
+                  
+                  </ul>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_software/">Cannon代码学习</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_sensor/">Cannon例程: SensorTag</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_led/">Cannon例程: 蓝牙LED</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">常见问题</a>
+                
+              </li>
+
+          
+        
+      
+
+    
+  </ul>
+
+
+</div>
+
+
+
+            <div class="content-body" role="main">
+
+<h1>Cannon蓝牙入门</h1>
+
+<p>现在一样东西能称得上智能硬件，它得有一个前提条件：能和手机通信。我们看一下物联网的几大热门无线通信技术：</p>
+<ul>
+<li>蓝牙：低成本、低功耗，设备和手机可以直接通信；</li>
+<li>WiFi：使用广泛、功耗略高，需要借助路由器上网，手机和设备通过英特网/局域网来通信；</li>
+<li>Zigbee：成本略高，需要借助网关上网，手机和设备通过英特网来通信；</li>
+<li>3G/4G：成本高，需要3G/4G手机卡，设备和手机通过英特网来通信；</li>
+</ul>
+<p>得益于手机的直接支持，一个蓝牙设备可以无需借助外力就和手机通信，这让蓝牙在无线个人局域网(WPAN)中广泛使用。近些年来，可穿戴、智能家居、车载设备等领域也随处可见蓝牙技术的影子。</p>
+<p>现在，小钢炮出场了，它的特色是<em>“蓝牙+传感器”</em>。目的就是要把传感器的数据，通过低成本、低功耗的蓝牙技术，传给手机，甚至英特网。</p>
+<p>通过本文，希望让大家在玩小钢炮之前，对蓝牙有一个感性的认识。</p>
+<blockquote>
+<p>“当蓝牙遇上传感器” —— 小钢炮来了。</p>
+</blockquote>
+<hr />
+<h2 id="_1">低功耗蓝牙<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>蓝牙技术联盟(Bluetooth SIG)在2012年推出了蓝牙4.0技术规范，它包含了三个方面：
+<img alt="" src="../images/ble0.jpg" /></p>
+<ul>
+<li>传统蓝牙(Bluetooth)：适用于传输音频、音乐、文件等数据的场合，如蓝牙耳机、鼠标键盘等。</li>
+<li>低功耗蓝牙(Bluetooth Smart)：适用于小数据量传输，但对功耗又敏感的场合，如智能手环、iBeacon等。低功耗蓝牙又称之为Bluetooth Low Energy(BLE)。</li>
+<li>双模蓝牙(Bluetooth Smart Ready)：双模蓝牙是兼容传统蓝牙和低功耗蓝牙两种技术指标的规范，如手机和电脑就属于双模蓝牙设备。</li>
+</ul>
+<p>低功耗蓝牙的主要特点包括：</p>
+<ul>
+<li>超低峰、平均和空闲模式功耗；</li>
+<li>一颗纽扣电池可以长时间工作；</li>
+<li>较低的物料及生产成本；</li>
+<li>协议简单，适用于小数据量传输；</li>
+<li>多平台支持，如iOS 7.0+和Android 4.3+移动平台，以及大多数PC平台；</li>
+</ul>
+<hr />
+<h2 id="_2">必备知识<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 物理信道<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>低功耗蓝牙运行在2.4GHz ISM频段，GFSK调制方式，Bit-rate：1Mbit/s。</p>
+<p>它有40个频道，频道间隙为2MHz，其中3个为固定的广播通道，其余37个为跳频的数据通道。</p>
+<p><img alt="" src="../images/ble1.jpg" />  </p>
+<h3 id="2">2. 状态和角色<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>低功耗蓝牙有几种状态：</p>
+<p><img alt="" src="../images/ble2.jpg" /></p>
+<ul>
+<li>待机状态(Standby)：默认状态，不做任何事情</li>
+<li>广播状态(Advertising)：广播状态（周期性）</li>
+<li>扫描状态(Scanning)：搜索正在广播的设备</li>
+<li>发起连接状态(Initiating)：向某个已被搜索到的设备主动发起连接</li>
+<li>连接状态(Connection)：两个设备之间建立起数据通道</li>
+</ul>
+<p>低功耗蓝牙有两种角色：</p>
+<ul>
+<li>主设备(Master)：主动发起连接的一方</li>
+<li>从设备(Slave) ：被动接受连接的一方，通常是周期性发送广播</li>
+</ul>
+<h3 id="3">3. 典型通信过程<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>一次典型的低功耗蓝牙通信过程为：</p>
+<p><img alt="" src="../images/ble5.png" /></p>
+<ol>
+<li>从设备发射广播</li>
+<li>主设备开启扫描</li>
+<li>主设备搜索到从设备的广播</li>
+<li>主设备发起连接请求</li>
+<li>从设备响应连接请求</li>
+<li>主设备和从设备建立起连接</li>
+<li>主设备和从设备之间传输数据</li>
+<li>断开连接</li>
+</ol>
+<blockquote>
+<p>只有处于两个相互建立<em>连接</em>的设备，才能发送数据。</p>
+</blockquote>
+<h3 id="4">4. 协议<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>低功耗蓝牙协议是分层的：</p>
+<p><img alt="" src="../images/ble9.jpg" /></p>
+<p>重要协议如下：</p>
+<ul>
+<li>PHY：物理层，包含信道、频段、调制方式等概念；</li>
+<li>LL：链路层，包含比特率、时序、纠错等概念；</li>
+<li>L2CAP：逻辑链路控制适配层，包含如建立链连接、断开连接等概念；</li>
+<li>ATT：属性层，包含如设备UUID等概念；</li>
+<li>GATT：通用属性层，包含特征值、描述符等概念；</li>
+<li>GAP：各种Profile的基础；</li>
+<li>Profile：针对某些特定应用商定的协议，如心率、近距离感应、遥控等；</li>
+</ul>
+<p>整个协议可以分成Controller和Host两部分，有两种实现方式：</p>
+<ul>
+<li>单芯片方案（SoC方案）：Controller、Host、Profile、Application在同一芯片中，市面常见的TI CC254x、Nordic nRF51822等都是单芯片方案；</li>
+<li>双芯片方案：Controller属于一个芯片(蓝牙收发控制器)，Host、Profile、Application属于另一个芯片（通常为一个MCU）。本文描述的BlueNRG就是一个单纯的Controller，外需配有一个MCU；</li>
+<li>HCI：Host和Controller之间的接口，一般为SPI、Uart、USB等总线；</li>
+</ul>
+<blockquote>
+<p>单芯片方案 vs 双芯片方案：并没有好与坏，只有合适不合适，选择哪种取决于应用场景。双芯片方案架构灵活，可以适配多种MCU；单芯片方案简单小巧，易于实现。</p>
+</blockquote>
+<hr />
+<h2 id="bluenrg">BlueNRG芯片<a class="headerlink" href="#bluenrg" title="Permanent link">&para;</a></h2>
+<p>BlueNRG是意法半导体(ST)推出的一款蓝牙控制器芯片(Controller)。它功耗极低、发射功率可以达到+8dB，是业内发射距离最远的低功耗蓝牙芯片。</p>
+<p>BlueNRG属于上面描述的<em>双芯片方案</em>，它内部实现了蓝牙协议栈。实际应用中，外面需配有MCU，MCU负责完成Profile和应用层事物，而BlueNRG负责完成蓝牙通信的任务：</p>
+<p><img alt="" src="../images/ble11.jpg" /></p>
+<p>小钢炮使用了BlueNRG-MS+STM32F401的双芯片方案，其中：</p>
+<ul>
+<li>BlueNRG-MS是支持M/S(Master/Slave，主从一体)协议栈的芯片版本；</li>
+<li>STM32F401是性能强大的MCU，可以完成各类算法、协议等，片内资源是单芯片方案难以比拟的；</li>
+<li>HCI使用了SPI总线作为BlueNRG-MS和STM32F401之间的接口；</li>
+</ul>
+<p>更多关于BlueNRG的资源介绍请参阅<a href="http://pan.baidu.com/s/1o76rwbo#path=%252F%25E5%25B0%258F%25E9%2592%25A2%25E7%2582%25AE_%25E8%258A%25AF%25E7%2589%2587%25E8%25B5%2584%25E6%2596%2599%252F%25E6%259D%25BF%25E8%25BD%25BD%25E5%2599%25A8%25E4%25BB%25B6%25E8%25B5%2584%25E6%25BA%2590%25E8%25B5%2584%25E6%2596%2599%252F%25E8%2593%259D%25E7%2589%2599">这里</a>。</p>
+<hr />
+<h2 id="api">嵌入式API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>为了方便操控BlueNRG，我们提供了低功耗蓝牙SDK，它封装了在MCU上的蓝牙操作。</p>
+<p>通过头文件，我们可以看到相应的API，在线阅读点击<a href="https://github.com/JUMA-IO/STM32_Platform/blob/master/system/middlewares/juma/sdk/bluenrg_sdk_api.h">这里</a>。</p>
+<p>本地文件位于SDK的<code>/system/middlewares/juma/sdk/bluenrg_sdk_api.h</code>路径下。</p>
+<p>摘取部分API如下：</p>
+<pre><code>/* 设置设备广播名称 */
+tBleStatus ble_device_set_name(const char* new_device_name);
+
+/* 设置设备广播间隔 */
+void ble_device_set_advertising_interval(uint16_t interval);
+
+/* 设置设备地址 */
+tBleStatus ble_address(uint8_t* advaddress);
+
+/* 开始广播 */
+tBleStatus ble_device_start_advertising(void);
+
+/* 停止广播 */
+tBleStatus ble_device_stop_advertising(void);
+
+/* 发送数据 */
+tBleStatus ble_device_send(uint8_t type, uint32_t length, uint8_t* value);
+
+/* 断开连接 */
+tBleStatus ble_disconnect_device(void);
+
+/* 收到数据的回调事件 */
+void ble_device_on_message(uint8_t type, uint16_t length, uint8_t* value);
+
+/* 建立连接的回调事件 */
+void ble_device_on_connect( void );
+
+/* 断开连接的回调事件 */
+void ble_device_on_disconnect(uint8_t reason);
+
+</code></pre>
+
+<blockquote>
+<p>关于每个API的详细说明请点击<a href="http://www.juma.io/doc/zh/embedded_api/ble/">这里</a>。</p>
+</blockquote>
+<p>有了对蓝牙的感性认知，接下去，我们继续深入学习代码。</p></div>
+        </div>
+
+        
+
+        <script src="../../js/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="../../js/prettify.min.js"></script>
+        <script src="../../js/main.js"></script>
+
+        <div id="go-top" data-toggle="tooltip" data-placement="bottom" title="回到顶部"><i class="fa fa-arrow-circle-up"></i></div>
+
+        <footer class="footer clearfix">
+    <div class="container">
+        <ul class="list-unstyled list-inline pull-left">
+            <!--<li><a href="/faq/">FAQ</a></li>-->
+            <!-- <li><a href="Blog"></a></li> -->
+            <li><a href="https://github.com/JUMA-IO">GitHub</a></li>
+        </ul>
+        <p class="pull-right">&copy; 2015 JUMA</p>
+    </div>
+</footer>
+        <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=6062249992052412388' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+        </script>
+    </body>
+</html>
