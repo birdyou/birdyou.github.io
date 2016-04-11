@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/cannon_lesson_sensor/">
+        <link rel="canonical" href="http://www.juma.io/doc/zh/stm32_platform/cannon_log/">
         <link rel="shortcut icon" href="../../img/jumafav.png">
 
         <title>JUMA 文档中心</title>
@@ -92,7 +92,7 @@
             <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../../basics/">文档</a></li>
-    <li>Cannon例程: SensorTag</li>
+    <li>Cannon查看日志</li>
   </ol>
 
   
@@ -183,61 +183,45 @@
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../cannon_log/">Cannon查看日志</a>
+              <li class="active">
+                <a class="itm-l1" href="./">Cannon查看日志</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">串口日志</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 软件配置</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2">2. 硬件配置</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3">3. 示例</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#ble">BLE调试助手日志</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1-bleapp">1. 下载&amp;安装BLE调试助手APP</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2_2">2. 使用说明</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
                 
               </li>
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">Cannon例程: SensorTag</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#_1">概述</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#sdk">获取嵌入式SDK及例程</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#_2">编译和烧写嵌入式软件</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step1">Step1. 打开样本工程：</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step2">Step2. 编译工程</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step3">Step3. 烧写软件</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#st_sensor-app">手机安装ST_SENSOR APP</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#app">和手机APP通信</a></li>
-<!--                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step1_1">Step1. 打开手机的蓝牙功能</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step2-st_sensorapp">Step2. 运行“ST_SENSOR”APP</a></li>
-                      </ul>
-                    
-                      <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#step3-cannon">Step3. 和Cannon通信</a></li>
-                      </ul>
-                    -->
-                  
-                    <li class=""><a href="#_3">阅读代码</a></li>
-<!--                    -->
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../cannon_lesson_sensor/">Cannon例程: SensorTag</a>
                 
               </li>
 
@@ -269,63 +253,86 @@
 
             <div class="content-body" role="main">
 
-<h1>Cannon例程: SensorTag</h1>
+<h1>Cannon查看日志</h1>
 
-<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Cannon上板载了多个由意法半导体(ST)出品的传感器，包括加速度计/陀螺仪、磁力计、气压计、温湿度计。本例程讲述了如何通过SDK的JSensor API(传感器API接口)获取这些传感器的数据，以及如何通过BLE API(低功耗蓝牙API接口)将这些数据接收到手机。</p>
+<p>为了方便调试代码，本文用以说明如何通过小钢炮输出日志。</p>
 <hr />
-<h2 id="sdk">获取嵌入式SDK及例程<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
-<p>下载最新的嵌入式SDK(发布版)：<br />
-<a href="https://github.com/JUMA-IO/STM32_Platform/releases">https://github.com/JUMA-IO/STM32_Platform/releases</a><br />
-如JUMA STM32 Platform SDK v1.0.0： <br />
-<img alt="" src="../images/sdk_release.jpg" /></p>
+<h2 id="_1">串口日志<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 软件配置<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>打开工程配置窗口，将条件编译栏的空定义<code>NO_PRINTF</code>去掉。</p>
+<p><img alt="" src="../images/cannon_log1.jpg" /></p>
+<h3 id="2">2. 硬件配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>小钢炮上串口的硬件接口如下，分别对应串口的3V3、RX、TX、GND四个引脚：</p>
+<p><img alt="" src="../images/cannon_log2.jpg" /></p>
+<p>您也可以通过原理图，查看详细信息(<code>x:/documents/cannon_v2/Cannon_V2_SCH.pdf</code>)：</p>
+<p><img alt="" src="../images/cannon_log3.jpg" /></p>
+<h3 id="3">3. 示例<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>在代码中加入<code>printf</code>：</p>
+<p><img alt="" src="../images/cannon_log4.png" /></p>
+<p>通过电脑上的串口调试查看日志，波特率设置为115200bps、无校验位：</p>
+<p><img alt="" src="../images/cannon_log5.jpg" /></p>
+<hr />
+<h2 id="ble">BLE调试助手日志<a class="headerlink" href="#ble" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="1-bleapp">1. 下载&amp;安装BLE调试助手APP<a class="headerlink" href="#1-bleapp" title="Permanent link">&para;</a></h3>
+<p>为了方便调试嵌入式代码，我们提供了手机端的BLE(低功耗蓝牙)调试助手，可以实现手机和设备之间原始数据的收发。现在您可以从Appstore、应用宝等应用市场直接下载，或者自行编译源码。</p>
+<h4 id="1_1">(1) 应用市场下载安装<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>iOS版本: <a href="https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596?l=en&amp;mt=8">BLE调试助手_AppStore</a></li>
+<li>Android版本: <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.juma.helper">BLE调试助手_应用宝</a></li>
+</ul>
 <blockquote>
-<p>如果您想获知最新的代码改动情况，请使用github的“watch”功能。</p>
+<p>在您的手机上，打开Appstore、应用宝等应用市场，搜索“BLE调试助手”便可找到。</p>
 </blockquote>
-<hr />
-<h2 id="_2">编译和烧写嵌入式软件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h4 id="step1">Step1. 打开样本工程：<a class="headerlink" href="#step1" title="Permanent link">&para;</a></h4>
-<pre><code>x:/Cannon/product/application/sensor_tag/mdk-arm/CAF.uvproj
+<h4 id="2_1">(2) 源码编译安装<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>iOS版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">BLE调试助手_iOS_Github</a></li>
+<li>Android版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_Android">BLE调试助手_Android_Github</a></li>
+</ul>
+<h4 id="4-androidapk">(4) Android手机直接安装APK文件<a class="headerlink" href="#4-androidapk" title="Permanent link">&para;</a></h4>
+<p>如果您使用Android手机，可以直接安装BLE调试助手的APK文件。打包下载好github上的文件后，APK文件位于：</p>
+<pre><code>X:\STM32_Platform\tools\JumaBleHelper.apk
 </code></pre>
 
-<p><img alt="" src="../images/sensor_tag_path.jpg" /></p>
-<h4 id="step2">Step2. 编译工程<a class="headerlink" href="#step2" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/yiwI1p2.png" /></p>
-<h4 id="step3">Step3. 烧写软件<a class="headerlink" href="#step3" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/yatJwos.png" /></p>
-<hr />
-<h2 id="st_sensor-app">手机安装ST_SENSOR APP<a class="headerlink" href="#st_sensor-app" title="Permanent link">&para;</a></h2>
-<p>有两种方式可以安装“ST_SENSOR”APP：<br />
-第一种方式：使用Android的APK文件，该文件位于SDK的tools目录下： </p>
-<pre><code>x:/Cannon/tools/STSensor.apk
-</code></pre>
-
-<p>将该文件传送到Android手机，直接安装便可。</p>
+<p><img alt="" src="../images/cannon_blehelper2.jpg" /></p>
 <blockquote>
-<p>如果您不知道如果将APK安装至手机，请参阅<a href="http://jingyan.baidu.com/article/eae07827eda2fa1fec548527.html">这篇文章</a>。</p>
+<p>如果您不知道如果将APK安装至手机，请参阅<a href="http://jingyan.baidu.com/article/eae07827eda2fa1fec548527.html">这篇文章</a>哦。</p>
 </blockquote>
-<p>第二种方式：如果您熟悉Android开发环境，可以使用“ST_SENSOR APP”的源码来安装。“ST_SENSOR”APP的源码位于：<br />
-<a href="https://github.com/JUMA-IO/BLE_SensorTag_Android">https://github.com/JUMA-IO/BLE_SensorTag_Android</a></p>
-<hr />
-<h2 id="app">和手机APP通信<a class="headerlink" href="#app" title="Permanent link">&para;</a></h2>
-<h4 id="step1_1">Step1. 打开手机的蓝牙功能<a class="headerlink" href="#step1_1" title="Permanent link">&para;</a></h4>
-<p><img alt="" src="../images/mobile_bluetooth.jpg" /></p>
-<h4 id="step2-st_sensorapp">Step2. 运行“ST_SENSOR”APP<a class="headerlink" href="#step2-st_sensorapp" title="Permanent link">&para;</a></h4>
-<p>打开后的界面如下：<br />
-<img alt="" src="../images/sensor_app0.jpg" /></p>
-<h4 id="step3-cannon">Step3. 和Cannon通信<a class="headerlink" href="#step3-cannon" title="Permanent link">&para;</a></h4>
-<p>点击“Select Device”按钮，它会搜索周围的Cannon，点击设备进行连接，之后结果如下： <br />
-<img alt="" src="../images/sensor_app1.jpg" /></p>
-<p>可以看到，Cannon将板载的传感器采样得到的数据传送到了APP上。</p>
-<hr />
-<h2 id="_3">阅读代码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>本例中的嵌入式代码位于：  </p>
-<pre><code>x:/Cannon/product/application/sensor_tag/app.c
+<h3 id="2_2">2. 使用说明<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
+<p>以Android版的BLE调试助手为例，说明操作步骤，iOS版本的操作雷同。</p>
+<h4 id="1_2">(1) 搜索设备<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
+<p>点击“SCAN”用于搜索周围的BLE设备。</p>
+<p><img alt="" src="../images/ble_scan.jpg" /></p>
+<p>需要注意的是，BLE调试助手的通过service UUID过滤出使用JUMA SDK的设备：</p>
+<p><img alt="" src="../images/ble_scan_code.png" /></p>
+<pre><code>这部分的代码参见：
+Android BLE SDK：https://github.com/JUMA-IO/BLE_SDK_Android
+iOS BLE SDK：https://github.com/JUMA-IO/BLE_SDK_iOS
 </code></pre>
 
-<p>代码量很少，已配有注释，非常方便阅读。  </p>
-<p>如果您对其中的BLE APIs和JSensor APIs有所疑问，请查阅相应的API说明：<br />
-<a href="http://www.juma.io/doc/zh/embedded_api/guide/">http://www.juma.io/doc/zh/embedded_api/guide/</a></p></div>
+<h4 id="2_3">(2) 选择设备<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
+<p>点击“SCAN”对话框中的某个设备，之后的操作都针对该设备。</p>
+<p><img alt="" src="../images/ble_choose.jpg" /></p>
+<h4 id="3-ble">(3) 建立BLE连接<a class="headerlink" href="#3-ble" title="Permanent link">&para;</a></h4>
+<p>点击“CONNECT”，和该设备建立起BLE连接，APP会显示日志信息：</p>
+<p><img alt="" src="../images/ble_connect.jpg" /></p>
+<h4 id="4">(4) 编辑发送数据<a class="headerlink" href="#4" title="Permanent link">&para;</a></h4>
+<p>点击“SEND”，用于编辑发送的数据，Type为“0x09”。</p>
+<p>F1、F2~F9为快捷按钮，<em>长按</em>可以用于编辑发送数据，Type为“0x00”、“0x01”~“0x08”。</p>
+<blockquote>
+<ol>
+<li>所有编辑的数据均为十六进制数值，您不用在前面加“0x”前缀。  </li>
+<li>收发数据的编码符合TLV格式，即Tyep、Length、Value，定义参见<a href="http://www.juma.io/doc/zh/embedded_api/ble/#_12">这里</a>。 </li>
+</ol>
+</blockquote>
+<p>APP端的代码实现参见<a href="https://github.com/JUMA-IO/BLE_Debugger_Android/blob/master/src/com/juma/helper/MainActivity.java">这里</a>，发送部分的关键代码为：</p>
+<p><img alt="" src="../images/ble_send_code.jpg" /></p>
+<h4 id="5">(5) 查看收发数据<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
+<p>您编辑的发送数据，和从设备收到的数据，都会显示在APP上方的日志区域：</p>
+<p><img alt="" src="../images/ble_log.jpg" /></p>
+<h4 id="6-ble">(6) 断开BLE连接<a class="headerlink" href="#6-ble" title="Permanent link">&para;</a></h4>
+<p>最终，点击“DISCONNECT”以断开和设备之间的连接：</p>
+<p><img alt="" src="../images/ble_disconnect.jpg" /></p></div>
         </div>
 
         
