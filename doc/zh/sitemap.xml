@@ -5,43 +5,43 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/intro/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/support/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/aboutus/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/legal/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/ble_first/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//basics/embedded_iot/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -51,115 +51,115 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/guide/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/task/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/ble/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/ble_master/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/jsensor/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/imu_sensor/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/env_sensor/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/gpio/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/spi/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/serial/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/timer/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/wdog/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/storage/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/usb/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/light/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/buzz/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/infrared/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/adc/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//embedded_api/gfx/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -169,19 +169,19 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//android_api/guide/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//android_api/scan/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//android_api/device/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -191,19 +191,19 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//ios_api/guide/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//ios_api/manager/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//ios_api/device/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -213,49 +213,49 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/guide/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/dev_env/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/nova_resource/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/nova_burn/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/nova_lesson/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/smp_resource/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/smp_burn/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//nrf51_platform/smp_lesson/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -265,61 +265,67 @@
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/guide/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_resource/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_first/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_env/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_burn/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_bluetooth/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_software/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_log/</loc>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_lesson_sensor/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/cannon_lesson_led/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>http://www.juma.io/doc/zh//stm32_platform/faq/</loc>
-     <lastmod>2016-04-02</lastmod>
+     <lastmod>2016-04-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
