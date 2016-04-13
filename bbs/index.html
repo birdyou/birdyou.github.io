@@ -2,13 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
-    <style>
-        *{padding:0;margin:0;box-sizing: border-box}
-        html,body{width:100%;height: 100%;overflow: hidden}
-    </style>
+    <title>Title</title>
 </head>
 <body>
-    <iframe width="100%" height="100%" frameborder="0" src="http://bbs.juma.io:8080/bbs/forum.php"></iframe>
+   <div style="width:60%;margin:20% auto;text-align: center">
+       <p>网站到新域名，请移步至 <a href="http://www.52cannon.com/bbs">http://www.52cannon.com/bbs</a></p>
+       <span id="second">3</span>秒后自动跳转……
+   </div>
 </body>
+<script>
+    window.onload = function () {
+        var time = 3;
+        setTimeout(function () {
+            window.location.href = "http://www.52cannon.com/bbs/forum.php";
+        },time * 1000);
+        var inter = setInterval(function () {
+            second.innerHTML = time--;
+            if(time < 0) clearInterval(inter)
+        },1000)
+    }
+</script>
 </html>
