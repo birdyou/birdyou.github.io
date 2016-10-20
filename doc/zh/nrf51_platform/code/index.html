@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://www.juma.io/doc/zh/nrf51_platform/smp_lesson/">
+        <link rel="canonical" href="http://www.juma.io/doc/zh/nrf51_platform/code/">
         <link rel="shortcut icon" href="../../img/jumafav.png">
 
         <title>JUMA 文档中心</title>
@@ -92,7 +92,7 @@
             <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../../basics/">文档</a></li>
-    <li>SMP的例程: 三轴加速度计</li>
+    <li>代码学习</li>
   </ol>
 
   
@@ -136,8 +136,40 @@
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../code/">代码学习</a>
+              <li class="active">
+                <a class="itm-l1" href="./">代码学习</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#nrf51">nRF51 代码学习</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_1">分层结构</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#sdk">协议栈、SDK和应用层</a></li>
+                      </ul>
+                    -->
+                  
+                    <li class=""><a href="#_2">目录结构</a></li>
+<!--                    -->
+                  
+                    <li class=""><a href="#_3">几个重要工程</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1-smp-acc">1. SMP ACC工程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2-sdk">2. SDK接口工程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3-sdk">3. SDK工程</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
                 
               </li>
 
@@ -185,27 +217,8 @@
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">SMP的例程: 三轴加速度计</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#sdk">获取SDK集成包</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#_1">编译和下载嵌入式固件</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#ble">安装BLE调试助手</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#blesmp">使用BLE调试助手连接SMP</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#motionsensorsmp">使用MotionSensor连接SMP</a></li>
-<!--                    -->
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../smp_lesson/">SMP的例程: 三轴加速度计</a>
                 
               </li>
 
@@ -235,90 +248,76 @@
 
             <div class="content-body" role="main">
 
-<h1>SMP的例程: 三轴加速度计</h1>
+<h1>代码学习</h1>
 
-<p>本例程用以说明如何在SMP上获取三轴加速度计的原始数据。
-当SMP和手机建立连接后，会源源不断的发送三轴加速度计的数据给手机APP。</p>
-<p>本例程的知识点：</p>
-<ul>
-<li>嵌入式SDK的使用；</li>
-<li>SMP的烧录；</li>
-<li>BLE通信(扫描、建立连接、收发数据)等；</li>
-<li>BLE调试助手的使用；</li>
-<li>MotionSensor的使用；</li>
-<li>三轴加速度计的原理；</li>
-</ul>
+<h2 id="nrf51">nRF51 代码学习<a class="headerlink" href="#nrf51" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>本文档只介绍嵌入式代码，手机APP端的代码请自行学习。</p>
+</blockquote>
 <hr />
-<h2 id="sdk">获取SDK集成包<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
-<p>1.下载最新的嵌入式SDK(发布版)：<br />
-<a href="https://github.com/JUMA-IO/nRF51_Platform/releases">https://github.com/JUMA-IO/nRF51_Platform/releases</a><br />
-如JUMA nRF51 Platform SDK v1.0.2： <br />
-<img alt="" src="../images_smp/sdk_release_n51.jpg" /></p>
-<pre><code>注意，如果您想获知最新的代码改动情况，请使用github的“watch”功能。
+<h2 id="_1">分层结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="sdk">协议栈、SDK和应用层<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h3>
+<p>记住，为了跑蓝牙，嵌入式端是需要协议栈的，就像跑网络需要TCP/IP协议栈那样，这个协议栈是由Nordic公司提供的。  </p>
+<p>我们在Nordic蓝牙协议栈的基础之上，增加了一层SDK，对蓝牙操作以及常见驱动做了一些封装，方便大家开发。  </p>
+<p>你的嵌入式应用层代码是通过SDK的API来执行的。</p>
+<p>好了，我们来看文件，你应该已经下载了嵌入式的开发资源吧，里面有个<code>重烧协议栈</code>的文件夹：</p>
+<p><img alt="" src="../images/layers.png" /></p>
+<p>每个文件的作用如下：  </p>
+<pre><code>flash-ble-device-system.bat -- 烧写脚本
+ble_host_radio.hex          -- 蓝牙主设备协议栈（入门级用户用不到的）
+ble_device_radio.hex        -- 蓝牙从设备协议栈
+ble_device_platform.hex     -- 我们的SDK
 </code></pre>
 
-<p>2.下载开发资源，里面含有<code>配套APP</code>：<br />
-<a href="https://pan.baidu.com/s/1hrAhtRI">https://pan.baidu.com/s/1hrAhtRI</a></p>
+<blockquote>
+<p>蓝牙通信两个设备，一个称为主设备，一个称为从设备。一般手机做主设备，板子做从设备，但是有时，板子也可以做主设备，就需要主设备协议栈了。</p>
+</blockquote>
+<p>协议栈和SDK的烧写需要用脚本，应用层代码烧写用Keil（当然也可以用脚本）。协议栈和SDK烧过一次就可以了，Keil烧写应用层代码的时候，不会覆盖协议栈和SDK的。</p>
+<blockquote>
+<p>协议栈和SDK烧一次就可以了！！</p>
+<p>入门级用户，先不要改协议栈和SDK，先玩应用层代码。</p>
+</blockquote>
 <hr />
-<h2 id="_1">编译和下载嵌入式固件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>打开对应的acc的例子：  </p>
+<h2 id="_2">目录结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>你应该也从github下载了嵌入式代码了吧，就是那个<code>nRF51_Platform</code>的工程。</p>
+<p>好了，SDK代码和应用层示例代码都包含在这里了！</p>
+<p>我们来看目录结构：</p>
+<pre><code>BoardConfig     -- 板子配置
+Document        -- 文档（其实不太全，还是看代码最有用）
+Interface       -- 接口，就是一个SDK接口，lib库的形式！
+Platform        -- SDK的代码都在这里，包括main函数！
+Product         -- 应用层的示例工程代码
+</code></pre>
+
+<hr />
+<h2 id="_3">几个重要工程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="1-smp-acc">1. SMP ACC工程<a class="headerlink" href="#1-smp-acc" title="Permanent link">&para;</a></h3>
+<p>玩SMP开发板的朋友，就是要获取3轴的原始数据，这个工程在哪里呢？</p>
 <pre><code>nRF51_Platform/Product/Examples/acc/
 </code></pre>
 
-<p><img alt="" src="../images_smp/acc_path.png" />  </p>
-<p>双击 app.uvprojx打开对应的工程项目：之后按照顺序，先点击左侧红框内的东西，然后点击右侧红框内的的东西。（SMP板子必须已经处于连接好的状态）</p>
-<p><img alt="" src="../images_smp/SMP_DownLoad_ACC.png" />  </p>
-<pre><code>注：确保嵌入式环境搭建正确，请参阅左侧的“烧入方法”篇幅。
+<p>其中，arm文件夹下就是Keil的工程文件，打开如下：</p>
+<p><img alt="" src="../images/acc_project.png" /></p>
+<p>你应该可以想到，这是一个应用层代码的工程。</p>
+<blockquote>
+<p>再说一遍，这是一个应用层代码的工程。</p>
+</blockquote>
+<p>有没有看见左边的<code>juma_sdk.lib</code>，这个就是库，包含了SDK的API。</p>
+<h3 id="2-sdk">2. SDK接口工程<a class="headerlink" href="#2-sdk" title="Permanent link">&para;</a></h3>
+<p><code>juma_sdk.lib</code>，这个库，是由SDK接口工程生成的，那么，这个工程在哪里呢？</p>
+<p>如果你仔细阅读了第2节，就可以想到，在下面这个路径：</p>
+<pre><code>nRF51_Platform/Interface/Project/
 </code></pre>
 
-<blockquote>
-<p>当然，这是应用层的代码，板子里默认已经烧写了协议栈和SDK。</p>
-</blockquote>
-<h2 id="ble">安装BLE调试助手<a class="headerlink" href="#ble" title="Permanent link">&para;</a></h2>
-<p>1.应用市场安装</p>
-<p>您可以从AppStore和应用宝，下载和安装“JUMA BLE调试助手”:</p>
-<ul>
-<li>iOS版本: <a href="https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596?l=en&amp;mt=8">BLE调试助手_AppStore</a></li>
-<li>Android版本: <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.juma.helper">BLE调试助手_应用宝</a></li>
-</ul>
-<p>2.Android APK安装</p>
-<p>下载开发资料后，在<code>配套APP</code>里有<code>JumaBleHelper.apk</code>，可以直接安装：</p>
-<p><img alt="" src="../images/app_res.png" />  </p>
-<p>3.自行编译源码安装  </p>
-<p>(1)Android SDK和调试助手代码<br />
-<a href="https://github.com/JUMA-IO/BLE_SDK_Android">https://github.com/JUMA-IO/BLE_SDK_Android</a><br />
-<a href="https://github.com/JUMA-IO/BLE_Debugger_Android">https://github.com/JUMA-IO/BLE_Debugger_Android</a></p>
-<p>(2)iOS SDK和调试助手代码<br />
-<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">https://github.com/JUMA-IO/BLE_SDK_iOS</a><br />
-<a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></p>
-<hr />
-<h2 id="blesmp">使用BLE调试助手连接SMP<a class="headerlink" href="#blesmp" title="Permanent link">&para;</a></h2>
-<p>安装好安卓调试助手后，点击Scan进行设备扫描。  </p>
-<p><img alt="" src="../images_smp/Android_app.png" />   </p>
-<p>之后会看到如下的扫描结果：</p>
-<p><img alt="" src="../images_smp/Android_scan.png" />  </p>
-<ul>
-<li>点击JUMA_Acc进行连接。</li>
-<li>之后，点击下方的Connect进行连接。</li>
-<li>然后就会源源不断的收到来自SMP板子的三轴的数据了。</li>
-</ul>
-<hr />
-<h2 id="motionsensorsmp">使用MotionSensor连接SMP<a class="headerlink" href="#motionsensorsmp" title="Permanent link">&para;</a></h2>
-<p>MotionSensor APP将SMP上三轴的原始数据显示为波形。</p>
-<p>1.Android APK安装 <br />
-下载开发资料后，在<code>配套APP</code>里有<code>MotionSensor.apk</code>，可以直接安装。</p>
-<p>2.自行编译源码安装<br />
-<a href="https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android">https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android</a></p>
-<blockquote>
-<p>如果不会用git，就网页下载整个工程，不过有点大，耐心等待。</p>
-</blockquote>
-<p>打开MotionSensor APP，扫描并连接相应的SMP开发板，会看到三轴数据的波形：</p>
-<p><img alt="" src="../images_smp/motion1.png" />  </p>
-<p>如果您移动或翻转SMP开发板，会发现三轴数据波形的变化：</p>
-<p><img alt="" src="../images_smp/motion2.png" />  </p>
-<blockquote>
-<p>代码都开源了，自行学习吧。^_^</p>
-</blockquote></div>
+<h3 id="3-sdk">3. SDK工程<a class="headerlink" href="#3-sdk" title="Permanent link">&para;</a></h3>
+<p>上面这个仅仅是接口，真正的SDK代码工程在下面的路径，包括你们要的main函数：</p>
+<pre><code>nRF51_Platform/Platform/Project/
+</code></pre>
+
+<p>可以想象，这个工程下面和蓝牙API息息相关，和驱动也息息相关，感兴趣的朋友可以阅读一下代码。</p>
+<p>可以想象，第1节中那个<code>ble_device_platform.hex</code>，就是由这个工程生成的。</p>
+<p>当然，做SDK的目的本身是为了方便开发，为了只玩应用层就可以了，不用接触底层的东西。</p>
+<p>亲，如果你只玩过51，别问我为啥要搞这么多工程，分这么多层次，为啥没有main函数，这种问题。。。莫怪我装逼，这是一种设计思想，我只能这样告诉你。</p></div>
         </div>
 
         

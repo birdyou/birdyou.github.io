@@ -134,26 +134,34 @@
                 
                   <ul class="nav">
                   
-                    <li class="active "><a href="#nrf51">nRF51平台进阶流程</a></li>
+                    <li class="active "><a href="#nrf51">nRF51平台指南</a></li>
 <!--                    
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#1">1. 搭建开发环境</a></li>
+                        <li><a class="itm-l2" href="#1">1. 了解开发板</a></li>
                       </ul>
                     
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#2">2. 了解开发板硬件资源</a></li>
+                        <li><a class="itm-l2" href="#2">2. 下载资源</a></li>
                       </ul>
                     
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#3">3. 掌握开发板烧入方式</a></li>
+                        <li><a class="itm-l2" href="#3">3. 学习代码</a></li>
                       </ul>
                     
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#4">4. 学会使用入门例程</a></li>
+                        <li><a class="itm-l2" href="#4">4. 开发环境和烧录</a></li>
                       </ul>
                     
                       <ul class="nav nav-l2">
-                        <li><a class="itm-l2" href="#5">5. 开始自己的创造之旅</a></li>
+                        <li><a class="itm-l2" href="#5">5. 使用入门例程</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#6">6. 开始创造之旅</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#7">7. 常见问题</a></li>
                       </ul>
                     -->
                   
@@ -164,7 +172,14 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
+                <a class="itm-l1" href="../code/">代码学习</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../dev_env/">开发环境</a>
                 
               </li>
 
@@ -211,6 +226,13 @@
               </li>
 
           
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">故障排除</a>
+                
+              </li>
+
+          
         
       
 
@@ -231,20 +253,56 @@
 
 <h1>使用说明</h1>
 
-<h2 id="nrf51">nRF51平台进阶流程<a class="headerlink" href="#nrf51" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 搭建开发环境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>搭建<a href="../dev_env/">开发环境</a>，安装和配置相关的软件。</p>
-<h3 id="2">2. 了解开发板硬件资源<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>基于Nordic nRF51822，我们提供了<a href="../nova_resource/">NOVA</a>、<a href="../smp_resource/">SMP</a>两款开发板。您可以查看开发板说明，了解它能够做些什么。  </p>
+<h2 id="nrf51">nRF51平台指南<a class="headerlink" href="#nrf51" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 了解开发板<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>想必，你已经对蓝牙开发板有所了解了吧：  </p>
+<ul>
+<li>对于NOVA开发板来说，它有丰富的扩展口；  </li>
+<li>对于SMP开发板来说，它有三轴加速度计；  </li>
+</ul>
+<p>两个开发板都基于nRF51822芯片，如果你对这个芯片不了解，可以看看它的芯片手册，网上一搜很多的。</p>
 <blockquote>
-<p>JUMA SDK可以运行在任何基于Nordic nRF51822的硬件上。  </p>
+<p>不过简单说，它就是一个蓝牙芯片，而且内部集成了一个ARM Cortex-M0的单片机。</p>
 </blockquote>
-<h3 id="3">3. 掌握开发板烧入方式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>掌握如何给开发板烧入固件(嵌入式程序)。</p>
-<h3 id="4">4. 学会使用入门例程<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<p>每个入门例程都是一个工程模板。通过学习例程，掌握如何使用SDK。一旦学会，您会感受到使用SDK开发BLE程序是如此惊人的便捷，而且，这一切很容易学习。</p>
-<h3 id="5">5. 开始自己的创造之旅<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<p>之后，您就可以用SDK开始创作自己的应用了。</p></div>
+<hr />
+<h3 id="2">2. 下载资源<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<p>(1)嵌入式开发资源<br />
+包括开发环境、硬件电路、芯片手册等：<br />
+<a href="https://pan.baidu.com/s/1hrAhtRI">https://pan.baidu.com/s/1hrAhtRI</a></p>
+<p>(2)嵌入式代码<br />
+<a href="https://github.com/JUMA-IO/nRF51_Platform">https://github.com/JUMA-IO/nRF51_Platform</a></p>
+<p>(3)Android SDK和调试助手代码<br />
+<a href="https://github.com/JUMA-IO/BLE_SDK_Android">https://github.com/JUMA-IO/BLE_SDK_Android</a><br />
+<a href="https://github.com/JUMA-IO/BLE_Debugger_Android">https://github.com/JUMA-IO/BLE_Debugger_Android</a></p>
+<p>(4)iOS SDK和调试助手代码<br />
+<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">https://github.com/JUMA-IO/BLE_SDK_iOS</a><br />
+<a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></p>
+<p>(5)SMP加速度计 Android APP代码<br />
+<a href="https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android">https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android</a></p>
+<blockquote>
+<p>如果不会用git，就网页下载整个工程，不过有点大，耐心等待。</p>
+</blockquote>
+<hr />
+<h3 id="3">3. 学习代码<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>你要对代码的组件、层次、目录结构有一定了解。<br />
+从嵌入式到APP的代码都开源了，就是上面的链接，自己下载。<br />
+嵌入式代码可以运行于任何的nRF51822芯片上，不一定是我家的开发板。<br />
+详细的内容点击左边的<code>代码学习</code>去看。</p>
+<hr />
+<h3 id="4">4. 开发环境和烧录<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>学习开发环境和烧录，没啥特别的，使用<code>Keil+JLink</code>，搞嵌入式的必备技能。 <br />
+在Keil中需要安装nRF51芯片的<code>Pack</code>，不然无法识别，具体过程看左边的<code>环境配置</code>。 <br />
+不同开发板Jlink的连线位置可能不一样，要学会看电路图。</p>
+<hr />
+<h3 id="5">5. 使用入门例程<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>BLE的应用都是嵌入式和APP相互配合，要收发数据的嘛。。如果你不熟悉，板子烧录嵌入式代码，手机上也装上相应的APP，就能玩起来了。<br />
+每个入门例程都是一个工程模板，学会使用后，你可以试着自行修改。</p>
+<hr />
+<h3 id="6">6. 开始创造之旅<a class="headerlink" href="#6" title="Permanent link">&para;</a></h3>
+<p>好了，你都会了，可以自己创造了。</p>
+<hr />
+<h3 id="7">7. 常见问题<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p>如果遇到问题，请先看左边的<code>故障排除</code>，看看自己能不能解决哦。</p></div>
         </div>
 
         
