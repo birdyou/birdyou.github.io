@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://www.juma.io/doc/zh/nrf51_platform/smp_lesson/">
+        <link rel="canonical" href="http://www.juma.io/doc/zh/nrf51_platform/faq/">
         <link rel="shortcut icon" href="../../img/jumafav.png">
 
         <title>JUMA 文档中心</title>
@@ -92,7 +92,7 @@
             <div class="toolbar clearfix">
   <ol class="breadcrumb pull-left">
     <li><a href="../../basics/">文档</a></li>
-    <li>SMP的例程: 三轴加速度计</li>
+    <li>故障排除</li>
   </ol>
 
   
@@ -185,34 +185,54 @@
 
           
 
-              <li class="active">
-                <a class="itm-l1" href="./">SMP的例程: 三轴加速度计</a>
-                
-                  <ul class="nav">
-                  
-                    <li class="active "><a href="#sdk">获取SDK集成包</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#_1">编译和下载嵌入式固件</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#ble">安装BLE调试助手</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#blesmp">使用BLE调试助手连接SMP</a></li>
-<!--                    -->
-                  
-                    <li class=""><a href="#motionsensorsmp">使用MotionSensor连接SMP</a></li>
-<!--                    -->
-                  
-                  </ul>
+              <li class="">
+                <a class="itm-l1" href="../smp_lesson/">SMP的例程: 三轴加速度计</a>
                 
               </li>
 
           
 
-              <li class="">
-                <a class="itm-l1" href="../faq/">故障排除</a>
+              <li class="active">
+                <a class="itm-l1" href="./">故障排除</a>
+                
+                  <ul class="nav">
+                  
+                    <li class="active "><a href="#_1">常见问题</a></li>
+<!--                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#1">1. 资源下载</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#2-keil">2. 批处理烧写还是Keil烧写</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#3-keil">3. Keil无法识别出芯片</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#4">4. 蓝牙搜不到</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#5">5. 蓝牙连不上</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#6-nrftools">6. nRFtools使用</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#7">7. 蓝牙学习资料</a></li>
+                      </ul>
+                    
+                      <ul class="nav nav-l2">
+                        <li><a class="itm-l2" href="#8-nrf51822">8. nRF51822芯片资料</a></li>
+                      </ul>
+                    -->
+                  
+                  </ul>
                 
               </li>
 
@@ -235,90 +255,55 @@
 
             <div class="content-body" role="main">
 
-<h1>SMP的例程: 三轴加速度计</h1>
+<h1>故障排除</h1>
 
-<p>本例程用以说明如何在SMP上获取三轴加速度计的原始数据。
-当SMP和手机建立连接后，会源源不断的发送三轴加速度计的数据给手机APP。</p>
-<p>本例程的知识点：</p>
-<ul>
-<li>嵌入式SDK的使用；</li>
-<li>SMP的烧录；</li>
-<li>BLE通信(扫描、建立连接、收发数据)等；</li>
-<li>BLE调试助手的使用；</li>
-<li>MotionSensor的使用；</li>
-<li>三轴加速度计的原理；</li>
-</ul>
 <hr />
-<h2 id="sdk">获取SDK集成包<a class="headerlink" href="#sdk" title="Permanent link">&para;</a></h2>
-<p>1.下载最新的嵌入式SDK(发布版)：<br />
-<a href="https://github.com/JUMA-IO/nRF51_Platform/releases">https://github.com/JUMA-IO/nRF51_Platform/releases</a><br />
-如JUMA nRF51 Platform SDK v1.0.2： <br />
-<img alt="" src="../images_smp/sdk_release_n51.jpg" /></p>
-<pre><code>注意，如果您想获知最新的代码改动情况，请使用github的“watch”功能。
-</code></pre>
-
-<p>2.下载开发资源，里面含有<code>配套APP</code>：<br />
-<a href="https://pan.baidu.com/s/1hrAhtRI">https://pan.baidu.com/s/1hrAhtRI</a></p>
+<h2 id="_1">常见问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. 资源下载<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>所有的资源，包括开发环境、嵌入式代码、APP代码都开源了，请参见左侧<code>使用说明</code>。</p>
 <hr />
-<h2 id="_1">编译和下载嵌入式固件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>打开对应的acc的例子：  </p>
-<pre><code>nRF51_Platform/Product/Examples/acc/
-</code></pre>
-
-<p><img alt="" src="../images_smp/acc_path.png" />  </p>
-<p>双击 app.uvprojx打开对应的工程项目：之后按照顺序，先点击左侧红框内的东西，然后点击右侧红框内的的东西。（SMP板子必须已经处于连接好的状态）</p>
-<p><img alt="" src="../images_smp/SMP_DownLoad_ACC.png" />  </p>
-<pre><code>注：确保嵌入式环境搭建正确，请参阅左侧的“烧入方法”篇幅。
-</code></pre>
-
-<blockquote>
-<p>当然，这是应用层的代码，板子里默认已经烧写了协议栈和SDK。</p>
-</blockquote>
-<h2 id="ble">安装BLE调试助手<a class="headerlink" href="#ble" title="Permanent link">&para;</a></h2>
-<p>1.应用市场安装</p>
-<p>您可以从AppStore和应用宝，下载和安装“JUMA BLE调试助手”:</p>
-<ul>
-<li>iOS版本: <a href="https://itunes.apple.com/cn/app/juma-ble-diao-shi-zhu-shou/id1027737596?l=en&amp;mt=8">BLE调试助手_AppStore</a></li>
-<li>Android版本: <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.juma.helper">BLE调试助手_应用宝</a></li>
-</ul>
-<p>2.Android APK安装</p>
-<p>下载开发资料后，在<code>配套APP</code>里有<code>JumaBleHelper.apk</code>，可以直接安装：</p>
-<p><img alt="" src="../images/app_res.png" />  </p>
-<p>3.自行编译源码安装  </p>
-<p>(1)Android SDK和调试助手代码<br />
-<a href="https://github.com/JUMA-IO/BLE_SDK_Android">https://github.com/JUMA-IO/BLE_SDK_Android</a><br />
-<a href="https://github.com/JUMA-IO/BLE_Debugger_Android">https://github.com/JUMA-IO/BLE_Debugger_Android</a></p>
-<p>(2)iOS SDK和调试助手代码<br />
-<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">https://github.com/JUMA-IO/BLE_SDK_iOS</a><br />
-<a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></p>
+<h3 id="2-keil">2. 批处理烧写还是Keil烧写<a class="headerlink" href="#2-keil" title="Permanent link">&para;</a></h3>
+<p>默认配置下，Keil烧写应用层代码，nRFTools批处理脚本烧写的协议栈和SDK。<br />
+出厂的时候，板子默认已经烧写了协议栈和SDK，不用重复烧写。<br />
+所以，一般用户只需使用Keil烧写就可以了。</p>
 <hr />
-<h2 id="blesmp">使用BLE调试助手连接SMP<a class="headerlink" href="#blesmp" title="Permanent link">&para;</a></h2>
-<p>安装好安卓调试助手后，点击Scan进行设备扫描。  </p>
-<p><img alt="" src="../images_smp/Android_app.png" />   </p>
-<p>之后会看到如下的扫描结果：</p>
-<p><img alt="" src="../images_smp/Android_scan.png" />  </p>
-<ul>
-<li>点击JUMA_Acc进行连接。</li>
-<li>之后，点击下方的Connect进行连接。</li>
-<li>然后就会源源不断的收到来自SMP板子的三轴的数据了。</li>
-</ul>
+<h3 id="3-keil">3. Keil无法识别出芯片<a class="headerlink" href="#3-keil" title="Permanent link">&para;</a></h3>
+<p>请确保在Keil中已经安装了nRF51的Package。<br />
+请确保使用JLink，并且配置为SWD模式。</p>
 <hr />
-<h2 id="motionsensorsmp">使用MotionSensor连接SMP<a class="headerlink" href="#motionsensorsmp" title="Permanent link">&para;</a></h2>
-<p>MotionSensor APP将SMP上三轴的原始数据显示为波形。</p>
-<p>1.Android APK安装 <br />
-下载开发资料后，在<code>配套APP</code>里有<code>MotionSensor.apk</code>，可以直接安装。</p>
-<p>2.自行编译源码安装<br />
-<a href="https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android">https://github.com/JUMA-IO/BLE_Demos/tree/master/Nordic/SMP/Acc/android</a></p>
-<blockquote>
-<p>如果不会用git，就网页下载整个工程，不过有点大，耐心等待。</p>
-</blockquote>
-<p>打开MotionSensor APP，扫描并连接相应的SMP开发板，会看到三轴数据的波形：</p>
-<p><img alt="" src="../images_smp/motion1.png" />  </p>
-<p>如果您移动或翻转SMP开发板，会发现三轴数据波形的变化：</p>
-<p><img alt="" src="../images_smp/motion2.png" />  </p>
-<blockquote>
-<p>代码都开源了，自行学习吧。^_^</p>
-</blockquote></div>
+<h3 id="4">4. 蓝牙搜不到<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>(1) Reset and Run<br />
+Keil中需要配置Jlink的<code>reset and run</code>，不然烧写代码后，需重新上电，程序才会运行。</p>
+<p>(2) 供电正确<br />
+SMP支持CR2032纽扣电池供电。<br />
+JLink的供电也可以。<br />
+确保供电是3.3V。</p>
+<p>(3) 手机开启/支持BLE  <br />
+确保手机已经开启蓝牙和支持BLE。<br />
+Android 4.4+支持BLE，iPhone4以上才支持。<br />
+Android手机差异很大，建议多拿几个手机试试看。</p>
+<p>(4) 手机使用了配套APP？  <br />
+不要用手机原生的蓝牙搜索，BLE总是和配套APP使用的，手机原生的蓝牙搜索可能搜不到BLE设备。<br />
+iPhone用户可以安装一个<code>lightblue</code>的APP，它是通用的BLE调试工具。<br />
+当然，还是建议你安装我们的<code>BLE调试助手</code>APP来搜索和调试。</p>
+<p>(5) Keil Debug  <br />
+你也可以用Keil来debug，看看程序是否在运行？</p>
+<p>(6) 物理损坏  <br />
+还不行？看看板子是否有明显的物理损坏？</p>
+<hr />
+<h3 id="5">5. 蓝牙连不上<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>蓝牙可以搜到，但是连不上。<br />
+遇到这种情况，建议多换几个手机试试，然后确保板子供电3.3V。</p>
+<hr />
+<h3 id="6-nrftools">6. nRFtools使用<a class="headerlink" href="#6-nrftools" title="Permanent link">&para;</a></h3>
+<p>nRFtools支持JLink，但不支持STLink，需要改驱动的。</p>
+<hr />
+<h3 id="7">7. 蓝牙学习资料<a class="headerlink" href="#7" title="Permanent link">&para;</a></h3>
+<p><a href="http://www.juma.io/doc/zh/basics/ble_first/">http://www.juma.io/doc/zh/basics/ble_first/</a></p>
+<hr />
+<h3 id="8-nrf51822">8. nRF51822芯片资料<a class="headerlink" href="#8-nrf51822" title="Permanent link">&para;</a></h3>
+<p>如果你从事底层开发或者协议栈开发，请参阅更多资料：<br />
+<a href="https://pan.baidu.com/s/1i5nuVjf">https://pan.baidu.com/s/1i5nuVjf</a></p></div>
         </div>
 
         

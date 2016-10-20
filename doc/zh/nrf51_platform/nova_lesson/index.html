@@ -137,7 +137,14 @@
           
 
               <li class="">
-                <a class="itm-l1" href="../dev_env/">开发环境搭建</a>
+                <a class="itm-l1" href="../code/">代码学习</a>
+                
+              </li>
+
+          
+
+              <li class="">
+                <a class="itm-l1" href="../dev_env/">开发环境</a>
                 
               </li>
 
@@ -200,6 +207,13 @@
               </li>
 
           
+
+              <li class="">
+                <a class="itm-l1" href="../faq/">故障排除</a>
+                
+              </li>
+
+          
         
       
 
@@ -238,12 +252,15 @@
 </code></pre>
 
 <h2 id="_1">编译和下载固件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>打开对应的echo的例子：<br />
-<img alt="" src="../images/ECHO_path.png" /></p>
+<p>打开对应的echo的例子：  </p>
+<pre><code>nRF51_Platform/Product/Examples/echo/
+</code></pre>
+
+<p><img alt="" src="../images/ECHO_path.png" /></p>
 <p>双击 app.uvprojx打开对应的工程项目：之后打开app文件，会看到如下所示的内容。  </p>
 <p><img alt="" src="../images/NOVA_DownLoad.png" /></p>
 <p>由于NOVA上面有一个LED其引脚为2所以，需要修改一下图中的那个宏定义，之后点击编译，最后执行下载。只要按照图中红框中的的步骤操作就可以了。</p>
-<pre><code>注：确保嵌入式环境搭建正确，请参阅右侧的“烧入方法”篇幅。
+<pre><code>注：确保嵌入式环境搭建正确，请参阅左侧的“烧入方法”篇幅。
 </code></pre>
 
 <h2 id="ble">安装BLE调试助手<a class="headerlink" href="#ble" title="Permanent link">&para;</a></h2>
@@ -254,13 +271,15 @@
 <li>Android版本: <a href="http://sj.qq.com/myapp/detail.htm?apkName=com.juma.helper">BLE调试助手_应用宝</a></li>
 </ul>
 <p>2.Android APK安装</p>
-<p>如果使用Android手机，在SDK集成包里含有“JUMA BLE调试助手”，可以直接安装：</p>
-<p><img alt="" src="../images/jumaBleHelper.png" />  </p>
-<p>3.自行编译源码安装</p>
-<ul>
-<li>iOS版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">BLE调试助手_iOS_Github</a></li>
-<li>Android版本: <a href="https://github.com/JUMA-IO/BLE_Debugger_Android">BLE调试助手_Android_Github</a></li>
-</ul>
+<p>下载开发资料后，在<code>配套APP</code>里有<code>JumaBleHelper.apk</code>，可以直接安装：</p>
+<p><img alt="" src="../images/app_res.png" />  </p>
+<p>3.自行编译源码安装<br />
+(1)Android SDK和调试助手代码<br />
+<a href="https://github.com/JUMA-IO/BLE_SDK_Android">https://github.com/JUMA-IO/BLE_SDK_Android</a><br />
+<a href="https://github.com/JUMA-IO/BLE_Debugger_Android">https://github.com/JUMA-IO/BLE_Debugger_Android</a></p>
+<p>(2)iOS SDK和调试助手代码<br />
+<a href="https://github.com/JUMA-IO/BLE_SDK_iOS">https://github.com/JUMA-IO/BLE_SDK_iOS</a><br />
+<a href="https://github.com/JUMA-IO/BLE_Debugger_iOS">https://github.com/JUMA-IO/BLE_Debugger_iOS</a></p>
 <h2 id="blenova">使用BLE调试助手连接NOVA<a class="headerlink" href="#blenova" title="Permanent link">&para;</a></h2>
 <p>安装好安卓调试助手后，点击Scan进行设备扫描：</p>
 <p><img alt="" src="../images/Android_app.png" />  </p>
